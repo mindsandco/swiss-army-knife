@@ -1,23 +1,23 @@
 <Project>
 
   <PropertyGroup Label="Build">
-    <LangVersion>latest</LangVersion>
+    <LangVersion>9</LangVersion>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <AnalysisLevel>latest</AnalysisLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Nullable>true</Nullable>
   </PropertyGroup>
 
   <PropertyGroup Label="Package">
-    <Authors>Project Author</Authors>
-    <Company>Project Author</Company>
-    <Copyright>Copyright © Project Author. All rights Reserved</Copyright>
+    <Authors>Gustav Wengel</Authors>
+    <Company>SCADA MINDS</Company>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Username/Project</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
-    <RepositoryUrl>https://github.com/Username/Project.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/SCADAMINDS/swiss-army-knife</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>https://github.com/Username/Project/releases</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/SCADAMINDS/swiss-army-knife/releases</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup Label="Package References">

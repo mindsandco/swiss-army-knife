@@ -1,9 +1,19 @@
 # swiss-army-knife
+![Banner](Images/Banner.png)
 
+# Project Title
+
+[![GitHub Actions Status](https://github.com/SCADAMINDS/swiss-army-knife/workflows/Build/badge.svg?branch=main)](https://github.com/SCADAMINDS/swiss-army-knife/actions)
+
+[![GitHub Actions Build History](https://buildstats.info/github/chart/SCADAMINDS/swiss-army-knife?branch=main&includeBuildsFromPullRequest=false)](https://github.com/SCADAMINDS/swiss-army-knife/actions)
+
+
+Project Description
 
 # csharplibrarytest
 
 # TODO
+- change key.snk ?
 - Write introduction and running guide
 - Setup CI & Github
 - Generate documentation
