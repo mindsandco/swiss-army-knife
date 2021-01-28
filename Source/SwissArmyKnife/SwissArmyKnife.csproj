@@ -2,6 +2,7 @@
 
   <PropertyGroup Label="Build">
     <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>SCM.SwissArmyKnife</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Label="Package">

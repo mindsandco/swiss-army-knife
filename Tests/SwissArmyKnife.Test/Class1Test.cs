@@ -1,6 +1,5 @@
-namespace swiss_army_knife.Test
+namespace SCM.SwissArmyKnife.Test
 {
-    using swiss_army_knife;
     using Xunit;
 
     public class Class1Test

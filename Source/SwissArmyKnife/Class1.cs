@@ -1,7 +1,5 @@
-namespace swiss_army_knife
+namespace SCM.SwissArmyKnife
 {
-    using System;
-
     /// <summary>
     /// Some class.
     /// </summary>

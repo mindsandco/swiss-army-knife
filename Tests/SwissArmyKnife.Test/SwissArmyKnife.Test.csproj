@@ -2,10 +2,11 @@
 
   <PropertyGroup Label="Build">
     <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>SCM.SwissArmyKnife.Test</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup Label="Project References">
-    <ProjectReference Include="..\..\Source\swiss_army_knife\swiss_army_knife.csproj" />
+    <ProjectReference Include="..\..\Source\SwissArmyKnife\SwissArmyKnife.csproj" />
   </ItemGroup>
 
 </Project>

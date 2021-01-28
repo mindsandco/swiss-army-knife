@@ -38,6 +38,12 @@ You can pull or fork this project. It runs on dotnet core, so you should be able
 You cannot commit to `main` - but feel free to make a Pull Request.
 Remember to add tests for your changes.
 
+You build it via `dotnet tool restore`
+
+dotnet cake --target=Build
+dotnet cake --target=Test
+
+see https://rehansaeed.com/the-fastest-nuget-package-ever-published-probably/
 
 # Release Process
 
