@@ -13,10 +13,10 @@ Project Description
 # csharplibrarytest
 
 # TODO
+- Build docs using doxygen or similar
 - change key.snk ?
 - Write introduction and running guide
 - Setup CI & Github
-- Generate documentation
 - Publish to nuget on new releases
 - Add [Pure] annotations where necessary
 - Add null checks where necessary
