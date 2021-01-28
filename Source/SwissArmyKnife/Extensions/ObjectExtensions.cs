@@ -1,7 +1,12 @@
 namespace SCM.SwissArmyKnife.Extensions
 {
     using System;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// Extensions that can go on every object. Such as printing the object to JSON.
+    /// </summary>
     public static class ObjectExtensions
     {
         /// <summary>
@@ -13,7 +18,7 @@ namespace SCM.SwissArmyKnife.Extensions
             return JsonConvert.SerializeObject(
                 objectToSerialize, new StringEnumConverter());
         }
-        
+
         /// <summary>
         /// Creates an object and turns it into an indented JSON string
         /// Converts Enums to their string values

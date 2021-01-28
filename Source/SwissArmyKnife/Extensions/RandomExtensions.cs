@@ -4,9 +4,13 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Extensions to make working with the CLR Random class a little less painful. Includes methods to get
+    /// a bunch of different types
+    /// </summary>
     public static class RandomExtensions
     {
-        
+
         /// <summary>
         /// Returns a double within the range [minValue..maxValue)
         /// (minValue inclusive, maxValue exclusive)
@@ -16,7 +20,7 @@
         {
             return @this.NextDouble() * (maxValue - minValue) + minValue;
         }
-        
+
         /// <summary>
         /// Returns a random boolean. There's a 50/50 chance of each.
         /// </summary>

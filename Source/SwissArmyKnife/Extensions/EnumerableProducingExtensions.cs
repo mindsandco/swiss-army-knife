@@ -4,7 +4,10 @@ namespace SCM.SwissArmyKnife.Extensions
     using System.Diagnostics.Contracts;
     using System.Threading.Tasks;
 
-    public static class EnumerableExtensions
+    /// <summary>
+    /// Various extensions to succinctly produce IEnumerables out of single items.
+    /// </summary>
+    public static class EnumerableProducingExtensions
     {
         // From https://stackoverflow.com/questions/1577822/passing-a-single-item-as-ienumerablet
 

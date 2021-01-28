@@ -2,6 +2,9 @@ namespace SCM.SwissArmyKnife.Extensions
 {
     using System.IO;
 
+    /// <summary>
+    /// Methods for working with more efficiently with MemoryStreams
+    /// </summary>
     public static class MemoryStreamExtensions
     {
         /// <summary>

@@ -4,6 +4,9 @@ namespace SCM.SwissArmyKnife.Extensions
     using System.Text;
     using System.Threading.Tasks;
 
+    /// <summary>
+    /// Extensions for performing stream-related tasks.
+    /// </summary>
     public static class StreamExtensions
     {
         /// <summary>
@@ -20,8 +23,12 @@ namespace SCM.SwissArmyKnife.Extensions
             return memoryStream;
         }
 
-        // Reads a stream fully into a byte-array.
-        // Reads from the current position
+        /// <summary>
+        /// Fully reads a stream into a byte array.
+        /// Starts at the current stream position.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static async Task<byte[]> ToByteArray(this Stream input)
         {
             await using var newMemoryStream = new MemoryStream();

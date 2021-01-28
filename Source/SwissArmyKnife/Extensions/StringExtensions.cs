@@ -3,6 +3,9 @@ namespace SCM.SwissArmyKnife.Extensions
     using System;
     using System.Text;
 
+    /// <summary>
+    /// Collection of string-related extension methods.
+    /// </summary>
     public static class StringExtensions
     {
         /**
@@ -15,7 +18,7 @@ namespace SCM.SwissArmyKnife.Extensions
             {
                 throw new ArgumentException("timesToRepeat must be <= 0");
             }
-            
+
             return new StringBuilder(@this.Length * timesToRepeat)
                 .AppendJoin(@this, new string[timesToRepeat + 1])
                 .ToString();
@@ -32,7 +35,7 @@ namespace SCM.SwissArmyKnife.Extensions
             {
                 throw new ArgumentOutOfRangeException(nameof(maxLength), "maxlength cannot be <= 0");
             }
-            
+
             if (maxLength >= @this.Length)
             {
                 return @this; // Return as-is, no truncation needed

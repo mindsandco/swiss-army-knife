@@ -4,6 +4,9 @@ namespace SCM.SwissArmyKnife.Extensions
     using System.Collections.Generic;
     using System.Diagnostics.Contracts;
 
+    /// <summary>
+    /// Extension methods for the CLR Dictionaries
+    /// </summary>
     public static class DictionaryExtensions
     {
         /// <summary>
