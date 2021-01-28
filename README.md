@@ -8,7 +8,8 @@
 
 Project Description
 
-# csharplibrarytest
+
+This library is opinionated and expects you to have both Nodatime and JSON.NET installed.
 
 # TODO
 
@@ -26,7 +27,6 @@ Project Description
   
 
 ## Code
-- Port code from other library
 - Add [Pure] annotations where necessary
 - Add null checks where necessary. !! with c# 9 ?
 
