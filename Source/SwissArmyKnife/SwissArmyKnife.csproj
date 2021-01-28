@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Build">
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>SCM.SwissArmyKnife</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <Product>swiss-army-knife</Product>
+    <Description>A collection of utillities for faster dotnet development</Description>
+  </PropertyGroup>
+
+</Project>
