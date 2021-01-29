@@ -18,14 +18,14 @@ namespace SCM.SwissArmyKnife.Extensions
         ///
         /// It basically works like EnsureStatusCode, except that it gives you a logging hook.
         /// </summary>
-        /// <param name="message">The HttpResponseMessage to ensure is valid</param>
+        /// <param name="message">The HttpResponseMessage to ensure is valid.</param>
         /// <param name="beforeThrowing">
         /// The function to be called if the request was not successful.
         /// This will get passed the HttpRequestException, and the response body.
         /// You do not need to throw the error.
         /// </param>
-        /// <returns></returns>
-        public static async Task EnsureSuccessStatusCodeEx(this HttpResponseMessage message,
+        public static async Task EnsureSuccessStatusCodeOrLogAsync(
+            this HttpResponseMessage message,
             Action<HttpRequestException, string> beforeThrowing)
         {
             try

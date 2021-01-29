@@ -471,6 +471,8 @@ dotnet_diagnostic.SA1309.severity = none
 dotnet_diagnostic.SA1005.severity = none
 dotnet_diagnostic.SA1515.severity = none
 
+# Covered by another rule
+dotnet_diagnostic.IDE0048.severity = none
 
 #--- Documentation rules
 
@@ -480,3 +482,5 @@ dotnet_diagnostic.SA1611.severity = suggestion
 dotnet_diagnostic.SA1615.severity = suggestion
 # Or type parameter
 dotnet_diagnostic.SA1618.severity = suggestion
+
+

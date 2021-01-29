@@ -20,7 +20,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// </summary>
         public static double NextDouble(this Random @this, double minValue, double maxValue)
         {
-            return @this.NextDouble() * (maxValue - minValue) + minValue;
+            return (@this.NextDouble() * (maxValue - minValue)) + minValue;
         }
 
         /// <summary>
