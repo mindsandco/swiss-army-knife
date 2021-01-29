@@ -445,6 +445,8 @@ dotnet_diagnostic.IDE0022.severity = none
 
 # Formatting issue in regards to blank lines - if there's no dotnet format for it we don't care
 dotnet_diagnostic.SA1507.severity = none
+dotnet_diagnostic.SA1513.severity = none
+dotnet_diagnostic.SA1510.severity = none
 
 # Formatting rules
 dotnet_diagnostic.SA1509.severity = none

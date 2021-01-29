@@ -84,8 +84,7 @@ namespace SCM.SwissArmyKnife.Extensions
 
                 if (jsonBody != null)
                 {
-                    content = new StringContent(JsonConvert.SerializeObject(jsonBody), Encoding.UTF8,
-                        "application/json");
+                    content = new StringContent(JsonConvert.SerializeObject(jsonBody), Encoding.UTF8, "application/json");
                 }
 
                 var response = await httpClient.PostAsync(url, content).ConfigureAwait(false);
