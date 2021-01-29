@@ -25,7 +25,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
                 {"foo", "bar"}
             };
             var json = JsonConvert.SerializeObject(originalDictionary);
-            
+
             var handlerMock = HttpMessageHandlerMock(new HttpResponseMessage
             {
                 StatusCode = HttpStatusCode.OK,
@@ -40,13 +40,13 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             // Assert
             dictionaryFromClient.Should().BeEquivalentTo(originalDictionary);
         }
-        
+
         [Fact]
         public void GetAsJson_ShouldThrowError_WithBodyInIt_OnNonSuccessfulHttpCode()
         {
             // Arrange
             var errorResponse = "some error response";
-            
+
             var handlerMock = HttpMessageHandlerMock(new HttpResponseMessage
             {
                 StatusCode = HttpStatusCode.NotFound,
@@ -61,13 +61,13 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             // Assert
             action.Should().Throw<HttpRequestException>().WithMessage($"*{errorResponse}*");
         }
-        
+
         [Fact]
         public void GetAsJson_ShouldThrowError_WithBodyInIt_OnJsonParseException()
         {
             // Arrange
             var serverResponse = "{invalid json}";
-            
+
             var handlerMock = HttpMessageHandlerMock(new HttpResponseMessage
             {
                 StatusCode = HttpStatusCode.OK,
@@ -82,13 +82,13 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             // Assert
             action.Should().Throw<JsonException>().WithMessage($"*{serverResponse}*");
         }
-        
+
         [Fact]
         public void GetAsJson_ShouldThrowError_WithTruncatedBodyInIt_OnNonSuccessfulHttpCode()
         {
             // Arrange
             var errorResponse = "123456789";
-            
+
             var handlerMock = HttpMessageHandlerMock(new HttpResponseMessage
             {
                 StatusCode = HttpStatusCode.NotFound,
@@ -104,8 +104,8 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             // Error body only contains 12345 and then a quote '
             action.Should().Throw<HttpRequestException>().WithMessage($"*12345...*");
         }
-        
-        
+
+
 
         // from https://gingter.org/2018/07/26/how-to-mock-httpclient-in-your-net-c-unit-tests/
         private static Mock<HttpMessageHandler> HttpMessageHandlerMock(HttpResponseMessage response)

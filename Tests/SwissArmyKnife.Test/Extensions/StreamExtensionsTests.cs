@@ -16,7 +16,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
         {
             // Arrange
             using var stream = new MemoryStream();
-            stream.Write(new byte[]{1, 2, 3});
+            stream.Write(new byte[] { 1, 2, 3 });
             stream.Position = 1;
 
             // Act
@@ -24,25 +24,25 @@ namespace ScadaMinds.SwissArmyKnife.Tests
 
             // Assert - the new stream only contains the leftovers of the old stream
             asMemoryStream.Position.Should().Be(0);
-            asMemoryStream.ToArray().Should().BeEquivalentTo(new byte[] {2, 3});
+            asMemoryStream.ToArray().Should().BeEquivalentTo(new byte[] { 2, 3 });
         }
-        
+
         [Fact]
         public async Task ToByteArray_WillConvertAMemoryStream_ToAByteArray()
         {
-            
+
             // Arrange
             using var stream = new MemoryStream();
-            stream.Write(new byte[]{1, 2, 3});
+            stream.Write(new byte[] { 1, 2, 3 });
             stream.Position = 1;
 
             // Act
             var returnedByteArray = await stream.ToByteArray();
 
             // Assert - the byte array contains the leftovers of the old stream
-            returnedByteArray.Should().BeEquivalentTo(new byte[] {2, 3});
+            returnedByteArray.Should().BeEquivalentTo(new byte[] { 2, 3 });
         }
-        
+
         [Fact]
         public void ContentToString_WillUse_SpecifiedEncoding()
         {
@@ -58,7 +58,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             // Assert - the returned string is the same
             stringFromStream.Should().Be("foo");
         }
-        
+
         [Fact]
         public void ContentToString_WillDefault_ToUtf8Encoding()
         {

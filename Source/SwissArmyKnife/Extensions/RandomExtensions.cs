@@ -1,4 +1,4 @@
-﻿namespace SCM.SwissArmyKnife.Extensions
+namespace SCM.SwissArmyKnife.Extensions
 {
     using System;
     using System.Collections.Generic;
@@ -37,7 +37,7 @@
         /// <returns></returns>
         public static byte NextByte(this Random @this)
         {
-            return (byte) @this.Next(byte.MaxValue + 1);
+            return (byte)@this.Next(byte.MaxValue + 1);
         }
 
         /// <summary>

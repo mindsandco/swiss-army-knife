@@ -46,60 +46,60 @@ namespace ScadaMinds.SwissArmyKnife.Tests
         {
             // Arrange
             var errorResponse = "some error response";
-            
+
             var handlerMock = HttpMessageHandlerMock(new HttpResponseMessage
             {
                 StatusCode = HttpStatusCode.NotFound,
                 Content = new StringContent(errorResponse)
             });
-        
+
             var client = new HttpClient(handlerMock.Object);
-        
+
             // Act
             Func<Task> action = async () => await client.PostAsJson<Dictionary<string, string>>("http://doesntmatter.com");
-        
+
             // Assert
             action.Should().Throw<HttpRequestException>().WithMessage($"*{errorResponse}*");
         }
-        
+
         [Fact]
         public void PostAsJson_ShouldThrowError_WithBodyInIt_OnJsonParseException()
         {
             // Arrange
             var serverResponse = "{invalid json}";
-            
+
             var handlerMock = HttpMessageHandlerMock(new HttpResponseMessage
             {
                 StatusCode = HttpStatusCode.OK,
                 Content = new StringContent(serverResponse)
             });
-        
+
             var client = new HttpClient(handlerMock.Object);
-        
+
             // Act
             Func<Task> action = async () => await client.PostAsJson<Dictionary<string, string>>("http://doesntmatter.com");
-        
+
             // Assert
             action.Should().Throw<JsonException>().WithMessage($"*{serverResponse}*");
         }
-        
+
         [Fact]
         public void PostAsJson_ShouldThrowError_WithTruncatedBodyInIt_OnNonSuccessfulHttpCode()
         {
             // Arrange
             var errorResponse = "123456789";
-            
+
             var handlerMock = HttpMessageHandlerMock(new HttpResponseMessage
             {
                 StatusCode = HttpStatusCode.NotFound,
                 Content = new StringContent(errorResponse)
             });
-        
+
             var client = new HttpClient(handlerMock.Object);
-        
+
             // Act
             Func<Task> action = async () => await client.PostAsJson<Dictionary<string, string>>("http://doesntmatter.com", null, 5);
-        
+
             // Assert
             // Error body only contains 12345 and then a quote '
             action.Should().Throw<HttpRequestException>().WithMessage($"*12345...*");

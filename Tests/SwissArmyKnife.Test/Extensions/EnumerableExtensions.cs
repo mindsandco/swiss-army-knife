@@ -22,8 +22,8 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             // Assert
             yieldedItem.Single().Should().Be(itemToYield);
         }
-        
-        
+
+
         [Fact]
         public async Task YieldAsync_ShouldProduceSameObject_AsAsyncEnumerable()
         {
@@ -35,7 +35,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
 
             // Assert - iterate through and add to list
             var items = new List<string>();
-            await foreach ( var result in yieldedItem)
+            await foreach (var result in yieldedItem)
             {
                 items.Add(result);
             }

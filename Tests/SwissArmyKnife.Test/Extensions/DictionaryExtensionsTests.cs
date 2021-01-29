@@ -9,7 +9,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
 
     public class DictionaryExtensionsTests
     {
-        
+
         [Fact]
         public void GetOrThrow_ShouldReturnValue_IfItExists()
         {
@@ -25,7 +25,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             // Assert
             returnedValue.Should().Be("bar");
         }
-        
+
         [Fact]
         public void GetOrThrow_ShouldThrowExceptionProducedByFactory_IfNoValueExists()
         {
@@ -39,8 +39,8 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             // Assert
             tryGet.Should().ThrowExactly<ArgumentException>().Where(e => e == exceptionToThrow);
         }
-        
-        
+
+
         [Fact]
         public void GetValueOr_ShouldReturnValueCreatedByValueFactory_IfNoCurrentValueExists()
         {
@@ -53,7 +53,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             // Assert
             returnedValue.Should().Be("bar");
         }
-        
+
         [Fact]
         public void GetValueOr_ShouldReturnValue_IfItExists()
         {
@@ -69,6 +69,6 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             // Assert
             returnedValue.Should().Be("bar");
         }
-        
+
     }
 }

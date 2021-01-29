@@ -23,7 +23,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
                 randomDouble.Should().BeLessThan(2);
             }
         }
-        
+
         [Fact]
         public void NextByte_ReturnsAByte_WithinSpecifiedRange()
         {
@@ -35,7 +35,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
                 randomDouble.Should().BeLessOrEqualTo(byte.MaxValue);
             }
         }
-        
+
         [Fact]
         public void NextBoolean_ReturnsABoolean()
         {
@@ -48,7 +48,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             randomlyGeneratedBooleans.Should().Contain(true);
             randomlyGeneratedBooleans.Should().Contain(false);
         }
-        
+
         [Fact]
         public void Choice_ReturnsARandomItem_FromEnumerable()
         {
