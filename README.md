@@ -41,7 +41,7 @@ This library is opinionated and expects you to have both Nodatime and JSON.NET i
 ## Tests missing
 - Test HttpResponseMessageExtensions
 - Test ObjectExtensions
-- Test TaskExtensions
+- Test FluentTaskExtensions
 
 
 # CI
