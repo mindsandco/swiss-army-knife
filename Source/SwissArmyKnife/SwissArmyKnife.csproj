@@ -9,5 +9,9 @@
     <Product>swiss-army-knife</Product>
     <Description>A collection of utillities for faster dotnet development</Description>
   </PropertyGroup>
-
+  
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.JSON" Version="11.*" />
+  </ItemGroup>
+  
 </Project>

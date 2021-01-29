@@ -190,10 +190,11 @@ csharp_style_prefer_range_operator = true:warning
 # https://docs.microsoft.com/visualstudio/ide/editorconfig-language-conventions#miscellaneous-preferences
 csharp_style_deconstructed_variable_declaration = true:warning
 csharp_style_pattern_local_over_anonymous_function = true:warning
-csharp_using_directive_placement = inside_namespace:warning
+csharp_using_directive_placement = outside_namespace:warning
 csharp_prefer_static_local_function = true:warning
 csharp_prefer_simple_using_statement = true:suggestion
 dotnet_diagnostic.IDE0063.severity = suggestion
+
 
 ##########################################
 # .NET Formatting Conventions
@@ -423,37 +424,51 @@ dotnet_naming_rule.parameters_rule.severity             = warning
 # https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md
 dotnet_diagnostic.SA1633.severity = none
 
-##########################################
-# License
-##########################################
-# The following applies as to the .editorconfig file ONLY, and is
-# included below for reference, per the requirements of the license
-# corresponding to this .editorconfig file.
-# See: https://github.com/RehanSaeed/EditorConfig
-#
-# MIT License
-#
-# Copyright (c) 2017-2019 Muhammad Rehan Saeed
-# Copyright (c) 2019 Henry Gabryjelski
-#
-# Permission is hereby granted, free of charge, to any
-# person obtaining a copy of this software and associated
-# documentation files (the "Software"), to deal in the
-# Software without restriction, including without limitation
-# the rights to use, copy, modify, merge, publish, distribute,
-# sublicense, and/or sell copies of the Software, and to permit
-# persons to whom the Software is furnished to do so, subject
-# to the following conditions:
-#
-# The above copyright notice and this permission notice shall be
-# included in all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-# OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-# OTHER DEALINGS IN THE SOFTWARE.
-##########################################
+
+# --------------------- CUSTOM -------------------------
+dotnet_diagnostic.IDE0007.severity = none
+dotnet_diagnostic.IDE0009.severity = none
+dotnet_diagnostic.IDE0021.severity = none
+dotnet_diagnostic.IDE0055.severity = none
+
+dotnet_diagnostic.SA1111.severity = none
+dotnet_diagnostic.SA1101.severity = none
+
+# False positives https://github.com/DotNetAnalyzers/StyleCopAnalyzers/issues/3057
+dotnet_diagnostic.SA1312.severity = none
+
+# While trailing commas is nice, don't force users to do it unless dotnet format will suport it
+dotnet_diagnostic.SA1413.severity = none
+
+# I disagree with forcing expression bodies for one-line methods
+dotnet_diagnostic.IDE0022.severity = none
+
+# Formatting issue in regards to blank lines - if there's no dotnet format for it we don't care
+dotnet_diagnostic.SA1507.severity = none
+
+# Formatting rules
+dotnet_diagnostic.SA1509.severity = none
+dotnet_diagnostic.SA1013.severity = none
+dotnet_diagnostic.SA1009.severity = none
+dotnet_diagnostic.SA1505.severity = none
+dotnet_diagnostic.SA1508.severity = none
+
+# Using directives
+dotnet_diagnostic.SA1012.severity = none
+dotnet_diagnostic.SA1200.severity = none
+dotnet_diagnostic.SA1210.severity = none # don't care about ordering
+
+# Ordering rules
+dotnet_diagnostic.SA1201.severity = none
+
+
+
+# we can prefix with _
+dotnet_diagnostic.IDE1006.severity = none
+dotnet_diagnostic.SA1309.severity = none
+
+
+# Formatting re: comments
+dotnet_diagnostic.SA1005.severity = none
+dotnet_diagnostic.SA1515.severity = none
+
