@@ -1,8 +1,8 @@
 using System;
 using System.IO;
 using FluentAssertions;
-using Xunit;
 using SCM.SwissArmyKnife.Extensions;
+using Xunit;
 
 namespace ScadaMinds.SwissArmyKnife.Tests
 {

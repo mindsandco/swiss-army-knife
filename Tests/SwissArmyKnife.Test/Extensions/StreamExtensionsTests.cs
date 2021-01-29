@@ -3,8 +3,8 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
-using Xunit;
 using SCM.SwissArmyKnife.Extensions;
+using Xunit;
 
 namespace ScadaMinds.SwissArmyKnife.Tests
 {

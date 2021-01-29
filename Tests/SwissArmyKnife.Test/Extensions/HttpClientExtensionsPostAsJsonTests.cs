@@ -8,8 +8,8 @@ using FluentAssertions;
 using Moq;
 using Moq.Protected;
 using Newtonsoft.Json;
-using Xunit;
 using SCM.SwissArmyKnife.Extensions;
+using Xunit;
 
 namespace ScadaMinds.SwissArmyKnife.Tests
 {

@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
-using Xunit;
 using SCM.SwissArmyKnife.Extensions;
+using Xunit;
 
 namespace ScadaMinds.SwissArmyKnife.Tests
 {
