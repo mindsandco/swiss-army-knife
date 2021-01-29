@@ -10,7 +10,7 @@ namespace SCM.SwissArmyKnife.Extensions
     {
         /// <summary>
         /// Takes a nullable struct, and if it is not-null, applies the given transformation to it.
-        /// If it is null, the transformation function is not applied
+        /// If it is null, the transformation function is not applied.
         /// </summary>
         public static TRes? TransformIfExists<T, TRes>(this T? nullable, Func<T, TRes> transformation)
             where T : struct
@@ -26,7 +26,7 @@ namespace SCM.SwissArmyKnife.Extensions
 
         /// <summary>
         /// Takes a nullable class, and if it is not-null, applies the given transformation to it.
-        /// If it is null, the transformation function is not applied
+        /// If it is null, the transformation function is not applied.
         /// </summary>
         public static TRes? TransformIfExists<T, TRes>(this T? nullable, Func<T, TRes> transformation)
             where T : class

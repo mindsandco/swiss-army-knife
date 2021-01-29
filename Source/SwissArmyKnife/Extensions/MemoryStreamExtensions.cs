@@ -4,7 +4,7 @@ using System.IO;
 namespace SCM.SwissArmyKnife.Extensions
 {
     /// <summary>
-    /// Methods for working with more efficiently with MemoryStreams
+    /// Methods for working with more efficiently with MemoryStreams.
     /// </summary>
     public static class MemoryStreamExtensions
     {

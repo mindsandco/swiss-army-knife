@@ -16,17 +16,17 @@ namespace SCM.SwissArmyKnife.Extensions
          * GETs the given address, and serializes the resulting JSON object into an object.
          * Throws an error on non-2xx status messages.
          */
-        public static Task<T> GetAsJson<T>(this HttpClient httpClient, string url,
+        public static Task<T> GetAsJsonAsync<T>(this HttpClient httpClient, string url,
             int? maxCharactersToPrint = null)
         {
-            return GetAsJson<T>(httpClient, new Uri(url), maxCharactersToPrint);
+            return GetAsJsonAsync<T>(httpClient, new Uri(url), maxCharactersToPrint);
         }
 
         /// <summary>
-        /// GETs the given address, and serializes the resulting JSON object into an object.
+        /// GETs the given address, and serializes the resulting JSON object into an object of type T.
         /// Throws an error on non-2xx status messages.
         /// </summary>
-        public static async Task<T> GetAsJson<T>(this HttpClient httpClient, Uri url,
+        public static async Task<T> GetAsJsonAsync<T>(this HttpClient httpClient, Uri url,
             int? maxCharactersToPrint = null)
         {
             string? body = null;
@@ -64,10 +64,10 @@ namespace SCM.SwissArmyKnife.Extensions
          * The JSON response is serialized into an T.
          * Throws an error on non-2xx status messages.
          */
-        public static Task<T> PostAsJson<T>(this HttpClient httpClient, string url, object? jsonBody = null,
+        public static Task<T> PostAsJsonAsync<T>(this HttpClient httpClient, string url, object? jsonBody = null,
             int? maxCharactersToPrint = null)
         {
-            return PostAsJson<T>(httpClient, new Uri(url), jsonBody, maxCharactersToPrint);
+            return PostAsJsonAsync<T>(httpClient, new Uri(url), jsonBody, maxCharactersToPrint);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// The JSON response is serialized into an T.
         /// Throws an error on non-2xx status messages.
         /// </summary>
-        public static async Task<T> PostAsJson<T>(this HttpClient httpClient, Uri url, object? jsonBody = null, int? maxCharactersToPrint = null)
+        public static async Task<T> PostAsJsonAsync<T>(this HttpClient httpClient, Uri url, object? jsonBody = null, int? maxCharactersToPrint = null)
         {
             string? body = null;
             try

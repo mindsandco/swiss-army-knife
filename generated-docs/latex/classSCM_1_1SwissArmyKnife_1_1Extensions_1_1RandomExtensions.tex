@@ -1,0 +1,71 @@
+\hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions}{}\doxysection{S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Random\+Extensions Class Reference}
+\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions}\index{SCM.SwissArmyKnife.Extensions.RandomExtensions@{SCM.SwissArmyKnife.Extensions.RandomExtensions}}
+
+
+\mbox{\hyperlink{namespaceSCM_1_1SwissArmyKnife_1_1Extensions}{Extensions}} to make working with the C\+LR Random class a little less painful. Includes methods to get a bunch of different types  
+
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions_a1025a3e640b34316a7671277d5f98c41}{Next\+Double}} (this Random @this, double min\+Value, double max\+Value)
+\begin{DoxyCompactList}\small\item\em Returns a double within the range \mbox{[}min\+Value..max\+Value) (min\+Value inclusive, max\+Value exclusive) Based on \href{https://stackoverflow.com/questions/1064901/random-number-between-2-double-numbers}{\texttt{ this}}. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions_a9e55bc66250611c202f5fcc0a4ec1a05}{Next\+Boolean}} (this Random @this)
+\begin{DoxyCompactList}\small\item\em Returns a random boolean. There\textquotesingle{}s a 50/50 chance of each. \end{DoxyCompactList}\item 
+static byte \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions_a4549ff78ac0f8ba4e708eab242b25366}{Next\+Byte}} (this Random @this)
+\begin{DoxyCompactList}\small\item\em Returns a random byte. Can be from the range \mbox{[}0..byte.\+max\+Value\mbox{]} (both inclusive). \end{DoxyCompactList}\item 
+static T \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions_aad344edaf9607417bef17b559db33c93}{Choice$<$ T $>$}} (this Random @this, I\+Enumerable$<$ T $>$ enumerable)
+\begin{DoxyCompactList}\small\item\em Selects one specific item from an Enumerable. There\textquotesingle{}s an equal chance it will select each item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{namespaceSCM_1_1SwissArmyKnife_1_1Extensions}{Extensions}} to make working with the C\+LR Random class a little less painful. Includes methods to get a bunch of different types 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions_aad344edaf9607417bef17b559db33c93}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions_aad344edaf9607417bef17b559db33c93}} 
+\index{SCM.SwissArmyKnife.Extensions.RandomExtensions@{SCM.SwissArmyKnife.Extensions.RandomExtensions}!Choice$<$ T $>$@{Choice$<$ T $>$}}
+\index{Choice$<$ T $>$@{Choice$<$ T $>$}!SCM.SwissArmyKnife.Extensions.RandomExtensions@{SCM.SwissArmyKnife.Extensions.RandomExtensions}}
+\doxysubsubsection{\texorpdfstring{Choice$<$ T $>$()}{Choice< T >()}}
+{\footnotesize\ttfamily static T S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Random\+Extensions.\+Choice$<$ T $>$ (\begin{DoxyParamCaption}\item[{this Random @}]{this,  }\item[{I\+Enumerable$<$ T $>$}]{enumerable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Selects one specific item from an Enumerable. There\textquotesingle{}s an equal chance it will select each item. 
+
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions_a9e55bc66250611c202f5fcc0a4ec1a05}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions_a9e55bc66250611c202f5fcc0a4ec1a05}} 
+\index{SCM.SwissArmyKnife.Extensions.RandomExtensions@{SCM.SwissArmyKnife.Extensions.RandomExtensions}!NextBoolean@{NextBoolean}}
+\index{NextBoolean@{NextBoolean}!SCM.SwissArmyKnife.Extensions.RandomExtensions@{SCM.SwissArmyKnife.Extensions.RandomExtensions}}
+\doxysubsubsection{\texorpdfstring{NextBoolean()}{NextBoolean()}}
+{\footnotesize\ttfamily static bool S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Random\+Extensions.\+Next\+Boolean (\begin{DoxyParamCaption}\item[{this Random @}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a random boolean. There\textquotesingle{}s a 50/50 chance of each. 
+
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions_a4549ff78ac0f8ba4e708eab242b25366}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions_a4549ff78ac0f8ba4e708eab242b25366}} 
+\index{SCM.SwissArmyKnife.Extensions.RandomExtensions@{SCM.SwissArmyKnife.Extensions.RandomExtensions}!NextByte@{NextByte}}
+\index{NextByte@{NextByte}!SCM.SwissArmyKnife.Extensions.RandomExtensions@{SCM.SwissArmyKnife.Extensions.RandomExtensions}}
+\doxysubsubsection{\texorpdfstring{NextByte()}{NextByte()}}
+{\footnotesize\ttfamily static byte S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Random\+Extensions.\+Next\+Byte (\begin{DoxyParamCaption}\item[{this Random @}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a random byte. Can be from the range \mbox{[}0..byte.\+max\+Value\mbox{]} (both inclusive). 
+
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions_a1025a3e640b34316a7671277d5f98c41}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions_a1025a3e640b34316a7671277d5f98c41}} 
+\index{SCM.SwissArmyKnife.Extensions.RandomExtensions@{SCM.SwissArmyKnife.Extensions.RandomExtensions}!NextDouble@{NextDouble}}
+\index{NextDouble@{NextDouble}!SCM.SwissArmyKnife.Extensions.RandomExtensions@{SCM.SwissArmyKnife.Extensions.RandomExtensions}}
+\doxysubsubsection{\texorpdfstring{NextDouble()}{NextDouble()}}
+{\footnotesize\ttfamily static double S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Random\+Extensions.\+Next\+Double (\begin{DoxyParamCaption}\item[{this Random @}]{this,  }\item[{double}]{min\+Value,  }\item[{double}]{max\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a double within the range \mbox{[}min\+Value..max\+Value) (min\+Value inclusive, max\+Value exclusive) Based on \href{https://stackoverflow.com/questions/1064901/random-number-between-2-double-numbers}{\texttt{ this}}. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Swiss\+Army\+Knife/\+Extensions/\mbox{\hyperlink{RandomExtensions_8cs}{Random\+Extensions.\+cs}}\end{DoxyCompactItemize}

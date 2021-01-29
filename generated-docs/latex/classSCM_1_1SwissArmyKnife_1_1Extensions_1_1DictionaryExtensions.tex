@@ -1,0 +1,65 @@
+\hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions}{}\doxysection{S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Dictionary\+Extensions Class Reference}
+\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions}\index{SCM.SwissArmyKnife.Extensions.DictionaryExtensions@{SCM.SwissArmyKnife.Extensions.DictionaryExtensions}}
+
+
+Extension methods for the C\+LR Dictionaries  
+
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T\+Value \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions_aa745a7149fd0c7e785f96e1be4ded165}{Get\+Or\+Throw$<$ T\+Key, T\+Value $>$}} (this I\+Read\+Only\+Dictionary$<$ T\+Key, T\+Value $>$ dictionary, T\+Key key, Func$<$ Exception $>$ error\+Creator)
+\begin{DoxyCompactList}\small\item\em Get the value for given dictionary key. If no value can be found, it will throw an exception generated from the {\itshape error\+Creator}  function. \end{DoxyCompactList}\item 
+static T\+Value \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions_a6620b1080d5b7c40e25af2dbd1664478}{Get\+Value\+Or$<$ T\+Key, T\+Value $>$}} (this I\+Read\+Only\+Dictionary$<$ T\+Key, T\+Value $>$ dictionary, T\+Key key, Func$<$ T\+Value $>$ value\+Producer)
+\begin{DoxyCompactList}\small\item\em Same as the Regular Get\+Or\+Default except this one takes a factory to produce the value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Extension methods for the C\+LR Dictionaries 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions_aa745a7149fd0c7e785f96e1be4ded165}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions_aa745a7149fd0c7e785f96e1be4ded165}} 
+\index{SCM.SwissArmyKnife.Extensions.DictionaryExtensions@{SCM.SwissArmyKnife.Extensions.DictionaryExtensions}!GetOrThrow$<$ TKey, TValue $>$@{GetOrThrow$<$ TKey, TValue $>$}}
+\index{GetOrThrow$<$ TKey, TValue $>$@{GetOrThrow$<$ TKey, TValue $>$}!SCM.SwissArmyKnife.Extensions.DictionaryExtensions@{SCM.SwissArmyKnife.Extensions.DictionaryExtensions}}
+\doxysubsubsection{\texorpdfstring{GetOrThrow$<$ TKey, TValue $>$()}{GetOrThrow< TKey, TValue >()}}
+{\footnotesize\ttfamily static T\+Value S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Dictionary\+Extensions.\+Get\+Or\+Throw$<$ T\+Key, T\+Value $>$ (\begin{DoxyParamCaption}\item[{this I\+Read\+Only\+Dictionary$<$ T\+Key, T\+Value $>$}]{dictionary,  }\item[{T\+Key}]{key,  }\item[{Func$<$ Exception $>$}]{error\+Creator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get the value for given dictionary key. If no value can be found, it will throw an exception generated from the {\itshape error\+Creator}  function. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var myDictionary = \textcolor{keyword}{new} Dictionary<string, string> \{}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}myKey"{}}, \textcolor{stringliteral}{"{}myValue"{}}\}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{comment}{// Will return "{}myValue"{}}}
+\DoxyCodeLine{myDictionary.GetOrThrow(\textcolor{stringliteral}{"{}myKey"{}}, () => \textcolor{keyword}{new} ArgumentException(\textcolor{stringliteral}{"{}tried to get invalid key"{}}));}
+\DoxyCodeLine{\textcolor{comment}{// Will throw ArgumentException}}
+\DoxyCodeLine{myDictionary.GetOrThrow(\textcolor{stringliteral}{"{}nonExistingKey"{}}, () => \textcolor{keyword}{new} ArgumentException(\textcolor{stringliteral}{"{}tried to get invalid key"{}}));}
+\end{DoxyCode}
+ \begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T\+Key} : {\em notnull}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions_a6620b1080d5b7c40e25af2dbd1664478}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions_a6620b1080d5b7c40e25af2dbd1664478}} 
+\index{SCM.SwissArmyKnife.Extensions.DictionaryExtensions@{SCM.SwissArmyKnife.Extensions.DictionaryExtensions}!GetValueOr$<$ TKey, TValue $>$@{GetValueOr$<$ TKey, TValue $>$}}
+\index{GetValueOr$<$ TKey, TValue $>$@{GetValueOr$<$ TKey, TValue $>$}!SCM.SwissArmyKnife.Extensions.DictionaryExtensions@{SCM.SwissArmyKnife.Extensions.DictionaryExtensions}}
+\doxysubsubsection{\texorpdfstring{GetValueOr$<$ TKey, TValue $>$()}{GetValueOr< TKey, TValue >()}}
+{\footnotesize\ttfamily static T\+Value S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Dictionary\+Extensions.\+Get\+Value\+Or$<$ T\+Key, T\+Value $>$ (\begin{DoxyParamCaption}\item[{this I\+Read\+Only\+Dictionary$<$ T\+Key, T\+Value $>$}]{dictionary,  }\item[{T\+Key}]{key,  }\item[{Func$<$ T\+Value $>$}]{value\+Producer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Same as the Regular Get\+Or\+Default except this one takes a factory to produce the value. 
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T\+Key} : {\em notnull}]\end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Swiss\+Army\+Knife/\+Extensions/\mbox{\hyperlink{DictionaryExtensions_8cs}{Dictionary\+Extensions.\+cs}}\end{DoxyCompactItemize}

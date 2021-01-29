@@ -1,0 +1,47 @@
+\hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpResponseMessageExtensions}{}\doxysection{S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Http\+Response\+Message\+Extensions Class Reference}
+\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpResponseMessageExtensions}\index{SCM.SwissArmyKnife.Extensions.HttpResponseMessageExtensions@{SCM.SwissArmyKnife.Extensions.HttpResponseMessageExtensions}}
+
+
+Methods for working with more efficiently with Http\+Responses.  
+
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static async Task \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpResponseMessageExtensions_a5ce49b3c19ebb3fd24e918ed0e60286c}{Ensure\+Success\+Status\+Code\+Ex}} (this Http\+Response\+Message message, Action$<$ Http\+Request\+Exception, string $>$ before\+Throwing)
+\begin{DoxyCompactList}\small\item\em Ensures that the Http\+Response returns with an OK status code. If it does not, it will call the \char`\"{}before\+Throwing\char`\"{} function, and then throw a Http\+Request\+Exception. It will pass the error and the request body as a string into the or\+Else\+Function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Methods for working with more efficiently with Http\+Responses. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpResponseMessageExtensions_a5ce49b3c19ebb3fd24e918ed0e60286c}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpResponseMessageExtensions_a5ce49b3c19ebb3fd24e918ed0e60286c}} 
+\index{SCM.SwissArmyKnife.Extensions.HttpResponseMessageExtensions@{SCM.SwissArmyKnife.Extensions.HttpResponseMessageExtensions}!EnsureSuccessStatusCodeEx@{EnsureSuccessStatusCodeEx}}
+\index{EnsureSuccessStatusCodeEx@{EnsureSuccessStatusCodeEx}!SCM.SwissArmyKnife.Extensions.HttpResponseMessageExtensions@{SCM.SwissArmyKnife.Extensions.HttpResponseMessageExtensions}}
+\doxysubsubsection{\texorpdfstring{EnsureSuccessStatusCodeEx()}{EnsureSuccessStatusCodeEx()}}
+{\footnotesize\ttfamily static async Task S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Http\+Response\+Message\+Extensions.\+Ensure\+Success\+Status\+Code\+Ex (\begin{DoxyParamCaption}\item[{this Http\+Response\+Message}]{message,  }\item[{Action$<$ Http\+Request\+Exception, string $>$}]{before\+Throwing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Ensures that the Http\+Response returns with an OK status code. If it does not, it will call the \char`\"{}before\+Throwing\char`\"{} function, and then throw a Http\+Request\+Exception. It will pass the error and the request body as a string into the or\+Else\+Function. 
+
+It basically works like Ensure\+Status\+Code, except that it gives you a logging hook.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The Http\+Response\+Message to ensure is valid\\
+\hline
+{\em before\+Throwing} & The function to be called if the request was not successful. This will get passed the Http\+Request\+Exception, and the response body. You do not need to throw the error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Swiss\+Army\+Knife/\+Extensions/\mbox{\hyperlink{HttpResponseMessageExtensions_8cs}{Http\+Response\+Message\+Extensions.\+cs}}\end{DoxyCompactItemize}

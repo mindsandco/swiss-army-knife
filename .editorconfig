@@ -463,14 +463,20 @@ dotnet_diagnostic.SA1210.severity = none # don't care about ordering
 # Ordering rules
 dotnet_diagnostic.SA1201.severity = none
 
-
-
 # we can prefix with _
 dotnet_diagnostic.IDE1006.severity = none
 dotnet_diagnostic.SA1309.severity = none
-
 
 # Formatting re: comments
 dotnet_diagnostic.SA1005.severity = none
 dotnet_diagnostic.SA1515.severity = none
 
+
+#--- Documentation rules
+
+# Do not force documentation of all parameters
+dotnet_diagnostic.SA1611.severity = suggestion
+# Do not force return-type documentation either
+dotnet_diagnostic.SA1615.severity = suggestion
+# Or type parameter
+dotnet_diagnostic.SA1618.severity = suggestion

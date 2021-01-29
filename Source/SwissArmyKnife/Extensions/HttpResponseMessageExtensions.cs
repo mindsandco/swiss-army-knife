@@ -7,7 +7,7 @@ namespace SCM.SwissArmyKnife.Extensions
 {
 
     /// <summary>
-    /// Methods for working with more efficiently with HttpResponses
+    /// Methods for working with more efficiently with HttpResponses.
     /// </summary>
     public static class HttpResponseMessageExtensions
     {

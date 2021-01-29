@@ -1,0 +1,75 @@
+\hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions}{}\doxysection{S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Stream\+Extensions Class Reference}
+\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions}\index{SCM.SwissArmyKnife.Extensions.StreamExtensions@{SCM.SwissArmyKnife.Extensions.StreamExtensions}}
+
+
+\mbox{\hyperlink{namespaceSCM_1_1SwissArmyKnife_1_1Extensions}{Extensions}} for performing stream-\/related tasks.  
+
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static async Task$<$ Memory\+Stream $>$ \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions_a1cab88ea3f7ee708af0bac8799043931}{As\+Memory\+Stream}} (this Stream stream)
+\begin{DoxyCompactList}\small\item\em Copies the stream over to a new memory\+Stream. The Memory\+Stream will be at position 0. \end{DoxyCompactList}\item 
+static async Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions_a236851a16c540e8620565d3e2e49e9aa}{To\+Byte\+Array}} (this Stream input)
+\begin{DoxyCompactList}\small\item\em Fully reads a stream into a byte array. Starts at the current stream position. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions_ab019fc138b176f97204deafdbb229d93}{Content\+To\+String}} (this Stream input, Encoding? encoding=null)
+\begin{DoxyCompactList}\small\item\em Debug method to take a stream and return it as a string. Reads from current stream position, and does not reset the stream position afterwards. Defaults to U\+T\+F-\/8 encoding \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{namespaceSCM_1_1SwissArmyKnife_1_1Extensions}{Extensions}} for performing stream-\/related tasks. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions_a1cab88ea3f7ee708af0bac8799043931}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions_a1cab88ea3f7ee708af0bac8799043931}} 
+\index{SCM.SwissArmyKnife.Extensions.StreamExtensions@{SCM.SwissArmyKnife.Extensions.StreamExtensions}!AsMemoryStream@{AsMemoryStream}}
+\index{AsMemoryStream@{AsMemoryStream}!SCM.SwissArmyKnife.Extensions.StreamExtensions@{SCM.SwissArmyKnife.Extensions.StreamExtensions}}
+\doxysubsubsection{\texorpdfstring{AsMemoryStream()}{AsMemoryStream()}}
+{\footnotesize\ttfamily static async Task$<$Memory\+Stream$>$ S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Stream\+Extensions.\+As\+Memory\+Stream (\begin{DoxyParamCaption}\item[{this Stream}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Copies the stream over to a new memory\+Stream. The Memory\+Stream will be at position 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions_ab019fc138b176f97204deafdbb229d93}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions_ab019fc138b176f97204deafdbb229d93}} 
+\index{SCM.SwissArmyKnife.Extensions.StreamExtensions@{SCM.SwissArmyKnife.Extensions.StreamExtensions}!ContentToString@{ContentToString}}
+\index{ContentToString@{ContentToString}!SCM.SwissArmyKnife.Extensions.StreamExtensions@{SCM.SwissArmyKnife.Extensions.StreamExtensions}}
+\doxysubsubsection{\texorpdfstring{ContentToString()}{ContentToString()}}
+{\footnotesize\ttfamily static string S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Stream\+Extensions.\+Content\+To\+String (\begin{DoxyParamCaption}\item[{this Stream}]{input,  }\item[{Encoding?}]{encoding = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Debug method to take a stream and return it as a string. Reads from current stream position, and does not reset the stream position afterwards. Defaults to U\+T\+F-\/8 encoding 
+
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions_a236851a16c540e8620565d3e2e49e9aa}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions_a236851a16c540e8620565d3e2e49e9aa}} 
+\index{SCM.SwissArmyKnife.Extensions.StreamExtensions@{SCM.SwissArmyKnife.Extensions.StreamExtensions}!ToByteArray@{ToByteArray}}
+\index{ToByteArray@{ToByteArray}!SCM.SwissArmyKnife.Extensions.StreamExtensions@{SCM.SwissArmyKnife.Extensions.StreamExtensions}}
+\doxysubsubsection{\texorpdfstring{ToByteArray()}{ToByteArray()}}
+{\footnotesize\ttfamily static async Task$<$byte\mbox{[}$\,$\mbox{]}$>$ S\+C\+M.\+Swiss\+Army\+Knife.\+Extensions.\+Stream\+Extensions.\+To\+Byte\+Array (\begin{DoxyParamCaption}\item[{this Stream}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fully reads a stream into a byte array. Starts at the current stream position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Swiss\+Army\+Knife/\+Extensions/\mbox{\hyperlink{StreamExtensions_8cs}{Stream\+Extensions.\+cs}}\end{DoxyCompactItemize}
