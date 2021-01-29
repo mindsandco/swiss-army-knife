@@ -11,6 +11,15 @@ namespace SCM.SwissArmyKnife.Extensions
     {
         // From https://stackoverflow.com/questions/1577822/passing-a-single-item-as-ienumerablet
 
+
+
+
+
+
+
+
+
+
         /// <summary>
         /// Wraps this object instance into an IEnumerable;
         /// consisting of a single item.
