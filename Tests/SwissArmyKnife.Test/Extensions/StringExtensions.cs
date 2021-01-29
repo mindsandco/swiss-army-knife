@@ -1,10 +1,10 @@
 using System;
 using FluentAssertions;
 using Xunit;
+using SCM.SwissArmyKnife.Extensions;
 
 namespace ScadaMinds.SwissArmyKnife.Tests
 {
-    using SCM.SwissArmyKnife.Extensions;
 
     public class StringExtensions
     {
@@ -22,7 +22,6 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             Action action = () => "foo".Repeat(0);
             action.Should().Throw<ArgumentException>();
         }
-
 
         [Fact]
         public void Truncate_ShouldThrowOnMaxLengthThatIsNegativeOrZero()

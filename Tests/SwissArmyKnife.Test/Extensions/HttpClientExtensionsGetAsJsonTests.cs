@@ -9,10 +9,10 @@ using Moq;
 using Moq.Protected;
 using Newtonsoft.Json;
 using Xunit;
+using SCM.SwissArmyKnife.Extensions;
 
 namespace ScadaMinds.SwissArmyKnife.Tests
 {
-    using SCM.SwissArmyKnife.Extensions;
 
     public class HttpClientExtensionsGetAsJsonTests
     {

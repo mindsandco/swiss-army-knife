@@ -1,0 +1,13 @@
+# Test code is more lax
+
+# Don't care about ConfigureAwait
+[*.cs]
+dotnet_diagnostic.VSTHRD111.severity = none
+
+# Don't need to postfix Async
+dotnet_diagnostic.VSTHRD200.severity = none
+
+# Can catch "exception in tests"
+dotnet_diagnostic.CA2201.severity = none
+
+

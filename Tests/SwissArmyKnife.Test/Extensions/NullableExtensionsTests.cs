@@ -1,11 +1,10 @@
 using System;
 using FluentAssertions;
 using Xunit;
+using SCM.SwissArmyKnife.Extensions;
 
 namespace ScadaMinds.SwissArmyKnife.Tests
 {
-    using SCM.SwissArmyKnife.Extensions;
-
     public class NullableExtensionsTests
 
     {

@@ -2,10 +2,10 @@ using System;
 using System.IO;
 using FluentAssertions;
 using Xunit;
+using SCM.SwissArmyKnife.Extensions;
 
 namespace ScadaMinds.SwissArmyKnife.Tests
 {
-    using SCM.SwissArmyKnife.Extensions;
 
     public class MemoryStreamExtensionsTests
     {

@@ -3,10 +3,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Xunit;
+using SCM.SwissArmyKnife.Extensions;
 
 namespace ScadaMinds.SwissArmyKnife.Tests
 {
-    using SCM.SwissArmyKnife.Extensions;
 
     public class EnumerableExtensions
     {

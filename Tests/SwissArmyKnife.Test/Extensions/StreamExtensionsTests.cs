@@ -4,10 +4,10 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Xunit;
+using SCM.SwissArmyKnife.Extensions;
 
 namespace ScadaMinds.SwissArmyKnife.Tests
 {
-    using SCM.SwissArmyKnife.Extensions;
 
     public class StreamExtensionsTests
     {
@@ -30,7 +30,6 @@ namespace ScadaMinds.SwissArmyKnife.Tests
         [Fact]
         public async Task ToByteArray_WillConvertAMemoryStream_ToAByteArray()
         {
-
             // Arrange
             using var stream = new MemoryStream();
             stream.Write(new byte[] { 1, 2, 3 });

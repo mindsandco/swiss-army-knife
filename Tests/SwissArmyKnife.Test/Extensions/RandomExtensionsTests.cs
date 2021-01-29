@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
 using Xunit;
+using SCM.SwissArmyKnife.Extensions;
 
 namespace ScadaMinds.SwissArmyKnife.Tests
 {
-    using SCM.SwissArmyKnife.Extensions;
 
     public class RandomExtensionsTests
     {
@@ -15,7 +15,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
         [Fact]
         public void NextDouble_ReturnsADouble_WithinSpecifiedRange()
         {
-            // Run it a couple of times just to make sure it works always 
+            // Run it a couple of times just to make sure it works always
             for (int i = 0; i < 100; i++)
             {
                 var randomDouble = _random.NextDouble(0, 2);
@@ -27,7 +27,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
         [Fact]
         public void NextByte_ReturnsAByte_WithinSpecifiedRange()
         {
-            // Run it a couple of times just to make sure it works always 
+            // Run it a couple of times just to make sure it works always
             for (int i = 0; i < 100; i++)
             {
                 var randomDouble = _random.NextByte();

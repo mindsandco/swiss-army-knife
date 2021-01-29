@@ -2,11 +2,10 @@ using System;
 using System.Collections.Generic;
 using FluentAssertions;
 using Xunit;
+using SCM.SwissArmyKnife.Extensions;
 
 namespace ScadaMinds.SwissArmyKnife.Tests
 {
-    using SCM.SwissArmyKnife.Extensions;
-
     public class DictionaryExtensionsTests
     {
 
@@ -64,7 +63,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             };
 
             // Act
-            var returnedValue = dictionary.GetValueOr("foo", () => "");
+            var returnedValue = dictionary.GetValueOr("foo", () => string.Empty);
 
             // Assert
             returnedValue.Should().Be("bar");
