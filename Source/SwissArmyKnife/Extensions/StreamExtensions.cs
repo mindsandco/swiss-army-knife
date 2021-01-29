@@ -17,7 +17,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// </summary>
         /// <param name="sourceStream">A MemoryStream to copy over to a new stream. Will be exhausted afterwards.</param>
         /// <returns>A new MemoryStream with the content from <paramref name="sourceStream"/> This stream will be at position 0. </returns>
-        public static async Task<MemoryStream> AsMemoryStream(this Stream sourceStream)
+        public static async Task<MemoryStream> AsMemoryStreamAsync(this Stream sourceStream)
         {
             var memoryStream = new MemoryStream();
             await sourceStream.CopyToAsync(memoryStream).ConfigureAwait(false);
@@ -31,7 +31,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// </summary>
         /// <param name="sourceStream">A MemoryStream to copy over to a byte array. Will be exhausted afterwards.</param>
         /// <returns>A byte array with the content from <paramref name="sourceStream"/>.</returns>
-        public static async Task<byte[]> ToByteArray(this Stream sourceStream)
+        public static async Task<byte[]> ToByteArrayAsync(this Stream sourceStream)
         {
             await using var newMemoryStream = new MemoryStream();
             await sourceStream.CopyToAsync(newMemoryStream).ConfigureAwait(false);

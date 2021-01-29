@@ -12,22 +12,37 @@ namespace SCM.SwissArmyKnife.Extensions
     /// </summary>
     public static class HttpClientExtensions
     {
-        /**
-         * GETs the given address, and serializes the resulting JSON object into an object.
-         * Throws an error on non-2xx status messages.
-         */
-        public static Task<T> GetAsJsonAsync<T>(this HttpClient httpClient, string url,
-            int? maxCharactersToPrint = null)
+
+        /// <summary>
+        /// GETs the given address, and serializes the resulting JSON object into an object of type T.
+        /// Throws an error on non-2xx status messages.
+        /// </summary>
+        /// <param name="httpClient">HttpClient to use.</param>
+        /// <param name="url">Url to retrieve.</param>
+        /// <param name="maxCharactersToPrint">
+        /// If any errors occurs, how many characters of the response body should be included in the response body?
+        /// If set to null, records the entire response.
+        /// </param>
+        /// <typeparam name="TResponse">The type to attempt to serialize the JSON response to.</typeparam>
+        /// <returns>The response from the server as <typeparamref name="TResponse"/>.</returns>
+        public static Task<TResponse> GetAsJsonAsync<TResponse>(this HttpClient httpClient, string url, int? maxCharactersToPrint = null)
         {
-            return GetAsJsonAsync<T>(httpClient, new Uri(url), maxCharactersToPrint);
+            return GetAsJsonAsync<TResponse>(httpClient, new Uri(url), maxCharactersToPrint);
         }
 
         /// <summary>
         /// GETs the given address, and serializes the resulting JSON object into an object of type T.
         /// Throws an error on non-2xx status messages.
         /// </summary>
-        public static async Task<T> GetAsJsonAsync<T>(this HttpClient httpClient, Uri url,
-            int? maxCharactersToPrint = null)
+        /// <param name="httpClient">HttpClient to use.</param>
+        /// <param name="url">Url to retrieve.</param>
+        /// <param name="maxCharactersToPrint">
+        /// If any errors occurs, how many characters of the response body should be included in the response body?
+        /// If set to null, records the entire response.
+        /// </param>
+        /// <typeparam name="TResponse">The type to attempt to serialize the JSON response to.</typeparam>
+        /// <returns>The response from the server as <typeparamref name="TResponse"/>.</returns>
+        public static async Task<TResponse> GetAsJsonAsync<TResponse>(this HttpClient httpClient, Uri url, int? maxCharactersToPrint = null)
         {
             string? body = null;
             try
@@ -35,7 +50,7 @@ namespace SCM.SwissArmyKnife.Extensions
                 var response = await httpClient.GetAsync(url).ConfigureAwait(false);
                 body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                 response.EnsureSuccessStatusCode();
-                return JsonConvert.DeserializeObject<T>(body);
+                return JsonConvert.DeserializeObject<TResponse>(body);
             }
             catch (HttpRequestException e)
             {
