@@ -68,6 +68,8 @@ The project is built with `dotnet-boxed`, so if you have any questions to the st
 
 Please run `dotnet format` before submitting your pull requests.
 
+We use Doxygen to build the documentation until DocFx supports .NET core
+
 # Release Process
 Nuget releases happen automatically when a new Github release is made. The `release-drafter` github action should automatically generate release notes
 if PR's have been labelled correctly.
