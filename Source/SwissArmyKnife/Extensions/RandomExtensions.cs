@@ -1,8 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
 
     /// <summary>
     /// Extensions to make working with the CLR Random class a little less painful. Includes methods to get

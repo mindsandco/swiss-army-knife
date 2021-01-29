@@ -1,8 +1,10 @@
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System;
-    using System.Net.Http;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// Methods for working with more efficiently with HttpResponses

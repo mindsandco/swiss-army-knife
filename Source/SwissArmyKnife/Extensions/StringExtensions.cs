@@ -1,8 +1,9 @@
+using System;
+using System.Text;
+
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System;
-    using System.Text;
-
     /// <summary>
     /// Collection of string-related extension methods.
     /// </summary>

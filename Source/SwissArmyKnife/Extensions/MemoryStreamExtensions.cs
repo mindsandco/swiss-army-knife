@@ -1,7 +1,8 @@
+using System.IO;
+
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System.IO;
-
     /// <summary>
     /// Methods for working with more efficiently with MemoryStreams
     /// </summary>

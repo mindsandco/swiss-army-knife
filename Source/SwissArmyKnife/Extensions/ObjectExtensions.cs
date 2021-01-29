@@ -1,9 +1,10 @@
+using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-
     /// <summary>
     /// Extensions that can go on every object. Such as printing the object to JSON.
     /// </summary>

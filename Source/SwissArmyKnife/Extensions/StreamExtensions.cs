@@ -1,8 +1,10 @@
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
+
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System.IO;
-    using System.Text;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// Extensions for performing stream-related tasks.

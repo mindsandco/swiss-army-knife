@@ -1,9 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics.Contracts;
-
     /// <summary>
     /// Extension methods for the CLR Dictionaries
     /// </summary>

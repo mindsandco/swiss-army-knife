@@ -1,7 +1,7 @@
+using System;
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System;
-
     /// <summary>
     /// Extensions for inline-transformations of nullable values
     /// C# treats structs and classes differently in regards to how the nullable boxing is done, so there's an overload for both types.

@@ -1,10 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-
     /// <summary>
     /// Bunch of extensions for Tasks to make LINQ-based syntax a bit prettier.
     /// E.g instead of (await foo()).Select(DoStuff)

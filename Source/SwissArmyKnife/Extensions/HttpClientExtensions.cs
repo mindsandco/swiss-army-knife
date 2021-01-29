@@ -1,11 +1,12 @@
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System;
-    using System.Net.Http;
-    using System.Text;
-    using System.Threading.Tasks;
-    using Newtonsoft.Json;
-
     /// <summary>
     /// Extension methods to simplify common HttpClientExtension such as working with JSON.
     /// </summary>
