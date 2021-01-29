@@ -1,9 +1,10 @@
+using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-
     /// <summary>
     /// Extensions that can go on every object. Such as printing the object to JSON.
     /// </summary>
@@ -11,7 +12,7 @@ namespace SCM.SwissArmyKnife.Extensions
     {
         /// <summary>
         /// Creates an object and turns it into a compact JSON string
-        /// Converts Enums to their string values
+        /// Converts Enums to their string values.
         /// </summary>
         public static string AsJson(this object objectToSerialize)
         {
@@ -21,7 +22,7 @@ namespace SCM.SwissArmyKnife.Extensions
 
         /// <summary>
         /// Creates an object and turns it into an indented JSON string
-        /// Converts Enums to their string values
+        /// Converts Enums to their string values.
         /// </summary>
         public static string AsIndentedJson(this object objectToSerialize)
         {
@@ -31,7 +32,7 @@ namespace SCM.SwissArmyKnife.Extensions
 
         /// <summary>
         /// Shortcut for Console.Writeline(object.AsJson())
-        /// Use only for debugging purposes
+        /// Use only for debugging purposes.
         /// </summary>
         public static void PrintAsJson(this object objectToPrint)
         {

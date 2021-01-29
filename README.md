@@ -41,7 +41,7 @@ This library is opinionated and expects you to have both Nodatime and JSON.NET i
 ## Tests missing
 - Test HttpResponseMessageExtensions
 - Test ObjectExtensions
-- Test TaskExtensions
+- Test FluentTaskExtensions
 
 
 # CI
@@ -67,6 +67,8 @@ dotnet cake --target=Test
 The project is built with `dotnet-boxed`, so if you have any questions to the structure, check out [this article](https://rehansaeed.com/the-fastest-nuget-package-ever-published-probably/)
 
 Please run `dotnet format` before submitting your pull requests.
+
+We use Doxygen to build the documentation until DocFx supports .NET core
 
 # Release Process
 Nuget releases happen automatically when a new Github release is made. The `release-drafter` github action should automatically generate release notes
