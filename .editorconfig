@@ -485,3 +485,7 @@ dotnet_diagnostic.SA1618.severity = suggestion
 
 
 dotnet_diagnostic.SA1618.severity = suggestion
+
+# Regions are cool
+dotnet_diagnostic.SA1124.severity = none
+

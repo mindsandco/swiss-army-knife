@@ -48,7 +48,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
         [Fact]
         public async Task First_ShouldWorkWith_Enumerable()
         {
-            var result = await GetTask(new int[] {1, 2}.AsEnumerable())
+            var result = await GetTask(new int[] { 1, 2 }.AsEnumerable())
                 .First();
 
             result.Should().Be(1);
@@ -57,7 +57,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
         [Fact]
         public async Task First_ShouldWorkWith_List()
         {
-            var result = await GetTask(new List<int> {1, 2})
+            var result = await GetTask(new List<int> { 1, 2 })
                 .First();
 
             result.Should().Be(1);
@@ -66,7 +66,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
         [Fact]
         public async Task First_ShouldWorkWith_Array()
         {
-            var result = await GetTask(new int[] {1, 2})
+            var result = await GetTask(new int[] { 1, 2 })
                 .First();
 
             result.Should().Be(1);

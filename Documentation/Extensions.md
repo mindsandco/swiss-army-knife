@@ -48,7 +48,8 @@ await singleValueTask.Select(i => i + 1); // Returns 2
 // Alternative to (await enumerableTask).Select(i => i + 1)
 await enumerableTask.Select(i => i + 1); // Returns [2,3]
 
-// First 
+// First
+// Returns 1 
 await enumerableTask.First();
 
 // SelectMany
