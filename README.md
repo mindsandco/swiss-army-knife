@@ -13,12 +13,12 @@ This library is opinionated and expects you to have both Nodatime and JSON.NET i
 
 # TODO
 - Write readme
-- Write better documentation and host it via Github pages
+
 
 ## Docs
 - Write readme documentation
 - Write Doxygen main page
-- Build docs using doxygen or similar
+- Write FluentTaskExtensions documentation
 
 
 ## Contribution

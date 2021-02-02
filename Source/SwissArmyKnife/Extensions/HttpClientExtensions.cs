@@ -104,6 +104,7 @@ namespace SCM.SwissArmyKnife.Extensions
         public static async Task<T> PostAsJsonAsync<T>(this HttpClient httpClient, Uri url, object? jsonBody = null, int? maxCharactersToPrint = null)
         {
             string? body = null;
+
             try
             {
                 HttpContent? content = null;
