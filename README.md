@@ -50,7 +50,11 @@ myDictionary.GetOr("nonExistingKey", () => "myFallbackValue");
 
 
 // ------------- Task.Select()
-todo
+var enumerableTask = Task.FromResult(new int[]{1,2});
+
+// Select to transform multiple values
+// Alternative to (await enumerableTask).Select(i => i + 1)
+await enumerableTask.Select(i => i + 1); // Returns [2,3]
 
 
 // ------------- object.Yield

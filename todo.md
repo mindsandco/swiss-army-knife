@@ -7,7 +7,3 @@
 ## Other
 - Publish to nuget on new releases
 - block pushes to main
-
-
-## Tests missing
-- Test FluentTaskExtensions
