@@ -16,6 +16,8 @@ namespace SCM.SwissArmyKnife.Extensions
         /// <returns>A copy of the entire <paramref name="sourceStream"/>.</returns>
         public static MemoryStream CloneEntireStream(this MemoryStream sourceStream)
         {
+            var new MemoryStream()
+
             var newStream = new MemoryStream();
             var originalPosition = sourceStream.Position;
 
