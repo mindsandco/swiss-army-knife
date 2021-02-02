@@ -38,8 +38,6 @@ If you are developing the library or want the latest packages built from the `ma
 2. Replace USERNAME with your Github username and TOKEN with a personal access token.
 3. Add the package: `dotnet add package SCM.SwissArmyKnife --version {VERSION} --prerelease`
 
-
-
 ## SwissArmyKnife.Extensions
 A bunch of handy extension methods that you'll probably like to use!
 Examples:
