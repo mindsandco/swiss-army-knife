@@ -7,7 +7,7 @@
 
 This is a project full of utility methods that can be used across multiple projects.  
 The code is:
-- Thoroughly documented
+- [Thoroughly documented](https://scadaminds.github.io/swiss-army-knife/)
 - Thoroughly tested
 - Methods that are side-effect free are marked as `[Pure]`
 
