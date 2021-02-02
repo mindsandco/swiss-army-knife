@@ -33,7 +33,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
 
         [Theory]
         [MemberData(nameof(ErrorStatusCodes))]
-        public void EnsureSuccessStatusCodeOrLogAsync_ShouldCallProvidedFunction_IfAnErrorOccurs(int statusCode)
+        public async Task EnsureSuccessStatusCodeOrLogAsync_ShouldCallProvidedFunction_IfAnErrorOccurs(int statusCode)
         {
             var httpResponse = new HttpResponseMessage((HttpStatusCode)statusCode)
             {
@@ -50,7 +50,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
                 });
 
             // Assert that the logging function was called and we rethrow the exception
-            ensureSuccessFunction.Should().Throw<HttpRequestException>();
+            await ensureSuccessFunction.Should().ThrowAsync<HttpRequestException>();
             loggingFunctionCalled.Should().BeTrue();
         }
     }

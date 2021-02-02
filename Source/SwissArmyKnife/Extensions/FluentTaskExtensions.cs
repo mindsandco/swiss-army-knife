@@ -17,11 +17,25 @@ namespace SCM.SwissArmyKnife.Extensions
     public static class FluentTaskExtensions
     {
         /// <summary>
-        /// If you have an async function you can call await MyMethodAsync().Select(/*...*/)
+        /// If you have an async function that returns a single element and you'd like to transform it before saving it,
+        /// you can call this.
+        /// await MyMethodAsync().Select(i => i + 2)
+        /// is equivalent to
+        /// (await MyMethodAsync()) + 2
+        /// you can call await MyMethodAsync().Select(/*...*/)
         /// instead of (await MyMethodAsync()).Select(/*...*/).
         /// </summary>
         public static async Task<TOut> Select<TIn, TOut>(this Task<TIn> task, Func<TIn, TOut> selector) =>
             selector(await task.ConfigureAwait(false));
+
+        /// <summary>
+        /// If you have an async function that returns an IEnumerable you can transform it directly.
+        /// await MyMethodAsync().Select(i => i + 2)
+        /// is equivalent to
+        /// (await MyMethodAsync()).Select(i => i + 2)
+        /// </summary>
+        public static async Task<IEnumerable<TOut>> Select<TIn, TOut>(this Task<IEnumerable<TIn>> task, Func<TIn, TOut> selector) =>
+            (await task.ConfigureAwait(false)).Select(selector);
 
         /// <summary>
         /// If you have an async function you can call await MyMethodAsync().First()
@@ -34,14 +48,8 @@ namespace SCM.SwissArmyKnife.Extensions
         /// If you have an async function you can call await MyMethodAsync().SelectMany(/*...*/)
         /// instead of (await MyMethodAsync()).SelectMany(/*...*/).
         /// </summary>
-        public static async Task<TOut> SelectMany<TIn, TOut>(this Task<TIn> task, Func<TIn, Task<TOut>> selector) =>
-            await selector(await task.ConfigureAwait(false)).ConfigureAwait(false); // TODO i'm not sure this works..
-
-        /// <summary>
-        /// If you have an async function you can call await MyMethodAsync().SelectMany(/*...*/)
-        /// instead of (await MyMethodAsync()).SelectMany(/*...*/).
-        /// </summary>
-        public static async Task<TOut> SelectMany<TOut>(this Task task, Func<Task<TOut>> selector) => await selector().ConfigureAwait(false); // TODO i'm not sure this works..
+        public static async Task<IEnumerable<TOut>> SelectMany<TIn, TOut>(this Task<IEnumerable<TIn>> task, Func<TIn, IEnumerable<TOut>> selector) =>
+            (await task.ConfigureAwait(false)).SelectMany(selector); // TODO i'm not sure this works..
 
         /// <summary>
         /// If you have an async function you can call await MyMethodAsync().ToList()

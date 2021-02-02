@@ -49,6 +49,10 @@ Examples:
 myDictionary.GetOr("nonExistingKey", () => "myFallbackValue");
 
 
+// ------------- Task.Select()
+todo
+
+
 // ------------- object.Yield
 // Produce an Enumerable out of an item
 int myItem = 3;

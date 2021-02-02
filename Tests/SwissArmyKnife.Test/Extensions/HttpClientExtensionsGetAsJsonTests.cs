@@ -42,7 +42,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
         }
 
         [Fact]
-        public void GetAsJson_ShouldThrowError_WithBodyInIt_OnNonSuccessfulHttpCode()
+        public async Task GetAsJson_ShouldThrowError_WithBodyInIt_OnNonSuccessfulHttpCode()
         {
             // Arrange
             var errorResponse = "some error response";
@@ -59,11 +59,11 @@ namespace SCM.SwissArmyKnife.Test.Extensions
             Func<Task> action = async () => await client.GetAsJsonAsync<Dictionary<string, string>>("http://doesntmatter.com");
 
             // Assert
-            action.Should().Throw<HttpRequestException>().WithMessage($"*{errorResponse}*");
+            await action.Should().ThrowAsync<HttpRequestException>().WithMessage($"*{errorResponse}*");
         }
 
         [Fact]
-        public void GetAsJson_ShouldThrowError_WithBodyInIt_OnJsonParseException()
+        public async Task GetAsJson_ShouldThrowError_WithBodyInIt_OnJsonParseException()
         {
             // Arrange
             var serverResponse = "{invalid json}";
@@ -80,11 +80,11 @@ namespace SCM.SwissArmyKnife.Test.Extensions
             Func<Task> action = async () => await client.GetAsJsonAsync<Dictionary<string, string>>("http://doesntmatter.com");
 
             // Assert
-            action.Should().Throw<JsonException>().WithMessage($"*{serverResponse}*");
+            await action.Should().ThrowAsync<JsonException>().WithMessage($"*{serverResponse}*");
         }
 
         [Fact]
-        public void GetAsJson_ShouldThrowError_WithTruncatedBodyInIt_OnNonSuccessfulHttpCode()
+        public async Task GetAsJson_ShouldThrowError_WithTruncatedBodyInIt_OnNonSuccessfulHttpCode()
         {
             // Arrange
             var errorResponse = "123456789";
@@ -102,7 +102,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
 
             // Assert
             // Error body only contains 12345 and then a quote '
-            action.Should().Throw<HttpRequestException>().WithMessage($"*12345...*");
+            await action.Should().ThrowAsync<HttpRequestException>().WithMessage($"*12345...*");
         }
 
 
