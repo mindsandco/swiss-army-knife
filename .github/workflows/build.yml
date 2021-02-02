@@ -60,7 +60,7 @@ jobs:
 
   build-documentation:
     name: 'Push and deploy documentation'
-#    needs: build
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: 'Build doxygen'
