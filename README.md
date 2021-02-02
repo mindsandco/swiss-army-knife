@@ -16,10 +16,6 @@ This library is opinionated and expects you to have both Nodatime and JSON.NET i
 ## Docs
 - Write readme documentation
 - Build docs using doxygen or similar
-  
-
-## Other
-- change key.snk ?
 
 
 ## Contribution
@@ -27,13 +23,11 @@ This library is opinionated and expects you to have both Nodatime and JSON.NET i
   
 
 ## Code
-- Fix billion warnings in StyleCop. Build docs first and see what you actually need
 - Add [Pure] annotations where necessary
 - Add null checks where necessary. !! with c# 9 ?
 
 
 ## Other
-- Setup CI & Github
 - Generate documentation
 - Publish to nuget on new releases
 
