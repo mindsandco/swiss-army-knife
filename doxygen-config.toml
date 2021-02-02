@@ -1926,3 +1926,7 @@ EXTERNAL_GROUPS        = YES
 # The default value is: YES.
 
 EXTERNAL_PAGES         = YES
+
+
+# NO LATEX
+GENERATE_LATEX         = NO
