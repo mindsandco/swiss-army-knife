@@ -107,6 +107,14 @@ SwissArmyKnife.Extensions</h2>
 <div class="line">myDictionary.GetOr(&quot;nonExistingKey&quot;, () =&gt; &quot;myFallbackValue&quot;);</div>
 <div class="line"> </div>
 <div class="line"> </div>
+<div class="line">// ------------- Task.Select()</div>
+<div class="line">var enumerableTask = Task.FromResult(new int[]{1,2});</div>
+<div class="line"> </div>
+<div class="line">// Select to transform multiple values</div>
+<div class="line">// Alternative to (await enumerableTask).Select(i =&gt; i + 1)</div>
+<div class="line">await enumerableTask.Select(i =&gt; i + 1); // Returns [2,3]</div>
+<div class="line"> </div>
+<div class="line"> </div>
 <div class="line">// ------------- object.Yield</div>
 <div class="line">// Produce an Enumerable out of an item</div>
 <div class="line">int myItem = 3;</div>

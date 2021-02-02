@@ -80,17 +80,35 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a280e2eca71715bb579de5e989792a382"><td class="memItemLeft" align="right" valign="top">static async Task&lt; TOut &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a280e2eca71715bb579de5e989792a382">Select&lt; TIn, TOut &gt;</a> (this Task&lt; TIn &gt; task, Func&lt; TIn, TOut &gt; selector)</td></tr>
-<tr class="memdesc:a280e2eca71715bb579de5e989792a382"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function you can call await MyMethodAsync().Select(/*...*&zwj;/) instead of (await MyMethodAsync()).Select(/*...*&zwj;/).  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a280e2eca71715bb579de5e989792a382">More...</a><br /></td></tr>
+<tr class="memdesc:a280e2eca71715bb579de5e989792a382"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function that returns a single element and you'd like to transform it before saving it, you can call this. await MyMethodAsync().Select(i =&gt; i + 2) is equivalent to (await MyMethodAsync()) + 2 you can call await MyMethodAsync().Select(/*...*&zwj;/) instead of (await MyMethodAsync()).Select(/*...*&zwj;/).  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a280e2eca71715bb579de5e989792a382">More...</a><br /></td></tr>
 <tr class="separator:a280e2eca71715bb579de5e989792a382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c894ab9829a0f35fcd1b2ad1b13b3a6"><td class="memItemLeft" align="right" valign="top">static async Task&lt; IEnumerable&lt; TOut &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a0c894ab9829a0f35fcd1b2ad1b13b3a6">Select&lt; TIn, TOut &gt;</a> (this Task&lt; IEnumerable&lt; TIn &gt;&gt; task, Func&lt; TIn, TOut &gt; selector)</td></tr>
+<tr class="memdesc:a0c894ab9829a0f35fcd1b2ad1b13b3a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function that returns an IEnumerable you can transform it directly. await MyMethodAsync().Select(i =&gt; i + 2) is equivalent to (await MyMethodAsync()).Select(i =&gt; i + 2).  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a0c894ab9829a0f35fcd1b2ad1b13b3a6">More...</a><br /></td></tr>
+<tr class="separator:a0c894ab9829a0f35fcd1b2ad1b13b3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f26be923e935de725a122d25f7c51d9"><td class="memItemLeft" align="right" valign="top">static async Task&lt; IEnumerable&lt; TOut &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a7f26be923e935de725a122d25f7c51d9">Select&lt; TIn, TOut &gt;</a> (this Task&lt; TIn[]&gt; task, Func&lt; TIn, TOut &gt; selector)</td></tr>
+<tr class="memdesc:a7f26be923e935de725a122d25f7c51d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function that returns an array you can transform it directly. await MyMethodAsync().Select(i =&gt; i + 2) is equivalent to (await MyMethodAsync()).Select(i =&gt; i + 2).  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a7f26be923e935de725a122d25f7c51d9">More...</a><br /></td></tr>
+<tr class="separator:a7f26be923e935de725a122d25f7c51d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cf67ffa5d65e2bd8b51db10375195ee"><td class="memItemLeft" align="right" valign="top">static async Task&lt; IEnumerable&lt; TOut &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a3cf67ffa5d65e2bd8b51db10375195ee">Select&lt; TIn, TOut &gt;</a> (this Task&lt; List&lt; TIn &gt;&gt; task, Func&lt; TIn, TOut &gt; selector)</td></tr>
+<tr class="memdesc:a3cf67ffa5d65e2bd8b51db10375195ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function that returns a List you can transform it directly. await MyMethodAsync().Select(i =&gt; i + 2) is equivalent to (await MyMethodAsync()).Select(i =&gt; i + 2).  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a3cf67ffa5d65e2bd8b51db10375195ee">More...</a><br /></td></tr>
+<tr class="separator:a3cf67ffa5d65e2bd8b51db10375195ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa54a73a3d1e07c22d92aa09f6f76b812"><td class="memItemLeft" align="right" valign="top">static async Task&lt; TOut &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#aa54a73a3d1e07c22d92aa09f6f76b812">First&lt; TOut &gt;</a> (this Task&lt; IEnumerable&lt; TOut &gt;&gt; task)</td></tr>
 <tr class="memdesc:aa54a73a3d1e07c22d92aa09f6f76b812"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function you can call await MyMethodAsync().First() instead of (await MyMethodAsync()).First().  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#aa54a73a3d1e07c22d92aa09f6f76b812">More...</a><br /></td></tr>
 <tr class="separator:aa54a73a3d1e07c22d92aa09f6f76b812"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1709c8087f640eea7c79442826bcd782"><td class="memItemLeft" align="right" valign="top">static async Task&lt; TOut &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a1709c8087f640eea7c79442826bcd782">SelectMany&lt; TIn, TOut &gt;</a> (this Task&lt; TIn &gt; task, Func&lt; TIn, Task&lt; TOut &gt;&gt; selector)</td></tr>
-<tr class="memdesc:a1709c8087f640eea7c79442826bcd782"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function you can call await MyMethodAsync().SelectMany(/*...*&zwj;/) instead of (await MyMethodAsync()).SelectMany(/*...*&zwj;/).  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a1709c8087f640eea7c79442826bcd782">More...</a><br /></td></tr>
-<tr class="separator:a1709c8087f640eea7c79442826bcd782"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb5b7bd706ed2cfa2aae284a203b4079"><td class="memItemLeft" align="right" valign="top">static async Task&lt; TOut &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#afb5b7bd706ed2cfa2aae284a203b4079">SelectMany&lt; TOut &gt;</a> (this Task task, Func&lt; Task&lt; TOut &gt;&gt; selector)</td></tr>
-<tr class="memdesc:afb5b7bd706ed2cfa2aae284a203b4079"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function you can call await MyMethodAsync().SelectMany(/*...*&zwj;/) instead of (await MyMethodAsync()).SelectMany(/*...*&zwj;/).  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#afb5b7bd706ed2cfa2aae284a203b4079">More...</a><br /></td></tr>
-<tr class="separator:afb5b7bd706ed2cfa2aae284a203b4079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c147f7a8f1bce513178d1efe28407c"><td class="memItemLeft" align="right" valign="top">static async Task&lt; TOut &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a82c147f7a8f1bce513178d1efe28407c">First&lt; TOut &gt;</a> (this Task&lt; TOut[]&gt; task)</td></tr>
+<tr class="memdesc:a82c147f7a8f1bce513178d1efe28407c"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function you can call await MyMethodAsync().First() instead of (await MyMethodAsync()).First().  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a82c147f7a8f1bce513178d1efe28407c">More...</a><br /></td></tr>
+<tr class="separator:a82c147f7a8f1bce513178d1efe28407c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b425ee6037bd266291619bba8533185"><td class="memItemLeft" align="right" valign="top">static async Task&lt; TOut &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a2b425ee6037bd266291619bba8533185">First&lt; TOut &gt;</a> (this Task&lt; List&lt; TOut &gt;&gt; task)</td></tr>
+<tr class="memdesc:a2b425ee6037bd266291619bba8533185"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function you can call await MyMethodAsync().First() instead of (await MyMethodAsync()).First().  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a2b425ee6037bd266291619bba8533185">More...</a><br /></td></tr>
+<tr class="separator:a2b425ee6037bd266291619bba8533185"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90e1c6df172d725691fbe10b3ca9ebe9"><td class="memItemLeft" align="right" valign="top">static async Task&lt; IEnumerable&lt; TOut &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a90e1c6df172d725691fbe10b3ca9ebe9">SelectMany&lt; TIn, TOut &gt;</a> (this Task&lt; IEnumerable&lt; TIn &gt;&gt; task, Func&lt; TIn, IEnumerable&lt; TOut &gt;&gt; selector)</td></tr>
+<tr class="memdesc:a90e1c6df172d725691fbe10b3ca9ebe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function you can call await MyMethodAsync().SelectMany(/*...*&zwj;/) instead of (await MyMethodAsync()).SelectMany(/*...*&zwj;/).  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a90e1c6df172d725691fbe10b3ca9ebe9">More...</a><br /></td></tr>
+<tr class="separator:a90e1c6df172d725691fbe10b3ca9ebe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a241520bef59a29a1950420b073ffbad8"><td class="memItemLeft" align="right" valign="top">static async Task&lt; IEnumerable&lt; TOut &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a241520bef59a29a1950420b073ffbad8">SelectMany&lt; TIn, TOut &gt;</a> (this Task&lt; List&lt; TIn &gt;&gt; task, Func&lt; TIn, IEnumerable&lt; TOut &gt;&gt; selector)</td></tr>
+<tr class="memdesc:a241520bef59a29a1950420b073ffbad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function you can call await MyMethodAsync().SelectMany(/*...*&zwj;/) instead of (await MyMethodAsync()).SelectMany(/*...*&zwj;/).  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a241520bef59a29a1950420b073ffbad8">More...</a><br /></td></tr>
+<tr class="separator:a241520bef59a29a1950420b073ffbad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaec4d98d02da10788ab49609ee563bac"><td class="memItemLeft" align="right" valign="top">static async Task&lt; IEnumerable&lt; TOut &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#aaec4d98d02da10788ab49609ee563bac">SelectMany&lt; TIn, TOut &gt;</a> (this Task&lt; TIn[]&gt; task, Func&lt; TIn, IEnumerable&lt; TOut &gt;&gt; selector)</td></tr>
+<tr class="memdesc:aaec4d98d02da10788ab49609ee563bac"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function you can call await MyMethodAsync().SelectMany(/*...*&zwj;/) instead of (await MyMethodAsync()).SelectMany(/*...*&zwj;/).  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#aaec4d98d02da10788ab49609ee563bac">More...</a><br /></td></tr>
+<tr class="separator:aaec4d98d02da10788ab49609ee563bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a384de24645330c673a196b2c3f306eda"><td class="memItemLeft" align="right" valign="top">static async Task&lt; List&lt; TOut &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a384de24645330c673a196b2c3f306eda">ToList&lt; TOut &gt;</a> (this Task&lt; IEnumerable&lt; TOut &gt;&gt; task)</td></tr>
 <tr class="memdesc:a384de24645330c673a196b2c3f306eda"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you have an async function you can call await MyMethodAsync().ToList() instead of (await MyMethodAsync()).ToList().  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions.html#a384de24645330c673a196b2c3f306eda">More...</a><br /></td></tr>
 <tr class="separator:a384de24645330c673a196b2c3f306eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -99,7 +117,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Bunch of extensions for Tasks to make LINQ-based syntax a bit prettier. E.g instead of (await foo()).Select(DoStuff) you can write await foo().Select(DoStuff). </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa54a73a3d1e07c22d92aa09f6f76b812"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa54a73a3d1e07c22d92aa09f6f76b812">&#9670;&nbsp;</a></span>First&lt; TOut &gt;()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa54a73a3d1e07c22d92aa09f6f76b812">&#9670;&nbsp;</a></span>First&lt; TOut &gt;() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -126,8 +144,140 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2b425ee6037bd266291619bba8533185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b425ee6037bd266291619bba8533185">&#9670;&nbsp;</a></span>First&lt; TOut &gt;() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static async Task&lt;TOut&gt; First&lt; TOut &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this Task&lt; List&lt; TOut &gt;&gt;&#160;</td>
+          <td class="paramname"><em>task</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If you have an async function you can call await MyMethodAsync().First() instead of (await MyMethodAsync()).First(). </p>
+
+</div>
+</div>
+<a id="a82c147f7a8f1bce513178d1efe28407c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c147f7a8f1bce513178d1efe28407c">&#9670;&nbsp;</a></span>First&lt; TOut &gt;() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static async Task&lt;TOut&gt; First&lt; TOut &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this Task&lt; TOut[]&gt;&#160;</td>
+          <td class="paramname"><em>task</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If you have an async function you can call await MyMethodAsync().First() instead of (await MyMethodAsync()).First(). </p>
+
+</div>
+</div>
+<a id="a0c894ab9829a0f35fcd1b2ad1b13b3a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c894ab9829a0f35fcd1b2ad1b13b3a6">&#9670;&nbsp;</a></span>Select&lt; TIn, TOut &gt;() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static async Task&lt;IEnumerable&lt;TOut&gt; &gt; Select&lt; TIn, TOut &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this Task&lt; IEnumerable&lt; TIn &gt;&gt;&#160;</td>
+          <td class="paramname"><em>task</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Func&lt; TIn, TOut &gt;&#160;</td>
+          <td class="paramname"><em>selector</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If you have an async function that returns an IEnumerable you can transform it directly. await MyMethodAsync().Select(i =&gt; i + 2) is equivalent to (await MyMethodAsync()).Select(i =&gt; i + 2). </p>
+
+</div>
+</div>
+<a id="a3cf67ffa5d65e2bd8b51db10375195ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cf67ffa5d65e2bd8b51db10375195ee">&#9670;&nbsp;</a></span>Select&lt; TIn, TOut &gt;() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static async Task&lt;IEnumerable&lt;TOut&gt; &gt; Select&lt; TIn, TOut &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this Task&lt; List&lt; TIn &gt;&gt;&#160;</td>
+          <td class="paramname"><em>task</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Func&lt; TIn, TOut &gt;&#160;</td>
+          <td class="paramname"><em>selector</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If you have an async function that returns a List you can transform it directly. await MyMethodAsync().Select(i =&gt; i + 2) is equivalent to (await MyMethodAsync()).Select(i =&gt; i + 2). </p>
+
+</div>
+</div>
 <a id="a280e2eca71715bb579de5e989792a382"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a280e2eca71715bb579de5e989792a382">&#9670;&nbsp;</a></span>Select&lt; TIn, TOut &gt;()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a280e2eca71715bb579de5e989792a382">&#9670;&nbsp;</a></span>Select&lt; TIn, TOut &gt;() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,12 +310,12 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>If you have an async function you can call await MyMethodAsync().Select(/*...*&zwj;/) instead of (await MyMethodAsync()).Select(/*...*&zwj;/). </p>
+<p>If you have an async function that returns a single element and you'd like to transform it before saving it, you can call this. await MyMethodAsync().Select(i =&gt; i + 2) is equivalent to (await MyMethodAsync()) + 2 you can call await MyMethodAsync().Select(/*...*&zwj;/) instead of (await MyMethodAsync()).Select(/*...*&zwj;/). </p>
 
 </div>
 </div>
-<a id="a1709c8087f640eea7c79442826bcd782"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1709c8087f640eea7c79442826bcd782">&#9670;&nbsp;</a></span>SelectMany&lt; TIn, TOut &gt;()</h2>
+<a id="a7f26be923e935de725a122d25f7c51d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f26be923e935de725a122d25f7c51d9">&#9670;&nbsp;</a></span>Select&lt; TIn, TOut &gt;() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,15 +324,53 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static async Task&lt;TOut&gt; SelectMany&lt; TIn, TOut &gt; </td>
+          <td class="memname">static async Task&lt;IEnumerable&lt;TOut&gt; &gt; Select&lt; TIn, TOut &gt; </td>
           <td>(</td>
-          <td class="paramtype">this Task&lt; TIn &gt;&#160;</td>
+          <td class="paramtype">this Task&lt; TIn[]&gt;&#160;</td>
           <td class="paramname"><em>task</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Func&lt; TIn, Task&lt; TOut &gt;&gt;&#160;</td>
+          <td class="paramtype">Func&lt; TIn, TOut &gt;&#160;</td>
+          <td class="paramname"><em>selector</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If you have an async function that returns an array you can transform it directly. await MyMethodAsync().Select(i =&gt; i + 2) is equivalent to (await MyMethodAsync()).Select(i =&gt; i + 2). </p>
+
+</div>
+</div>
+<a id="a90e1c6df172d725691fbe10b3ca9ebe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90e1c6df172d725691fbe10b3ca9ebe9">&#9670;&nbsp;</a></span>SelectMany&lt; TIn, TOut &gt;() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static async Task&lt;IEnumerable&lt;TOut&gt; &gt; SelectMany&lt; TIn, TOut &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this Task&lt; IEnumerable&lt; TIn &gt;&gt;&#160;</td>
+          <td class="paramname"><em>task</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Func&lt; TIn, IEnumerable&lt; TOut &gt;&gt;&#160;</td>
           <td class="paramname"><em>selector</em>&#160;</td>
         </tr>
         <tr>
@@ -202,8 +390,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afb5b7bd706ed2cfa2aae284a203b4079"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb5b7bd706ed2cfa2aae284a203b4079">&#9670;&nbsp;</a></span>SelectMany&lt; TOut &gt;()</h2>
+<a id="a241520bef59a29a1950420b073ffbad8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a241520bef59a29a1950420b073ffbad8">&#9670;&nbsp;</a></span>SelectMany&lt; TIn, TOut &gt;() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,15 +400,53 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static async Task&lt;TOut&gt; SelectMany&lt; TOut &gt; </td>
+          <td class="memname">static async Task&lt;IEnumerable&lt;TOut&gt; &gt; SelectMany&lt; TIn, TOut &gt; </td>
           <td>(</td>
-          <td class="paramtype">this Task&#160;</td>
+          <td class="paramtype">this Task&lt; List&lt; TIn &gt;&gt;&#160;</td>
           <td class="paramname"><em>task</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Func&lt; Task&lt; TOut &gt;&gt;&#160;</td>
+          <td class="paramtype">Func&lt; TIn, IEnumerable&lt; TOut &gt;&gt;&#160;</td>
+          <td class="paramname"><em>selector</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If you have an async function you can call await MyMethodAsync().SelectMany(/*...*&zwj;/) instead of (await MyMethodAsync()).SelectMany(/*...*&zwj;/). </p>
+
+</div>
+</div>
+<a id="aaec4d98d02da10788ab49609ee563bac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaec4d98d02da10788ab49609ee563bac">&#9670;&nbsp;</a></span>SelectMany&lt; TIn, TOut &gt;() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static async Task&lt;IEnumerable&lt;TOut&gt; &gt; SelectMany&lt; TIn, TOut &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this Task&lt; TIn[]&gt;&#160;</td>
+          <td class="paramname"><em>task</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Func&lt; TIn, IEnumerable&lt; TOut &gt;&gt;&#160;</td>
           <td class="paramname"><em>selector</em>&#160;</td>
         </tr>
         <tr>

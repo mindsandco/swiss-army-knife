@@ -92,8 +92,28 @@ EnumerableProducingExtensions</h1>
 </div><!-- fragment --><p><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1EnumerableProducingExtensions.html">View More Documentation</a></p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 FluentTaskExtensions</h1>
-<p>TODO</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<p>All tasks here are alternatives to calling <code>(await MyMethodAsync()).SomeFunction()</code> but instead allows you to chain the function at the end, and await the whole chain. </p><div class="fragment"><div class="line">var singleValueTask = Task.FromResult(1);</div>
+<div class="line">var enumerableTask = Task.FromResult(<span class="keyword">new</span> <span class="keywordtype">int</span>[]{1,2});</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Select to transform a single value</span></div>
+<div class="line">await singleValueTask.Select(i =&gt; i + 1); <span class="comment">// Returns 2</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Select to transform multiple values</span></div>
+<div class="line"><span class="comment">// Alternative to (await enumerableTask).Select(i =&gt; i + 1)</span></div>
+<div class="line">await enumerableTask.Select(i =&gt; i + 1); <span class="comment">// Returns [2,3]</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// First</span></div>
+<div class="line"><span class="comment">// Returns 1 </span></div>
+<div class="line">await enumerableTask.First();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// SelectMany</span></div>
+<div class="line">var taskThatEmitsMultipleEnumerables = Task.FromResult(<span class="keyword">new</span> <span class="keywordtype">int</span>[][]{ <span class="keyword">new</span> <span class="keywordtype">int</span>[]{1,2}, <span class="keyword">new</span> <span class="keywordtype">int</span>[]{3,4});</div>
+<div class="line"><span class="comment">// Returns [1, 2, 3, 4]</span></div>
+<div class="line">await taskThatEmitsMultipleEnumerables.SelectMany(i =&gt; i)</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// ToList - Converts an enumerable returning tasks to a List</span></div>
+<div class="line">List&lt;int&gt; list = await enumerableTask.ToList()</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 HttpClientExtensions</h1>
 <div class="fragment"><div class="line">var client = <span class="keyword">new</span> HttpClient();</div>
 <div class="line"> </div>
