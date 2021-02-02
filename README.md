@@ -15,7 +15,7 @@ The code is:
 This library can be installed from Nuget or Github Packages.
 
 ### Nuget
-You can install it from nuget by running `dotnet add package SwissArmyKnife`
+You can install it from nuget by running `dotnet add package SCM.SwissArmyKnife`
 
 ### Github
 If you are developing the library or want the latest packages built from the `main` branch, you can get them from Github packages.
@@ -36,7 +36,7 @@ If you are developing the library or want the latest packages built from the `ma
 </configuration>
 ```
 2. Replace USERNAME with your Github username and TOKEN with a personal access token.
-3. Add the package: `dotnet add package SwissArmyKnife --version {VERSION} --prerelease`
+3. Add the package: `dotnet add package SCM.SwissArmyKnife --version {VERSION} --prerelease`
 
 
 
