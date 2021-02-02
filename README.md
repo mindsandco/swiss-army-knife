@@ -1,5 +1,5 @@
 # SwissArmyKnife
-![Banner](Images/Banner.png)
+![Banner](Images/scm_banner.png)
 
 [![GitHub Actions Status](https://github.com/SCADAMINDS/swiss-army-knife/workflows/Build/badge.svg?branch=main)](https://github.com/SCADAMINDS/swiss-army-knife/actions)
 
@@ -36,11 +36,6 @@ Methods are marked as [pure] if they are Pure
 - Test FluentTaskExtensions
 
 
-# CI
-This project uses Github Actions to perform CI. It:
-- Runs all tests and Roslyn Analyzers on the master branch, and on all PR's
-- Runs code coverage via Codecov on all pull requests
-
 
 # Contributing
 You can pull or fork this project. It runs on dotnet core, so you should be able to run `dotnet test`
@@ -58,9 +53,14 @@ dotnet cake --target=Test
 
 The project is built with `dotnet-boxed`, so if you have any questions to the structure, check out [this article](https://rehansaeed.com/the-fastest-nuget-package-ever-published-probably/)
 
-Please run `dotnet format` before submitting your pull requests.
 
-We use Doxygen to build the documentation until DocFx supports .NET core
+### Before submitting a PR
+
+- Please run `dotnet format` before submitting your pull requests.
+- We use Doxygen to build the documentation until DocFx supports .NET core
+Please install it and run `doxygen doxygen-config.toml` to generate up-to-date documentation if needed.
+
+
 
 # Release Process
 Nuget releases happen automatically when a new Github release is made. The `release-drafter` github action should automatically generate release notes
