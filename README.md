@@ -14,8 +14,30 @@ The code is:
 # Installation
 This library can be installed from Nuget or Github Packages.
 
-# TODO nuget
-# TODO github package repository
+### Nuget
+You can install it from nuget by running `dotnet add package SwissArmyKnife`
+
+### Github
+If you are developing the library or want the latest packages built from the `main` branch, you can get them from Github packages.
+1. Add a `nuget.config` file to the root of your project.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <packageSources>
+        <clear />
+        <add key="github" value="https://nuget.pkg.github.com/SCADAMINDS/index.json" />
+    </packageSources>
+    <packageSourceCredentials>
+        <github>
+            <add key="Username" value="USERNAME" />
+            <add key="ClearTextPassword" value="TOKEN" />
+        </github>
+    </packageSourceCredentials>
+</configuration>
+```
+2. Replace USERNAME with your Github username and TOKEN with a personal access token.
+3. Add the package: `dotnet add package SwissArmyKnife --version {VERSION} --prerelease`
+
 
 
 ## SwissArmyKnife.Extensions
@@ -69,7 +91,6 @@ The project is built with `dotnet-boxed`, so if you have any questions to the st
 
 
 ### Before submitting a PR
-
 - Please run `dotnet format` before submitting your pull requests.
 - We use Doxygen to build the documentation until DocFx supports .NET core
   Please install it and run `doxygen doxygen-config.toml` to generate up-to-date documentation if needed.
@@ -80,25 +101,3 @@ The project is built with `dotnet-boxed`, so if you have any questions to the st
 Nuget releases happen automatically when a new Github release is made. The `release-drafter` github action should automatically generate release notes if PR's have been labelled correctly.
 
 Each merge into the `main` branch triggers a release of a Github Packages package.
-
-
-# TODO list
-
-## Docs
-- Write readme documentation
-- Write Doxygen main page
-- Write FluentTaskExtensions documentation
-
-
-## Contribution
-- Write introduction and running guide
-
-## Other
-- Publish to nuget on new releases
-- block pushes to main
-
-
-## Tests missing
-- Test HttpResponseMessageExtensions
-- Test ObjectExtensions
-- Test FluentTaskExtensions
