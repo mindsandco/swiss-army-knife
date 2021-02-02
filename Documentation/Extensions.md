@@ -35,7 +35,30 @@ var myAsyncEnumerable = myItem.YieldAsync();
 
 
 ## FluentTaskExtensions
-TODO
+All tasks here are alternatives to calling `(await MyMethodAsync()).SomeFunction()` but instead allows you to chain the function
+at the end, and await the whole chain.
+```{.cs}
+var singleValueTask = Task.FromResult(1);
+var enumerableTask = Task.FromResult(new int[]{1,2});
+
+// Select to transform a single value
+await singleValueTask.Select(i => i + 1); // Returns 2
+
+// Select to transform multiple values
+// Alternative to (await enumerableTask).Select(i => i + 1)
+await enumerableTask.Select(i => i + 1); // Returns [2,3]
+
+// First 
+await enumerableTask.First();
+
+// SelectMany
+var taskThatEmitsMultipleEnumerables = Task.FromResult(new int[][]{ new int[]{1,2}, new int[]{3,4});
+// Returns [1, 2, 3, 4]
+await taskThatEmitsMultipleEnumerables.SelectMany(i => i)
+
+// ToList - Converts an enumerable returning tasks to a List
+List<int> list = await enumerableTask.ToList()
+```
 
 ## HttpClientExtensions
 ```{.cs}
