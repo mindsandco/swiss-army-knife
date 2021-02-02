@@ -443,6 +443,9 @@ dotnet_diagnostic.SA1413.severity = none
 # I disagree with forcing expression bodies for one-line methods
 dotnet_diagnostic.IDE0022.severity = none
 
+# Files can contain multiple types
+dotnet_diagnostic.SA1402.severity = none
+
 # Formatting issue in regards to blank lines - if there's no dotnet format for it we don't care
 dotnet_diagnostic.SA1507.severity = none
 dotnet_diagnostic.SA1513.severity = none
@@ -454,6 +457,7 @@ dotnet_diagnostic.SA1013.severity = none
 dotnet_diagnostic.SA1009.severity = none
 dotnet_diagnostic.SA1505.severity = none
 dotnet_diagnostic.SA1508.severity = none
+dotnet_diagnostic.SA1516.severity = none
 
 # Using directives
 dotnet_diagnostic.SA1012.severity = none
@@ -482,5 +486,3 @@ dotnet_diagnostic.SA1611.severity = suggestion
 dotnet_diagnostic.SA1615.severity = suggestion
 # Or type parameter
 dotnet_diagnostic.SA1618.severity = suggestion
-
-

@@ -3,7 +3,7 @@ using FluentAssertions;
 using SCM.SwissArmyKnife.Extensions;
 using Xunit;
 
-namespace ScadaMinds.SwissArmyKnife.Tests
+namespace SCM.SwissArmyKnife.Test.Extensions
 {
     public class NullableExtensionsTests
 
@@ -70,7 +70,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
 
             public Wrapper(string myString)
             {
-                MyString = myString;
+                this.MyString = myString;
             }
         }
     }

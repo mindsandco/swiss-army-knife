@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -6,7 +5,7 @@ using FluentAssertions;
 using SCM.SwissArmyKnife.Extensions;
 using Xunit;
 
-namespace ScadaMinds.SwissArmyKnife.Tests
+namespace SCM.SwissArmyKnife.Test.Extensions
 {
 
     public class StreamExtensionsTests

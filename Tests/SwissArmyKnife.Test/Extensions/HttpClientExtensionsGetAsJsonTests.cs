@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 using SCM.SwissArmyKnife.Extensions;
 using Xunit;
 
-namespace ScadaMinds.SwissArmyKnife.Tests
+namespace SCM.SwissArmyKnife.Test.Extensions
 {
 
     public class HttpClientExtensionsGetAsJsonTests

@@ -10,4 +10,5 @@ dotnet_diagnostic.VSTHRD200.severity = none
 # Can catch "exception in tests"
 dotnet_diagnostic.CA2201.severity = none
 
-
+# This flags all FluentAssertions as issues
+dotnet_diagnostic.IDE0058.severity = none

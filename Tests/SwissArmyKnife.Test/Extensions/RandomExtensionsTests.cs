@@ -5,7 +5,7 @@ using FluentAssertions;
 using SCM.SwissArmyKnife.Extensions;
 using Xunit;
 
-namespace ScadaMinds.SwissArmyKnife.Tests
+namespace SCM.SwissArmyKnife.Test.Extensions
 {
 
     public class RandomExtensionsTests
@@ -18,7 +18,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             // Run it a couple of times just to make sure it works always
             for (int i = 0; i < 100; i++)
             {
-                var randomDouble = _random.NextDouble(0, 2);
+                var randomDouble = this._random.NextDouble(0, 2);
                 randomDouble.Should().BeGreaterThan(0);
                 randomDouble.Should().BeLessThan(2);
             }
@@ -30,7 +30,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             // Run it a couple of times just to make sure it works always
             for (int i = 0; i < 100; i++)
             {
-                var randomDouble = _random.NextByte();
+                var randomDouble = this._random.NextByte();
                 randomDouble.Should().BeGreaterOrEqualTo(byte.MinValue);
                 randomDouble.Should().BeLessOrEqualTo(byte.MaxValue);
             }
@@ -41,7 +41,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
         {
             // Run it a couple of times just to make sure it works always
             var randomlyGeneratedBooleans = Enumerable.Repeat(0, 100)
-                .Select(i => _random.NextBoolean())
+                .Select(i => this._random.NextBoolean())
                 .ToList();
 
             // Contains both trues and falses
@@ -59,7 +59,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
 
             for (int i = 0; i < 100; i++)
             {
-                var randomChoice = _random.Choice(list);
+                var randomChoice = this._random.Choice(list);
                 list.Should().Contain(randomChoice);
             }
         }
