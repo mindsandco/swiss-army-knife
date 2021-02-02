@@ -17,6 +17,7 @@ This library is opinionated and expects you to have both Nodatime and JSON.NET i
 
 ## Docs
 - Write readme documentation
+- Write Doxygen main page
 - Build docs using doxygen or similar
 
 
@@ -32,6 +33,7 @@ This library is opinionated and expects you to have both Nodatime and JSON.NET i
 ## Other
 - Publish to nuget on new releases
 - block pushes to main
+
 
 ## Tests missing
 - Test HttpResponseMessageExtensions
