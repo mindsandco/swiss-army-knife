@@ -21,3 +21,7 @@ dotnet_diagnostic.CA1711.severity = none
 
 # Method visibility dont matter
 dotnet_diagnostic.SA1401.severity = none
+
+# Regions are cool
+dotnet_diagnostic.SA1124.severity = none
+

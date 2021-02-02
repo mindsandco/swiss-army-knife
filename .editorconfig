@@ -482,3 +482,6 @@ dotnet_diagnostic.SA1611.severity = suggestion
 dotnet_diagnostic.SA1615.severity = suggestion
 # Or type parameter
 dotnet_diagnostic.SA1618.severity = suggestion
+
+
+dotnet_diagnostic.SA1618.severity = suggestion

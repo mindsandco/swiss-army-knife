@@ -16,6 +16,8 @@ namespace SCM.SwissArmyKnife.Extensions
     [SuppressMessage("ReSharper", "VSTHRD003", Justification = "Allow waiting for 'foreign' tasks here. Tasks don't travel very far and it is expected if the consumer needs scheduling or has conflict, that they will handle it themselves.")]
     public static class FluentTaskExtensions
     {
+        #region Select
+
         /// <summary>
         /// If you have an async function that returns a single element and you'd like to transform it before saving it,
         /// you can call this.
@@ -28,14 +30,38 @@ namespace SCM.SwissArmyKnife.Extensions
         public static async Task<TOut> Select<TIn, TOut>(this Task<TIn> task, Func<TIn, TOut> selector) =>
             selector(await task.ConfigureAwait(false));
 
+
         /// <summary>
         /// If you have an async function that returns an IEnumerable you can transform it directly.
         /// await MyMethodAsync().Select(i => i + 2)
         /// is equivalent to
-        /// (await MyMethodAsync()).Select(i => i + 2)
+        /// (await MyMethodAsync()).Select(i => i + 2).
         /// </summary>
         public static async Task<IEnumerable<TOut>> Select<TIn, TOut>(this Task<IEnumerable<TIn>> task, Func<TIn, TOut> selector) =>
             (await task.ConfigureAwait(false)).Select(selector);
+
+        /// <summary>
+        /// If you have an async function that returns an array you can transform it directly.
+        /// await MyMethodAsync().Select(i => i + 2)
+        /// is equivalent to
+        /// (await MyMethodAsync()).Select(i => i + 2).
+        /// </summary>
+        public static async Task<IEnumerable<TOut>> Select<TIn, TOut>(this Task<TIn[]> task, Func<TIn, TOut> selector) =>
+            (await task.ConfigureAwait(false)).Select(selector);
+
+        /// <summary>
+        /// If you have an async function that returns a List you can transform it directly.
+        /// await MyMethodAsync().Select(i => i + 2)
+        /// is equivalent to
+        /// (await MyMethodAsync()).Select(i => i + 2).
+        /// </summary>
+        public static async Task<IEnumerable<TOut>> Select<TIn, TOut>(this Task<List<TIn>> task, Func<TIn, TOut> selector) =>
+            (await task.ConfigureAwait(false)).Select(selector);
+        #endregion
+
+
+
+        #region First
 
         /// <summary>
         /// If you have an async function you can call await MyMethodAsync().First()
@@ -45,11 +71,47 @@ namespace SCM.SwissArmyKnife.Extensions
             (await task.ConfigureAwait(false)).First();
 
         /// <summary>
+        /// If you have an async function you can call await MyMethodAsync().First()
+        /// instead of (await MyMethodAsync()).First().
+        /// </summary>
+        public static async Task<TOut> First<TOut>(this Task<TOut[]> task) =>
+            (await task.ConfigureAwait(false)).First();
+
+        /// <summary>
+        /// If you have an async function you can call await MyMethodAsync().First()
+        /// instead of (await MyMethodAsync()).First().
+        /// </summary>
+        public static async Task<TOut> First<TOut>(this Task<List<TOut>> task) =>
+            (await task.ConfigureAwait(false)).First();
+
+
+        #endregion
+
+
+        #region SelectMany
+
+        /// <summary>
         /// If you have an async function you can call await MyMethodAsync().SelectMany(/*...*/)
         /// instead of (await MyMethodAsync()).SelectMany(/*...*/).
         /// </summary>
         public static async Task<IEnumerable<TOut>> SelectMany<TIn, TOut>(this Task<IEnumerable<TIn>> task, Func<TIn, IEnumerable<TOut>> selector) =>
-            (await task.ConfigureAwait(false)).SelectMany(selector); // TODO i'm not sure this works..
+            (await task.ConfigureAwait(false)).SelectMany(selector);
+
+        /// <summary>
+        /// If you have an async function you can call await MyMethodAsync().SelectMany(/*...*/)
+        /// instead of (await MyMethodAsync()).SelectMany(/*...*/).
+        /// </summary>
+        public static async Task<IEnumerable<TOut>> SelectMany<TIn, TOut>(this Task<List<TIn>> task, Func<TIn, IEnumerable<TOut>> selector) =>
+            (await task.ConfigureAwait(false)).SelectMany(selector);
+
+        /// <summary>
+        /// If you have an async function you can call await MyMethodAsync().SelectMany(/*...*/)
+        /// instead of (await MyMethodAsync()).SelectMany(/*...*/).
+        /// </summary>
+        public static async Task<IEnumerable<TOut>> SelectMany<TIn, TOut>(this Task<TIn[]> task, Func<TIn, IEnumerable<TOut>> selector) =>
+            (await task.ConfigureAwait(false)).SelectMany(selector);
+
+        #endregion
 
         /// <summary>
         /// If you have an async function you can call await MyMethodAsync().ToList()
