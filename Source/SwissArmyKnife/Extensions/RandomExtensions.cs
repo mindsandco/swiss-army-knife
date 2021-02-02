@@ -7,7 +7,7 @@ namespace SCM.SwissArmyKnife.Extensions
 {
 
     /// <summary>
-    /// Extensions to make working with the CLR Random class a little less painful. Includes methods to get
+    /// Extensions to make working with the BCL Random class a little less painful. Includes methods to get
     /// a bunch of different types.
     /// </summary>
     public static class RandomExtensions

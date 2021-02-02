@@ -6,7 +6,7 @@ using System.Diagnostics.Contracts;
 namespace SCM.SwissArmyKnife.Extensions
 {
     /// <summary>
-    /// Extension methods for the CLR Dictionaries.
+    /// Extension methods for the BCL Dictionaries.
     /// </summary>
     public static class DictionaryExtensions
     {

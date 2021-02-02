@@ -1,0 +1,83 @@
+\hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions}{}\doxysection{Fluent\+Task\+Extensions Class Reference}
+\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions}\index{FluentTaskExtensions@{FluentTaskExtensions}}
+
+
+Bunch of extensions for Tasks to make L\+I\+N\+Q-\/based syntax a bit prettier. E.\+g instead of (await foo()).Select(\+Do\+Stuff) you can write await foo().Select(\+Do\+Stuff).  
+
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static async Task$<$ T\+Out $>$ \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_a280e2eca71715bb579de5e989792a382}{Select$<$ T\+In, T\+Out $>$}} (this Task$<$ T\+In $>$ task, Func$<$ T\+In, T\+Out $>$ selector)
+\begin{DoxyCompactList}\small\item\em If you have an async function you can call await My\+Method\+Async().Select(/$\ast$...$\ast$/) instead of (await My\+Method\+Async()).Select(/$\ast$...$\ast$/). \end{DoxyCompactList}\item 
+static async Task$<$ T\+Out $>$ \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_aa54a73a3d1e07c22d92aa09f6f76b812}{First$<$ T\+Out $>$}} (this Task$<$ I\+Enumerable$<$ T\+Out $>$$>$ task)
+\begin{DoxyCompactList}\small\item\em If you have an async function you can call await My\+Method\+Async().First() instead of (await My\+Method\+Async()).First(). \end{DoxyCompactList}\item 
+static async Task$<$ T\+Out $>$ \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_a1709c8087f640eea7c79442826bcd782}{Select\+Many$<$ T\+In, T\+Out $>$}} (this Task$<$ T\+In $>$ task, Func$<$ T\+In, Task$<$ T\+Out $>$$>$ selector)
+\begin{DoxyCompactList}\small\item\em If you have an async function you can call await My\+Method\+Async().Select\+Many(/$\ast$...$\ast$/) instead of (await My\+Method\+Async()).Select\+Many(/$\ast$...$\ast$/). \end{DoxyCompactList}\item 
+static async Task$<$ T\+Out $>$ \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_afb5b7bd706ed2cfa2aae284a203b4079}{Select\+Many$<$ T\+Out $>$}} (this Task task, Func$<$ Task$<$ T\+Out $>$$>$ selector)
+\begin{DoxyCompactList}\small\item\em If you have an async function you can call await My\+Method\+Async().Select\+Many(/$\ast$...$\ast$/) instead of (await My\+Method\+Async()).Select\+Many(/$\ast$...$\ast$/). \end{DoxyCompactList}\item 
+static async Task$<$ List$<$ T\+Out $>$ $>$ \mbox{\hyperlink{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_a384de24645330c673a196b2c3f306eda}{To\+List$<$ T\+Out $>$}} (this Task$<$ I\+Enumerable$<$ T\+Out $>$$>$ task)
+\begin{DoxyCompactList}\small\item\em If you have an async function you can call await My\+Method\+Async().To\+List() instead of (await My\+Method\+Async()).To\+List(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Bunch of extensions for Tasks to make L\+I\+N\+Q-\/based syntax a bit prettier. E.\+g instead of (await foo()).Select(\+Do\+Stuff) you can write await foo().Select(\+Do\+Stuff). 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_aa54a73a3d1e07c22d92aa09f6f76b812}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_aa54a73a3d1e07c22d92aa09f6f76b812}} 
+\index{FluentTaskExtensions@{FluentTaskExtensions}!First$<$ TOut $>$@{First$<$ TOut $>$}}
+\index{First$<$ TOut $>$@{First$<$ TOut $>$}!FluentTaskExtensions@{FluentTaskExtensions}}
+\doxysubsubsection{\texorpdfstring{First$<$ TOut $>$()}{First< TOut >()}}
+{\footnotesize\ttfamily static async Task$<$T\+Out$>$ First$<$ T\+Out $>$ (\begin{DoxyParamCaption}\item[{this Task$<$ I\+Enumerable$<$ T\+Out $>$$>$}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+If you have an async function you can call await My\+Method\+Async().First() instead of (await My\+Method\+Async()).First(). 
+
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_a280e2eca71715bb579de5e989792a382}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_a280e2eca71715bb579de5e989792a382}} 
+\index{FluentTaskExtensions@{FluentTaskExtensions}!Select$<$ TIn, TOut $>$@{Select$<$ TIn, TOut $>$}}
+\index{Select$<$ TIn, TOut $>$@{Select$<$ TIn, TOut $>$}!FluentTaskExtensions@{FluentTaskExtensions}}
+\doxysubsubsection{\texorpdfstring{Select$<$ TIn, TOut $>$()}{Select< TIn, TOut >()}}
+{\footnotesize\ttfamily static async Task$<$T\+Out$>$ Select$<$ T\+In, T\+Out $>$ (\begin{DoxyParamCaption}\item[{this Task$<$ T\+In $>$}]{task,  }\item[{Func$<$ T\+In, T\+Out $>$}]{selector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+If you have an async function you can call await My\+Method\+Async().Select(/$\ast$...$\ast$/) instead of (await My\+Method\+Async()).Select(/$\ast$...$\ast$/). 
+
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_a1709c8087f640eea7c79442826bcd782}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_a1709c8087f640eea7c79442826bcd782}} 
+\index{FluentTaskExtensions@{FluentTaskExtensions}!SelectMany$<$ TIn, TOut $>$@{SelectMany$<$ TIn, TOut $>$}}
+\index{SelectMany$<$ TIn, TOut $>$@{SelectMany$<$ TIn, TOut $>$}!FluentTaskExtensions@{FluentTaskExtensions}}
+\doxysubsubsection{\texorpdfstring{SelectMany$<$ TIn, TOut $>$()}{SelectMany< TIn, TOut >()}}
+{\footnotesize\ttfamily static async Task$<$T\+Out$>$ Select\+Many$<$ T\+In, T\+Out $>$ (\begin{DoxyParamCaption}\item[{this Task$<$ T\+In $>$}]{task,  }\item[{Func$<$ T\+In, Task$<$ T\+Out $>$$>$}]{selector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+If you have an async function you can call await My\+Method\+Async().Select\+Many(/$\ast$...$\ast$/) instead of (await My\+Method\+Async()).Select\+Many(/$\ast$...$\ast$/). 
+
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_afb5b7bd706ed2cfa2aae284a203b4079}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_afb5b7bd706ed2cfa2aae284a203b4079}} 
+\index{FluentTaskExtensions@{FluentTaskExtensions}!SelectMany$<$ TOut $>$@{SelectMany$<$ TOut $>$}}
+\index{SelectMany$<$ TOut $>$@{SelectMany$<$ TOut $>$}!FluentTaskExtensions@{FluentTaskExtensions}}
+\doxysubsubsection{\texorpdfstring{SelectMany$<$ TOut $>$()}{SelectMany< TOut >()}}
+{\footnotesize\ttfamily static async Task$<$T\+Out$>$ Select\+Many$<$ T\+Out $>$ (\begin{DoxyParamCaption}\item[{this Task}]{task,  }\item[{Func$<$ Task$<$ T\+Out $>$$>$}]{selector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+If you have an async function you can call await My\+Method\+Async().Select\+Many(/$\ast$...$\ast$/) instead of (await My\+Method\+Async()).Select\+Many(/$\ast$...$\ast$/). 
+
+\mbox{\Hypertarget{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_a384de24645330c673a196b2c3f306eda}\label{classSCM_1_1SwissArmyKnife_1_1Extensions_1_1FluentTaskExtensions_a384de24645330c673a196b2c3f306eda}} 
+\index{FluentTaskExtensions@{FluentTaskExtensions}!ToList$<$ TOut $>$@{ToList$<$ TOut $>$}}
+\index{ToList$<$ TOut $>$@{ToList$<$ TOut $>$}!FluentTaskExtensions@{FluentTaskExtensions}}
+\doxysubsubsection{\texorpdfstring{ToList$<$ TOut $>$()}{ToList< TOut >()}}
+{\footnotesize\ttfamily static async Task$<$List$<$T\+Out$>$ $>$ To\+List$<$ T\+Out $>$ (\begin{DoxyParamCaption}\item[{this Task$<$ I\+Enumerable$<$ T\+Out $>$$>$}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+If you have an async function you can call await My\+Method\+Async().To\+List() instead of (await My\+Method\+Async()).To\+List(). 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Swiss\+Army\+Knife/\+Extensions/\mbox{\hyperlink{FluentTaskExtensions_8cs}{Fluent\+Task\+Extensions.\+cs}}\end{DoxyCompactItemize}
