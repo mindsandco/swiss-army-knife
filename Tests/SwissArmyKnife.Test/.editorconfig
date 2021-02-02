@@ -12,3 +12,7 @@ dotnet_diagnostic.CA2201.severity = none
 
 # This flags all FluentAssertions as issues
 dotnet_diagnostic.IDE0058.severity = none
+
+
+# Method visibility dont matter
+dotnet_diagnostic.SA1401.severity = none

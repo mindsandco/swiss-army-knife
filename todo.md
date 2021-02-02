@@ -10,5 +10,4 @@
 
 
 ## Tests missing
-- Test HttpResponseMessageExtensions
 - Test FluentTaskExtensions

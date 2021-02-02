@@ -8,7 +8,7 @@ using Xunit;
 namespace SCM.SwissArmyKnife.Test.Extensions
 {
 
-    public class EnumerableExtensions
+    public class EnumerableProducingExtensionsTests
     {
         [Fact]
         public void Yield_ShouldProduceSameObject_AsEnumerable()
