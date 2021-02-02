@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 
 
@@ -18,6 +19,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// (minValue inclusive, maxValue exclusive)
         /// Based on <a href="https://stackoverflow.com/questions/1064901/random-number-between-2-double-numbers">this</a>.
         /// </summary>
+        [Pure]
         public static double NextDouble(this Random @this, double minValue, double maxValue)
         {
             return (@this.NextDouble() * (maxValue - minValue)) + minValue;
@@ -26,6 +28,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// <summary>
         /// Returns a random boolean. There's a 50/50 chance of each.
         /// </summary>
+        [Pure]
         public static bool NextBoolean(this Random @this)
         {
             return @this.Next(2) == 0;
@@ -35,6 +38,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// Returns a random byte. Can be from the range [0..byte.maxValue]
         /// (both inclusive).
         /// </summary>
+        [Pure]
         public static byte NextByte(this Random @this)
         {
             return (byte)@this.Next(byte.MaxValue + 1);
@@ -44,6 +48,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// Selects one specific item from an Enumerable.
         /// There's an equal chance it will select each item.
         /// </summary>
+        [Pure]
         public static T Choice<T>(this Random @this, IEnumerable<T> enumerable)
         {
             var list = enumerable.ToList();

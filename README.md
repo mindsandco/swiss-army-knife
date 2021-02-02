@@ -10,6 +10,7 @@ Project Description
 
 
 This library is opinionated and expects you to have both Nodatime and JSON.NET installed.
+Methods are marked as [pure] if they are Pure
 
 # TODO
 - Write readme
@@ -23,12 +24,6 @@ This library is opinionated and expects you to have both Nodatime and JSON.NET i
 
 ## Contribution
 - Write introduction and running guide
-  
-
-## Code
-- Add [Pure] annotations where necessary
-- Add null checks where necessary. !! with c# 9 ?
-
 
 ## Other
 - Publish to nuget on new releases

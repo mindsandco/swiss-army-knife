@@ -25,7 +25,6 @@ namespace SCM.SwissArmyKnife.Extensions
         /// myDictionary.GetOrThrow("nonExistingKey", () => new ArgumentException("tried to get invalid key"));
         /// </code>
         /// </example>
-        [Pure]
         public static TValue GetOrThrow<TKey, TValue>(
             this IReadOnlyDictionary<TKey, TValue> dictionary,
             TKey key,
