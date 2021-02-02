@@ -13,7 +13,7 @@ myDictionary.GetOrThrow("myKey", () => new ArgumentException("tried to get inval
 myDictionary.GetOrThrow("nonExistingKey", () => new ArgumentException("tried to get invalid key"));
 
 // Will return "myFallbackValue"
-myDictionary.GetOrThrow("nonExistingKey", () => "myFallbackValue");
+myDictionary.GetOr("nonExistingKey", () => "myFallbackValue");
 ```
 
 \ref SCM.SwissArmyKnife.Extensions.DictionaryExtensions "View More Documentation"
