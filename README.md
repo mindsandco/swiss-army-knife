@@ -66,11 +66,11 @@ var await response = client.GetAsJsonAsync<MyResponseModel>(url)
 
 ```
 
-[And many more!](https://scadaminds.github.io/swiss-army-knife/html/md_Documentation_Extensions.html)
+[And many more!](https://scadaminds.github.io/swiss-army-knife/md_Documentation_Extensions.html)
 
 ## Documentation
 We automatically build the documentation based on some written docs and the source code.
-You can find the main page of the generated documentation [here](https://scadaminds.github.io/swiss-army-knife/html/index.html)
+You can find the main page of the generated documentation [here](https://scadaminds.github.io/swiss-army-knife/index.html)
 
 
 # Contributing
