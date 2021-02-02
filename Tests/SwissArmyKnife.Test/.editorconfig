@@ -13,6 +13,11 @@ dotnet_diagnostic.CA2201.severity = none
 # This flags all FluentAssertions as issues
 dotnet_diagnostic.IDE0058.severity = none
 
+# Fields can be mutable
+dotnet_diagnostic.CA2211.severity = none
+
+# Stuff can end in Enum or Class
+dotnet_diagnostic.CA1711.severity = none
 
 # Method visibility dont matter
 dotnet_diagnostic.SA1401.severity = none
