@@ -60,6 +60,7 @@ jobs:
   build-documentation:
     name: 'Push and deploy documentation'
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v2
