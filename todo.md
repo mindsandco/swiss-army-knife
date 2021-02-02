@@ -4,13 +4,8 @@
 - Change Name? SwissArmyKnife is obviously taken
 
 ## Docs
-- Write readme documentation
-- Write Doxygen main page
 - Write FluentTaskExtensions documentation
-
-
-## Contribution
-- Write introduction and running guide
+- link to doc pages in readme
 
 ## Other
 - Publish to nuget on new releases

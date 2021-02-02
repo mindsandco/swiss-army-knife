@@ -22,7 +22,6 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Swiss Army Knife
-   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">General utility tools for Scada Minds</div>
   </td>
@@ -79,7 +78,7 @@ DictionaryExtensions</h1>
 <div class="line">myDictionary.GetOrThrow(<span class="stringliteral">&quot;nonExistingKey&quot;</span>, () =&gt; <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;tried to get invalid key&quot;</span>));</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Will return &quot;myFallbackValue&quot;</span></div>
-<div class="line">myDictionary.GetOrThrow(<span class="stringliteral">&quot;nonExistingKey&quot;</span>, () =&gt; <span class="stringliteral">&quot;myFallbackValue&quot;</span>);</div>
+<div class="line">myDictionary.GetOr(<span class="stringliteral">&quot;nonExistingKey&quot;</span>, () =&gt; <span class="stringliteral">&quot;myFallbackValue&quot;</span>);</div>
 </div><!-- fragment --><p><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html">View More Documentation</a></p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 EnumerableProducingExtensions</h1>

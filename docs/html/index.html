@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Swiss Army Knife: Main Page</title>
+<title>Swiss Army Knife: SwissArmyKnife</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,6 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Swiss Army Knife
-   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">General utility tools for Scada Minds</div>
   </td>
@@ -62,11 +61,88 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Swiss Army Knife Documentation</div>  </div>
+<div class="title">SwissArmyKnife </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a><img src="scm_banner.png" alt="" class="inline" title="Banner"/>   </p>
+<p><a href="https://github.com/SCADAMINDS/swiss-army-knife/actions"><img src="https://github.com/SCADAMINDS/swiss-army-knife/workflows/Build/badge.svg?branch=main" alt="GitHub Actions Status" style="pointer-events: none;" class="inline"/></a></p>
+<p><a href="https://github.com/SCADAMINDS/swiss-army-knife/actions"><img src="https://buildstats.info/github/chart/SCADAMINDS/swiss-army-knife?branch=main&amp;includeBuildsFromPullRequest=false" alt="GitHub Actions Build History" class="inline"/></a></p>
+<p>This is a project full of utility methods that can be used across multiple projects. <br  />
+ The code is:</p><ul>
+<li>Thoroughly documented</li>
+<li>Thoroughly tested</li>
+<li>Methods that are side-effect free are marked as <code>[Pure]</code></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Installation</h1>
+<p>This library can be installed from Nuget or Github Packages.</p>
+<h3><a class="anchor" id="autotoc_md14"></a>
+Nuget</h3>
+<p>You can install it from nuget by running <code>dotnet add package SwissArmyKnife</code></p>
+<h3><a class="anchor" id="autotoc_md15"></a>
+Github</h3>
+<p>If you are developing the library or want the latest packages built from the <code>main</code> branch, you can get them from Github packages.</p><ol type="1">
+<li>Add a <code>nuget.config</code> file to the root of your project. <div class="fragment"><div class="line">&lt;?<span class="keyword">xml</span> <span class="keyword">version</span>=<span class="stringliteral">&quot;1.0&quot;</span> <span class="keyword">encoding</span>=<span class="stringliteral">&quot;utf-8&quot;</span>?&gt;</div>
+<div class="line">&lt;<span class="keywordtype">configuration</span>&gt;</div>
+<div class="line">    &lt;<span class="keywordtype">packageSources</span>&gt;</div>
+<div class="line">        &lt;<span class="keywordtype">clear</span> /&gt;</div>
+<div class="line">        &lt;<span class="keywordtype">add</span> <span class="keyword">key</span>=<span class="stringliteral">&quot;github&quot;</span> <span class="keyword">value</span>=<span class="stringliteral">&quot;https://nuget.pkg.github.com/SCADAMINDS/index.json&quot;</span> /&gt;</div>
+<div class="line">    &lt;/<span class="keywordtype">packageSources</span>&gt;</div>
+<div class="line">    &lt;<span class="keywordtype">packageSourceCredentials</span>&gt;</div>
+<div class="line">        &lt;<span class="keywordtype">github</span>&gt;</div>
+<div class="line">            &lt;<span class="keywordtype">add</span> <span class="keyword">key</span>=<span class="stringliteral">&quot;Username&quot;</span> <span class="keyword">value</span>=<span class="stringliteral">&quot;USERNAME&quot;</span> /&gt;</div>
+<div class="line">            &lt;<span class="keywordtype">add</span> <span class="keyword">key</span>=<span class="stringliteral">&quot;ClearTextPassword&quot;</span> <span class="keyword">value</span>=<span class="stringliteral">&quot;TOKEN&quot;</span> /&gt;</div>
+<div class="line">        &lt;/<span class="keywordtype">github</span>&gt;</div>
+<div class="line">    &lt;/<span class="keywordtype">packageSourceCredentials</span>&gt;</div>
+<div class="line">&lt;/<span class="keywordtype">configuration</span>&gt;</div>
+</div><!-- fragment --></li>
+<li>Replace USERNAME with your Github username and TOKEN with a personal access token.</li>
+<li>Add the package: <code>dotnet add package SwissArmyKnife --version {VERSION} --prerelease</code></li>
+</ol>
+<h2><a class="anchor" id="autotoc_md16"></a>
+SwissArmyKnife.Extensions</h2>
+<p>A bunch of handy extension methods that you'll probably like to use! Examples: </p><div class="fragment"><div class="line">// ------------- Dictionary.GetOr</div>
+<div class="line">myDictionary.GetOr(&quot;nonExistingKey&quot;, () =&gt; &quot;myFallbackValue&quot;);</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">// ------------- object.Yield</div>
+<div class="line">// Produce an Enumerable out of an item</div>
+<div class="line">int myItem = 3;</div>
+<div class="line"> </div>
+<div class="line">// Type: IEnumerable&lt;int&gt;</div>
+<div class="line">var myEnumerable = myItem.Yield();</div>
+<div class="line"> </div>
+<div class="line">// ------------- HttpClient.GetAsJsonAsync()</div>
+<div class="line">var client = new HttpClient();</div>
+<div class="line"> </div>
+<div class="line">var url = &quot;http://www.some-url-that-produces-json.com&quot;</div>
+<div class="line"> </div>
+<div class="line">// Gets URL and serializes model to MyResponseModel. On error prints http response</div>
+<div class="line">var await response = client.GetAsJsonAsync&lt;MyResponseModel&gt;(url)</div>
+</div><!-- fragment --><p><a href="https://scadaminds.github.io/swiss-army-knife/html/md_Documentation_Extensions.html">And many more!</a></p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Documentation</h2>
+<p>We automatically build the documentation based on some written docs and the source code. You can find the main page of the generated documentation <a href="https://scadaminds.github.io/swiss-army-knife/html/index.html">here</a></p>
+<h1><a class="anchor" id="autotoc_md18"></a>
+Contributing</h1>
+<p>You can pull or fork this project. It runs on dotnet core, so you should be able to run <code>dotnet test</code> You cannot commit to <code>main</code> - but feel free to make a Pull Request. Remember to add tests for your changes.</p>
+<p>The CI pipelines use <code>cake</code> to run builds and tests, so if you only see errors in CI and not locally, try running the same commands. First you will need to install the tool by running <code>dotnet tool restore</code></p>
+<p>Afterwards you can run build or tests via commands such as: </p><div class="fragment"><div class="line">dotnet cake --target=Build</div>
+<div class="line">dotnet cake --target=Test</div>
+</div><!-- fragment --><p>The project is built with <code>dotnet-boxed</code>, so if you have any questions to the structure, check out <a href="https://rehansaeed.com/the-fastest-nuget-package-ever-published-probably/">this article</a></p>
+<h3><a class="anchor" id="autotoc_md19"></a>
+Before submitting a PR</h3>
+<ul>
+<li>Please run <code>dotnet format</code> before submitting your pull requests.</li>
+<li>We use Doxygen to build the documentation until DocFx supports .NET core Please install it and run <code>doxygen doxygen-config.toml</code> to generate up-to-date documentation if needed.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md20"></a>
+Release Process</h1>
+<p>Nuget releases happen automatically when a new Github release is made. The <code>release-drafter</code> github action should automatically generate release notes if PR's have been labelled correctly.</p>
+<p>Each merge into the <code>main</code> branch triggers a release of a Github Packages package. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
