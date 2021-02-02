@@ -273,10 +273,6 @@ dotnet_naming_style.prefix_interface_with_i_style.required_prefix = I
 # prefix_type_parameters_with_t_style - Generic Type Parameters must be PascalCase and the first character must be a 'T'
 dotnet_naming_style.prefix_type_parameters_with_t_style.capitalization = pascal_case
 dotnet_naming_style.prefix_type_parameters_with_t_style.required_prefix = T
-# disallowed_style - Anything that has this style applied is marked as disallowed
-dotnet_naming_style.disallowed_style.capitalization  = pascal_case
-dotnet_naming_style.disallowed_style.required_prefix = ____RULE_VIOLATION____
-dotnet_naming_style.disallowed_style.required_suffix = ____RULE_VIOLATION____
 # internal_error_style - This style should never occur... if it does, it indicates a bug in file or in the parser using the file
 dotnet_naming_style.internal_error_style.capitalization  = pascal_case
 dotnet_naming_style.internal_error_style.required_prefix = ____INTERNAL_ERROR____
@@ -443,6 +439,9 @@ dotnet_diagnostic.SA1413.severity = none
 # I disagree with forcing expression bodies for one-line methods
 dotnet_diagnostic.IDE0022.severity = none
 
+# Files can contain multiple types
+dotnet_diagnostic.SA1402.severity = none
+
 # Formatting issue in regards to blank lines - if there's no dotnet format for it we don't care
 dotnet_diagnostic.SA1507.severity = none
 dotnet_diagnostic.SA1513.severity = none
@@ -454,6 +453,7 @@ dotnet_diagnostic.SA1013.severity = none
 dotnet_diagnostic.SA1009.severity = none
 dotnet_diagnostic.SA1505.severity = none
 dotnet_diagnostic.SA1508.severity = none
+dotnet_diagnostic.SA1516.severity = none
 
 # Using directives
 dotnet_diagnostic.SA1012.severity = none
@@ -482,5 +482,3 @@ dotnet_diagnostic.SA1611.severity = suggestion
 dotnet_diagnostic.SA1615.severity = suggestion
 # Or type parameter
 dotnet_diagnostic.SA1618.severity = suggestion
-
-

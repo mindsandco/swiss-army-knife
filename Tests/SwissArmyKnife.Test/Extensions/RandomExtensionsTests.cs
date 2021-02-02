@@ -5,9 +5,8 @@ using FluentAssertions;
 using SCM.SwissArmyKnife.Extensions;
 using Xunit;
 
-namespace ScadaMinds.SwissArmyKnife.Tests
+namespace SCM.SwissArmyKnife.Test.Extensions
 {
-
     public class RandomExtensionsTests
     {
         private readonly Random _random = new Random();
@@ -52,10 +51,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
         [Fact]
         public void Choice_ReturnsARandomItem_FromEnumerable()
         {
-            var list = new List<int>
-            {
-                1, 2, 3
-            };
+            var list = new List<int> { 1, 2, 3 };
 
             for (int i = 0; i < 100; i++)
             {

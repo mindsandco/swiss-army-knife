@@ -1,10 +1,9 @@
-using System;
 using System.IO;
 using FluentAssertions;
 using SCM.SwissArmyKnife.Extensions;
 using Xunit;
 
-namespace ScadaMinds.SwissArmyKnife.Tests
+namespace SCM.SwissArmyKnife.Test.Extensions
 {
 
     public class MemoryStreamExtensionsTests
