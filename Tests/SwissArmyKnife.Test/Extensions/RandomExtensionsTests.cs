@@ -29,7 +29,6 @@ namespace SCM.SwissArmyKnife.Test.Extensions
             // Run it a couple of times just to make sure it works always
             for (int i = 0; i < 100; i++)
             {
-                // ReSharper disable once ArrangeThisQualifier
                 var randomDouble = _random.NextByte();
                 randomDouble.Should().BeGreaterOrEqualTo(byte.MinValue);
                 randomDouble.Should().BeLessOrEqualTo(byte.MaxValue);
