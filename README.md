@@ -70,7 +70,8 @@ var await response = client.GetAsJsonAsync<MyResponseModel>(url)
 
 ## Documentation
 We automatically build the documentation based on some written docs and the source code.
-You can find the main page of the generated documentation [here](https://scadaminds.github.io/swiss-army-knife/index.html)
+You can find the main page of the generated documentation [here.](https://scadaminds.github.io/swiss-army-knife/index.html)
+It is automatically published from the `main` branch, so it might be slightly ahead of the current Nuget release.
 
 
 # Contributing
@@ -92,8 +93,6 @@ The project is built with `dotnet-boxed`, so if you have any questions to the st
 
 ### Before submitting a PR
 - Please run `dotnet format` before submitting your pull requests.
-- We use Doxygen to build the documentation until DocFx supports .NET core
-  Please install it and run `doxygen doxygen-config.toml` to generate up-to-date documentation if needed.
 
 
 
