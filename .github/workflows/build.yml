@@ -57,6 +57,22 @@ jobs:
         name: ${{matrix.os}}
         path: './Artefacts'
 
+  build-documentation:
+    name: 'Push and deploy documentation'
+    needs: build
+    runs-on: windows-latest
+    steps:
+      - name: 'Build doxygen'
+        uses: mattnotmitt/doxygen-action@v1
+        with:
+          working-directory: '.'
+          doxyfile-path: 'doxygen-config.toml'
+      - name: 'Push to gh-pages branch'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./generated-docs/html/
+
   push-github-packages:
     name: 'Push GitHub Packages'
     needs: build

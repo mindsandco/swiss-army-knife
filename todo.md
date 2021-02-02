@@ -17,3 +17,6 @@
 - Test HttpResponseMessageExtensions
 - Test ObjectExtensions
 - Test FluentTaskExtensions
+
+
+delete generated-docs
