@@ -20,7 +20,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             stream.Position = 1;
 
             // Act
-            var asMemoryStream = await stream.AsMemoryStream();
+            var asMemoryStream = await stream.AsMemoryStreamAsync();
 
             // Assert - the new stream only contains the leftovers of the old stream
             asMemoryStream.Position.Should().Be(0);
@@ -36,7 +36,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             stream.Position = 1;
 
             // Act
-            var returnedByteArray = await stream.ToByteArray();
+            var returnedByteArray = await stream.ToByteArrayAsync();
 
             // Assert - the byte array contains the leftovers of the old stream
             returnedByteArray.Should().BeEquivalentTo(new byte[] { 2, 3 });

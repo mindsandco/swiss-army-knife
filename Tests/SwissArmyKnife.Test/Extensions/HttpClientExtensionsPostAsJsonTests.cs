@@ -35,7 +35,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             var client = new HttpClient(handlerMock.Object);
 
             // Act
-            var dictionaryFromClient = await client.PostAsJson<Dictionary<string, string>>("http://doesntmatter.com");
+            var dictionaryFromClient = await client.PostAsJsonAsync<Dictionary<string, string>>("http://doesntmatter.com");
 
             // Assert
             dictionaryFromClient.Should().BeEquivalentTo(originalDictionary);
@@ -56,7 +56,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             var client = new HttpClient(handlerMock.Object);
 
             // Act
-            Func<Task> action = async () => await client.PostAsJson<Dictionary<string, string>>("http://doesntmatter.com");
+            Func<Task> action = async () => await client.PostAsJsonAsync<Dictionary<string, string>>("http://doesntmatter.com");
 
             // Assert
             action.Should().Throw<HttpRequestException>().WithMessage($"*{errorResponse}*");
@@ -77,7 +77,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             var client = new HttpClient(handlerMock.Object);
 
             // Act
-            Func<Task> action = async () => await client.PostAsJson<Dictionary<string, string>>("http://doesntmatter.com");
+            Func<Task> action = async () => await client.PostAsJsonAsync<Dictionary<string, string>>("http://doesntmatter.com");
 
             // Assert
             action.Should().Throw<JsonException>().WithMessage($"*{serverResponse}*");
@@ -98,7 +98,7 @@ namespace ScadaMinds.SwissArmyKnife.Tests
             var client = new HttpClient(handlerMock.Object);
 
             // Act
-            Func<Task> action = async () => await client.PostAsJson<Dictionary<string, string>>("http://doesntmatter.com", null, 5);
+            Func<Task> action = async () => await client.PostAsJsonAsync<Dictionary<string, string>>("http://doesntmatter.com", null, 5);
 
             // Assert
             // Error body only contains 12345 and then a quote '

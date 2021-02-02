@@ -6,7 +6,7 @@ using Xunit;
 namespace ScadaMinds.SwissArmyKnife.Tests
 {
 
-    public class StringExtensions
+    public class StringExtensionsTests
     {
         [Fact]
         public void Repeat_ShouldRepeatString_ASpecifiedAmountOfTimes()

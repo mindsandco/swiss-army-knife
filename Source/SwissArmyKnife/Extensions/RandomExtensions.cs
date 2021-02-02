@@ -1,12 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
 
     /// <summary>
     /// Extensions to make working with the CLR Random class a little less painful. Includes methods to get
-    /// a bunch of different types
+    /// a bunch of different types.
     /// </summary>
     public static class RandomExtensions
     {
@@ -14,11 +16,11 @@ namespace SCM.SwissArmyKnife.Extensions
         /// <summary>
         /// Returns a double within the range [minValue..maxValue)
         /// (minValue inclusive, maxValue exclusive)
-        /// From https://stackoverflow.com/questions/1064901/random-number-between-2-double-numbers
+        /// Based on <a href="https://stackoverflow.com/questions/1064901/random-number-between-2-double-numbers">this</a>.
         /// </summary>
         public static double NextDouble(this Random @this, double minValue, double maxValue)
         {
-            return @this.NextDouble() * (maxValue - minValue) + minValue;
+            return (@this.NextDouble() * (maxValue - minValue)) + minValue;
         }
 
         /// <summary>
@@ -31,10 +33,8 @@ namespace SCM.SwissArmyKnife.Extensions
 
         /// <summary>
         /// Returns a random byte. Can be from the range [0..byte.maxValue]
-        /// (both inclusive)
+        /// (both inclusive).
         /// </summary>
-        /// <param name="this"></param>
-        /// <returns></returns>
         public static byte NextByte(this Random @this)
         {
             return (byte)@this.Next(byte.MaxValue + 1);

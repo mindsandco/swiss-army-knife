@@ -1,9 +1,10 @@
+using System.IO;
+
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System.IO;
-
     /// <summary>
-    /// Methods for working with more efficiently with MemoryStreams
+    /// Methods for working with more efficiently with MemoryStreams.
     /// </summary>
     public static class MemoryStreamExtensions
     {
@@ -12,15 +13,15 @@ namespace SCM.SwissArmyKnife.Extensions
         /// It will leave the MemoryStream at the position where it was previously.
         /// The new stream will start at position 0.
         /// </summary>
-        /// <returns></returns>
-        public static MemoryStream CloneEntireStream(this MemoryStream streamToClone)
+        /// <returns>A copy of the entire <paramref name="sourceStream"/>.</returns>
+        public static MemoryStream CloneEntireStream(this MemoryStream sourceStream)
         {
             var newStream = new MemoryStream();
-            var originalPosition = streamToClone.Position;
+            var originalPosition = sourceStream.Position;
 
-            streamToClone.Position = 0;
-            streamToClone.CopyTo(newStream);
-            streamToClone.Position = originalPosition;
+            sourceStream.Position = 0;
+            sourceStream.CopyTo(newStream);
+            sourceStream.Position = originalPosition;
 
             newStream.Position = 0;
             return newStream;

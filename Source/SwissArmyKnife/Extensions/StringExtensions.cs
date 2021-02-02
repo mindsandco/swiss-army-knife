@@ -1,17 +1,17 @@
+using System;
+using System.Text;
+
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System;
-    using System.Text;
-
     /// <summary>
     /// Collection of string-related extension methods.
     /// </summary>
     public static class StringExtensions
     {
-        /**
-         * Repeat string n times
-         * From https://dzone.com/articles/string-repeat-method-for-c
-         */
+        /// <summary>
+        /// Repeat a string n times. Based on <a href="https://dzone.com/articles/string-repeat-method-for-c">this</a>.
+        /// </summary>
         public static string Repeat(this string @this, int timesToRepeat)
         {
             if (timesToRepeat <= 0)
@@ -24,9 +24,8 @@ namespace SCM.SwissArmyKnife.Extensions
                 .ToString();
         }
 
-        // Truncates a string to a given max length.
         /// <summary>
-        /// Truncate a string to a maximum of maxLength characters.
+        /// Truncate a string to a maximum of <paramref name="maxLength"/> characters.
         /// If the string is truncated, "..." is appended to it afterwards.
         /// </summary>
         public static string Truncate(this string @this, int maxLength)

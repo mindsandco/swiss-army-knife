@@ -1,9 +1,9 @@
+using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Threading.Tasks;
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System.Collections.Generic;
-    using System.Diagnostics.Contracts;
-    using System.Threading.Tasks;
-
     /// <summary>
     /// Various extensions to succinctly produce IEnumerables out of single items.
     /// </summary>

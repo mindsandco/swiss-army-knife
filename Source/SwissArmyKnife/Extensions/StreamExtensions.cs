@@ -1,8 +1,10 @@
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
+
+
 namespace SCM.SwissArmyKnife.Extensions
 {
-    using System.IO;
-    using System.Text;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// Extensions for performing stream-related tasks.
@@ -11,14 +13,14 @@ namespace SCM.SwissArmyKnife.Extensions
     {
         /// <summary>
         /// Copies the stream over to a new memoryStream.
-        /// The MemoryStream will be at position 0.
+        /// The new MemoryStream will be at position 0.
         /// </summary>
-        /// <param name="stream"></param>
-        /// <returns></returns>
-        public static async Task<MemoryStream> AsMemoryStream(this Stream stream)
+        /// <param name="sourceStream">A MemoryStream to copy over to a new stream. Will be exhausted afterwards.</param>
+        /// <returns>A new MemoryStream with the content from <paramref name="sourceStream"/> This stream will be at position 0. </returns>
+        public static async Task<MemoryStream> AsMemoryStreamAsync(this Stream sourceStream)
         {
             var memoryStream = new MemoryStream();
-            await stream.CopyToAsync(memoryStream).ConfigureAwait(false);
+            await sourceStream.CopyToAsync(memoryStream).ConfigureAwait(false);
             memoryStream.Position = 0;
             return memoryStream;
         }
@@ -27,25 +29,25 @@ namespace SCM.SwissArmyKnife.Extensions
         /// Fully reads a stream into a byte array.
         /// Starts at the current stream position.
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        public static async Task<byte[]> ToByteArray(this Stream input)
+        /// <param name="sourceStream">A MemoryStream to copy over to a byte array. Will be exhausted afterwards.</param>
+        /// <returns>A byte array with the content from <paramref name="sourceStream"/>.</returns>
+        public static async Task<byte[]> ToByteArrayAsync(this Stream sourceStream)
         {
             await using var newMemoryStream = new MemoryStream();
-            await input.CopyToAsync(newMemoryStream).ConfigureAwait(false);
+            await sourceStream.CopyToAsync(newMemoryStream).ConfigureAwait(false);
             return newMemoryStream.ToArray();
         }
 
 
         /// <summary>
-        /// Debug method to take a stream and return it as a string.
+        /// Take a stream and return the content as a string.
         /// Reads from current stream position, and does not reset the stream position afterwards.
-        /// Defaults to UTF-8 encoding
+        /// Defaults to UTF-8 encoding.
         /// </summary>
-        public static string ContentToString(this Stream input, Encoding? encoding = null)
+        public static string ContentToString(this Stream sourceStream, Encoding? encoding = null)
         {
             encoding ??= Encoding.UTF8;
-            var streamReader = new StreamReader(input, encoding);
+            var streamReader = new StreamReader(sourceStream, encoding);
             return streamReader.ReadToEnd();
         }
     }
