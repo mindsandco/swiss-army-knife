@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.Contracts;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -14,6 +15,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// Creates an object and turns it into a compact JSON string
         /// Converts Enums to their string values.
         /// </summary>
+        [Pure]
         public static string AsJson(this object objectToSerialize)
         {
             return JsonConvert.SerializeObject(
@@ -24,6 +26,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// Creates an object and turns it into an indented JSON string
         /// Converts Enums to their string values.
         /// </summary>
+        [Pure]
         public static string AsIndentedJson(this object objectToSerialize)
         {
             return JsonConvert.SerializeObject(

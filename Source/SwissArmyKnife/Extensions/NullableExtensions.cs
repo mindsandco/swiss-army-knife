@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.Contracts;
 
 namespace SCM.SwissArmyKnife.Extensions
 {
@@ -12,6 +13,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// Takes a nullable struct, and if it is not-null, applies the given transformation to it.
         /// If it is null, the transformation function is not applied.
         /// </summary>
+        [Pure]
         public static TRes? TransformIfExists<T, TRes>(this T? nullable, Func<T, TRes> transformation)
             where T : struct
             where TRes : struct
@@ -28,6 +30,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// Takes a nullable class, and if it is not-null, applies the given transformation to it.
         /// If it is null, the transformation function is not applied.
         /// </summary>
+        [Pure]
         public static TRes? TransformIfExists<T, TRes>(this T? nullable, Func<T, TRes> transformation)
             where T : class
             where TRes : class

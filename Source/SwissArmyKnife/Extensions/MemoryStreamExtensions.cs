@@ -1,3 +1,4 @@
+using System.Diagnostics.Contracts;
 using System.IO;
 
 
@@ -14,6 +15,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// The new stream will start at position 0.
         /// </summary>
         /// <returns>A copy of the entire <paramref name="sourceStream"/>.</returns>
+        [Pure]
         public static MemoryStream CloneEntireStream(this MemoryStream sourceStream)
         {
             var newStream = new MemoryStream();
