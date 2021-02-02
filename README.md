@@ -12,6 +12,8 @@ Project Description
 This library is opinionated and expects you to have both Nodatime and JSON.NET installed.
 
 # TODO
+- Write readme
+- Write better documentation and host it via Github pages
 
 ## Docs
 - Write readme documentation
@@ -28,7 +30,6 @@ This library is opinionated and expects you to have both Nodatime and JSON.NET i
 
 
 ## Other
-- Generate documentation
 - Publish to nuget on new releases
 
 
