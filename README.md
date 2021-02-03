@@ -9,7 +9,8 @@ This is a project full of utility methods that can be used across multiple proje
 The code is:
 - [Thoroughly documented](https://scadaminds.github.io/swiss-army-knife/)
 - Thoroughly tested
-- Completely null-annotated
+- Comprehensively ull-annotated
+- Includes SourceLink so you can step into the source to debug
 - Methods that are side-effect free are marked as `[Pure]`
 
 # Installation
