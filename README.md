@@ -9,10 +9,14 @@ This is a project full of utility methods that can be used across multiple proje
 The code is:
 - [Thoroughly documented](https://scadaminds.github.io/swiss-army-knife/)
 - Thoroughly tested
+- Completely null-annotated
 - Methods that are side-effect free are marked as `[Pure]`
 
 # Installation
 This library can be installed from Nuget or Github Packages.
+It targets [netstandard 2.1](https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.1.md),
+and will require a version of JSON.NET installed in the `11.x` range. 
+
 
 ### Nuget
 You can install it from nuget by running `dotnet add package SCM.SwissArmyKnife`
