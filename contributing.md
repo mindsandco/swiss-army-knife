@@ -28,3 +28,4 @@ Each merge into the `main` branch triggers a release of a Github Packages packag
 We automatically build the documentation based on some written docs and the source code.
 You can find the main page of the generated documentation [here.](https://scadaminds.github.io/swiss-army-knife/index.html)
 It is automatically published from the `main` branch, so it might be slightly ahead of the current Nuget release.
+
