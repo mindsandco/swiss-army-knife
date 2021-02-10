@@ -83,4 +83,5 @@ var await response = client.GetAsJsonAsync<MyResponseModel>(url)
 You can view the documentation for the `main` branch [here.](https://scadaminds.github.io/swiss-army-knife/index.html)
 
 # Contributing
-If you'd like to contribute view the contribution docs [here](./contribution.md)
+If you'd like to contribute view the contribution docs [here](./contributing.md)
+
