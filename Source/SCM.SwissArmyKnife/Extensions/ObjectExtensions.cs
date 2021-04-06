@@ -16,6 +16,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// Converts Enums to their string values.
         /// </summary>
         [Pure]
+        [Obsolete("Use ToJson instead")]
         public static string AsJson(this object objectToSerialize)
         {
             return JsonConvert.SerializeObject(
@@ -27,6 +28,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// Converts Enums to their string values.
         /// </summary>
         [Pure]
+        [Obsolete("Use ToIndentedJson instead")]
         public static string AsIndentedJson(this object objectToSerialize)
         {
             return JsonConvert.SerializeObject(
@@ -34,12 +36,34 @@ namespace SCM.SwissArmyKnife.Extensions
         }
 
         /// <summary>
-        /// Shortcut for Console.Writeline(object.AsJson())
+        /// Creates an object and turns it into an indented JSON string
+        /// Converts Enums to their string values.
+        /// </summary>
+        [Pure]
+        public static string ToIndentedJson(this object objectToSerialize)
+        {
+            return JsonConvert.SerializeObject(
+                objectToSerialize, Formatting.Indented, new StringEnumConverter());
+        }
+
+        /// <summary>
+        /// Creates an object and turns it into a compact JSON string
+        /// Converts Enums to their string values.
+        /// </summary>
+        [Pure]
+        public static string ToJson(this object objectToSerialize)
+        {
+            return JsonConvert.SerializeObject(
+                objectToSerialize, new StringEnumConverter());
+        }
+
+        /// <summary>
+        /// Shortcut for Console.Writeline(object.ToIndentedJson())
         /// Use only for debugging purposes.
         /// </summary>
         public static void PrintAsJson(this object objectToPrint)
         {
-            Console.WriteLine(objectToPrint.AsJson());
+            Console.WriteLine(objectToPrint.ToIndentedJson());
         }
     }
 }
