@@ -128,10 +128,10 @@ var myModel = new MyModel();
 
 // Returns a JSON-string representation of the object.
 // Enums are converted to string representations
-string jsonString = myModel.AsJson();
+string jsonString = myModel.ToJson();
 
 // Same as above except that the JSON is indented and not compact
-string indentedJsonString = myModel.AsIndentedJson();
+string indentedJsonString = myModel.ToIndentedJson();
 
 // For debugging purposes. Prints the entire object as JSON via `Console.Writeline` 
 myModel.PrintAsJson();
