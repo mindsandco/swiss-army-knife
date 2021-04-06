@@ -166,10 +166,10 @@ ObjectExtensions</h1>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Returns a JSON-string representation of the object.</span></div>
 <div class="line"><span class="comment">// Enums are converted to string representations</span></div>
-<div class="line"><span class="keywordtype">string</span> jsonString = myModel.AsJson();</div>
+<div class="line"><span class="keywordtype">string</span> jsonString = myModel.ToJson();</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Same as above except that the JSON is indented and not compact</span></div>
-<div class="line"><span class="keywordtype">string</span> indentedJsonString = myModel.AsIndentedJson();</div>
+<div class="line"><span class="keywordtype">string</span> indentedJsonString = myModel.ToIndentedJson();</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// For debugging purposes. Prints the entire object as JSON via `Console.Writeline` </span></div>
 <div class="line">myModel.PrintAsJson();</div>

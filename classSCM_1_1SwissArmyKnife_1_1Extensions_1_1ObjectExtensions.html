@@ -85,8 +85,14 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae3f7cb368c565666cf2dac81606d95bc"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#ae3f7cb368c565666cf2dac81606d95bc">AsIndentedJson</a> (this object objectToSerialize)</td></tr>
 <tr class="memdesc:ae3f7cb368c565666cf2dac81606d95bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an object and turns it into an indented JSON string Converts Enums to their string values.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#ae3f7cb368c565666cf2dac81606d95bc">More...</a><br /></td></tr>
 <tr class="separator:ae3f7cb368c565666cf2dac81606d95bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac51b73707e672858e72d1488feda7675"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#ac51b73707e672858e72d1488feda7675">ToIndentedJson</a> (this object objectToSerialize)</td></tr>
+<tr class="memdesc:ac51b73707e672858e72d1488feda7675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an object and turns it into an indented JSON string Converts Enums to their string values.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#ac51b73707e672858e72d1488feda7675">More...</a><br /></td></tr>
+<tr class="separator:ac51b73707e672858e72d1488feda7675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcc7f17ae0c961864bb6d6fd6aeb0901"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#adcc7f17ae0c961864bb6d6fd6aeb0901">ToJson</a> (this object objectToSerialize)</td></tr>
+<tr class="memdesc:adcc7f17ae0c961864bb6d6fd6aeb0901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an object and turns it into a compact JSON string Converts Enums to their string values.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#adcc7f17ae0c961864bb6d6fd6aeb0901">More...</a><br /></td></tr>
+<tr class="separator:adcc7f17ae0c961864bb6d6fd6aeb0901"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e939cc116f7b55111dea0c943d9adc8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#a5e939cc116f7b55111dea0c943d9adc8">PrintAsJson</a> (this object objectToPrint)</td></tr>
-<tr class="memdesc:a5e939cc116f7b55111dea0c943d9adc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut for Console.Writeline(object.AsJson()) Use only for debugging purposes.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#a5e939cc116f7b55111dea0c943d9adc8">More...</a><br /></td></tr>
+<tr class="memdesc:a5e939cc116f7b55111dea0c943d9adc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut for Console.Writeline(object.ToIndentedJson()) Use only for debugging purposes.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#a5e939cc116f7b55111dea0c943d9adc8">More...</a><br /></td></tr>
 <tr class="separator:a5e939cc116f7b55111dea0c943d9adc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -172,7 +178,63 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Shortcut for Console.Writeline(object.AsJson()) Use only for debugging purposes. </p>
+<p>Shortcut for Console.Writeline(object.ToIndentedJson()) Use only for debugging purposes. </p>
+
+</div>
+</div>
+<a id="ac51b73707e672858e72d1488feda7675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac51b73707e672858e72d1488feda7675">&#9670;&nbsp;</a></span>ToIndentedJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string ToIndentedJson </td>
+          <td>(</td>
+          <td class="paramtype">this object&#160;</td>
+          <td class="paramname"><em>objectToSerialize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an object and turns it into an indented JSON string Converts Enums to their string values. </p>
+
+</div>
+</div>
+<a id="adcc7f17ae0c961864bb6d6fd6aeb0901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcc7f17ae0c961864bb6d6fd6aeb0901">&#9670;&nbsp;</a></span>ToJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string ToJson </td>
+          <td>(</td>
+          <td class="paramtype">this object&#160;</td>
+          <td class="paramname"><em>objectToSerialize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an object and turns it into a compact JSON string Converts Enums to their string values. </p>
 
 </div>
 </div>
