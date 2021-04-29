@@ -9,5 +9,9 @@
     <ProjectReference Include="..\..\Source\SCM.SwissArmyKnife\SCM.SwissArmyKnife.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="test-data" />
+  </ItemGroup>
+
 
 </Project>

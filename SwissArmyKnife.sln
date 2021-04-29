@@ -28,6 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		README.md = README.md
 		Documentation\Extensions.md = Documentation\Extensions.md
 		contributing.md = contributing.md
+		Documentation\Compression.md = Documentation\Compression.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E1B24F25-B8A4-46EE-B7EB-7803DCFC543F}"
