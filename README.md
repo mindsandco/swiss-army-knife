@@ -79,6 +79,18 @@ var await response = client.GetAsJsonAsync<MyResponseModel>(url)
 
 [And many more!](https://scadaminds.github.io/swiss-army-knife/md_Documentation_Extensions.html)
 
+## SwissArmyKnife.Files
+Methods to operate on files:
+```cs
+// Get the current solution directory. It will start with the current working directory and traverse upwards until finding the solution directory.
+DirectoryInfo solutionDir = FileLocator.TryGetSolutionDirectoryInfo();
+
+// If you need to get a specific file based on a relative path from the solution directory you can do it like this.
+FileInfo programFile = FileLocator.GetFileStartingAtSolutionDirectory("SourceProject", "Program.cs");
+```
+
+[And more!](https://scadaminds.github.io/swiss-army-knife/md_Documentation_Files.html)
+
 ## Documentation
 You can view the documentation for the `main` branch [here.](https://scadaminds.github.io/swiss-army-knife/index.html)
 

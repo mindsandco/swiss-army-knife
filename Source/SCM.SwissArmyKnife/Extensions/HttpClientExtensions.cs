@@ -113,6 +113,10 @@ namespace SCM.SwissArmyKnife.Extensions
                 {
                     content = new StringContent(JsonConvert.SerializeObject(jsonBody), Encoding.UTF8, "application/json");
                 }
+                else
+                {
+                    content = new StringContent(string.Empty);
+                }
 
                 var response = await httpClient.PostAsync(url, content).ConfigureAwait(false);
                 body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
