@@ -38,7 +38,7 @@ namespace SCM.SwissArmyKnife.Files
             var startingPath = Directory.GetCurrentDirectory();
             var solutionDir = TryGetSolutionDirectoryInfo(startingPath);
 
-            var pathSegments = new List<string>(capacity: partsToJoin.Length + 1) {solutionDir.FullName};
+            var pathSegments = new List<string>(capacity: partsToJoin.Length + 1) { solutionDir.FullName };
             pathSegments.AddRange(partsToJoin);
 
             var joinedPath = Path.Join(pathSegments.ToArray());
