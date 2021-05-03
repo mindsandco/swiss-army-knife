@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -30,19 +29,22 @@ namespace SCM.SwissArmyKnife.Files
         /// Finds a file by starting to search from the nearest solution directory (looking from Directory.GetCurrentDirectory()).
         /// It will join the paths given and then return a FileInfo with the path.
         /// </summary>
-        /// <param name="partsToJoin">The separate path parts to be given to Path.Join().</param>
+        /// <param name="pathPartsToJoin">The separate path parts to be given to Path.Join().</param>
         /// <returns>A fileInfo if the file could be found.</returns>
         /// <exception cref="IOException">If the file was not found this will throw an IOException.</exception>
-        public static FileInfo GetFileStartingAtSolutionDirectory(params string[] partsToJoin)
+        public static FileInfo GetFileStartingAtSolutionDirectory(params string[] pathPartsToJoin)
         {
             var startingPath = Directory.GetCurrentDirectory();
             var solutionDir = TryGetSolutionDirectoryInfo(startingPath);
 
-            var pathSegments = new List<string>(capacity: partsToJoin.Length + 1) { solutionDir.FullName };
-            pathSegments.AddRange(partsToJoin);
+            // Construct path
+            var pathToFile = solutionDir.FullName;
+            foreach (var pathPart in pathPartsToJoin)
+            {
+                pathToFile = Path.Join(pathToFile, pathPart);
+            }
 
-            var joinedPath = Path.Join(pathSegments.ToArray());
-            var fileInfo = new FileInfo(joinedPath);
+            var fileInfo = new FileInfo(pathToFile);
 
             if (!fileInfo.Exists)
             {
