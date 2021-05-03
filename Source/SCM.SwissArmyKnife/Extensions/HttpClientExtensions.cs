@@ -115,7 +115,7 @@ namespace SCM.SwissArmyKnife.Extensions
                 }
                 else
                 {
-                    content = new StringContent(String.Empty);
+                    content = new StringContent(string.Empty);
                 }
 
                 var response = await httpClient.PostAsync(url, content).ConfigureAwait(false);
