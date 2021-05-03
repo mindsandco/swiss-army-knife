@@ -89,7 +89,7 @@ DirectoryInfo solutionDir = FileLocator.TryGetSolutionDirectoryInfo();
 FileInfo programFile = FileLocator.GetFileStartingAtSolutionDirectory("SourceProject", "Program.cs");
 ```
 
-[And many more!](https://scadaminds.github.io/swiss-army-knife/md_Documentation_Files.html)
+[And more!](https://scadaminds.github.io/swiss-army-knife/md_Documentation_Files.html)
 
 ## Documentation
 You can view the documentation for the `main` branch [here.](https://scadaminds.github.io/swiss-army-knife/index.html)
