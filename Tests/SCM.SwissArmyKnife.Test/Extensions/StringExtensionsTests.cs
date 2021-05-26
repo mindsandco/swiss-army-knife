@@ -47,5 +47,24 @@ namespace SCM.SwissArmyKnife.Test.Extensions
         {
             "123".Truncate(3).Should().Be("123");
         }
+
+        [Fact]
+        public void IsSet_ReturnsTrueIf_StringIsNotNullOrEmpty()
+        {
+            "123".IsSet().Should().BeTrue();
+        }
+
+        [Fact]
+        public void IsSet_ReturnsFalseIf_StringIsEmtpy()
+        {
+            string.Empty.IsSet().Should().BeFalse();
+        }
+
+        [Fact]
+        public void IsSet_ReturnsFalseIf_StringIsNull()
+        {
+            ((string)null!).IsSet().Should().BeFalse();
+        }
+
     }
 }
