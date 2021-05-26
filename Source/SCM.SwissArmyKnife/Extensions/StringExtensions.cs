@@ -45,5 +45,15 @@ namespace SCM.SwissArmyKnife.Extensions
 
             return @this.Substring(0, maxLength) + "...";
         }
+
+        /// <summary>
+        /// Checks if the string has been set, i.e it is not null or an empty string.
+        /// </summary>
+        /// <returns>Returns true if <paramref name="this"/> is not null or an empty string.</returns>
+        [Pure]
+        public static bool IsSet(this string @this)
+        {
+            return string.IsNullOrEmpty(@this) == false;
+        }
     }
 }
