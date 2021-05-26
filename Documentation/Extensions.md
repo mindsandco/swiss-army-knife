@@ -192,5 +192,8 @@ string.Truncate(maxLength: 10);
 
 // Returns "hel..."
 string.Truncate(maxLength: 3);
+
+// Returns true
+string.IsSet();
 ```
 \ref SCM.SwissArmyKnife.Extensions.StringExtensions "View More Documentation"
