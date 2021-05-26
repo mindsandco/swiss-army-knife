@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['randomextensions_40',['RandomExtensions',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions.html',1,'SCM::SwissArmyKnife::Extensions']]],
-  ['randomextensions_2ecs_41',['RandomExtensions.cs',['../RandomExtensions_8cs.html',1,'']]],
-  ['readme_2emd_42',['README.md',['../README_8md.html',1,'']]],
-  ['repeat_43',['Repeat',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StringExtensions.html#adb74c5a05fceeb13e6f14b0a487ab3b3',1,'SCM::SwissArmyKnife::Extensions::StringExtensions']]]
+  ['postasjsonasync_3c_20t_20_3e_38',['PostAsJsonAsync&lt; T &gt;',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#aebd3bfff58295054b8a6699a361c193d',1,'SCM::SwissArmyKnife::Extensions::HttpClientExtensions']]],
+  ['postasjsonasync_3c_20tresponse_20_3e_39',['PostAsJsonAsync&lt; TResponse &gt;',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a3d539fc36665b100d5e3a2f368b63582',1,'SCM::SwissArmyKnife::Extensions::HttpClientExtensions']]],
+  ['printasjson_40',['PrintAsJson',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#a5e939cc116f7b55111dea0c943d9adc8',1,'SCM::SwissArmyKnife::Extensions::ObjectExtensions']]]
 ];
