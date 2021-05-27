@@ -51,5 +51,56 @@ namespace SCM.SwissArmyKnife.Extensions
         {
             return dictionary.TryGetValue(key, out var value) ? value : valueProducer();
         }
+
+        /// <summary>
+        /// Converts the values in the given dictionary to the new type using the provided convert function. Throws when the value cannot be converted.
+        /// </summary>
+        /// <typeparam name="K">Key Type.</typeparam>
+        /// <typeparam name="O">Original Type.</typeparam>
+        /// <typeparam name="N">New Type.</typeparam>
+        /// <param name="dictionary">Source Dictionary.</param>
+        /// <param name="convertionFunction">Convert function.</param>
+        /// <exception cref="InvalidOperationException"> Throws when the provided convert function is not able to convert the value.</exception>
+        /// <example>
+        /// <code>
+        /// // Will return a new dictionary where value type is integer
+        /// var myDictionary = new Dictionary&lt;string, string&gt; {
+        ///     {"myKey", "2"}
+        /// }
+        /// myDictionary.ConvertValuesToNewType&lt;string, string, int>("myKey", oldValue => int.Parse(oldValue));
+        ///
+        /// // Will throw InvalidOperationException
+        /// var myDictionary = new Dictionary&lt;string, string&gt; {
+        ///     {"myKey", "bar"}
+        /// }
+        /// myDictionary.ConvertValuesToNewType&lt;string, string, int>("myKey", oldValue => int.Parse(oldValue));
+        /// </code>
+        /// </example>
+        /// <returns>Dictioanary&lt;K, N></returns>
+        public static Dictionary<K, N> ConvertValuesToNewType<K, O, N>(
+            this IReadOnlyDictionary<K, O> dictionary,
+            Func<O, N> convertionFunction)
+        {
+            var newDictionary = new Dictionary<K, N>();
+
+            if (dictionary.Count == 0)
+            {
+                return newDictionary;
+            }
+
+            foreach (var keyValuePair in dictionary)
+            {
+                try
+                {
+                    newDictionary.Add(keyValuePair.Key, convertionFunction(keyValuePair.Value));
+                }
+                catch (Exception ex)
+                {
+                    throw new InvalidOperationException("Tried converting the value but encountered an error", ex);
+                }
+            }
+
+            return newDictionary;
+        }
     }
 }

@@ -69,5 +69,58 @@ namespace SCM.SwissArmyKnife.Test.Extensions
             returnedValue.Should().Be("bar");
         }
 
+        [Fact]
+        public void ConvertValuesToNewType_IfValueExists()
+        {
+            // Arrange
+            var dictionary = new Dictionary<string, string>
+            {
+                {"foo", "2"}
+            };
+
+            // Act
+            var convertedValueDictionary = dictionary.ConvertValuesToNewType<string, string, int>(oldValue => int.Parse(oldValue));
+
+            // Assert
+            convertedValueDictionary.TryGetValue("foo", out var returnValue);
+
+            returnValue.Should().BeOfType(typeof(int));
+        }
+
+        [Fact]
+        public void ConvertValyesToNewType_IfNoValueExist()
+        {
+            // Arrange
+            var dictionary = new Dictionary<string, string>();
+
+            // Act
+            var convertedEmptyDictionary = dictionary.ConvertValuesToNewType<string, string, int>(oldValue => int.Parse(oldValue));
+
+            // Assert
+            var arguments = convertedEmptyDictionary.GetType().GetGenericArguments();
+
+            convertedEmptyDictionary.Should().BeEmpty();
+            arguments[0].Should().Be(typeof(string));
+            arguments[1].Should().Be(typeof(int));
+        }
+
+        [Fact]
+        public void ConvertValuesToNewType_ThrowsOnInvalidConvert()
+        {
+            // Arrange
+            var dictionary = new Dictionary<string, string>
+            {
+                {"foo", "bar"}
+            };
+
+            // Act
+            Action convertAction = () => dictionary.ConvertValuesToNewType<string, string, int>(oldValue => int.Parse(oldValue));
+
+            // Assert
+            convertAction
+                .Should()
+                .Throw<InvalidOperationException>()
+                .WithMessage("Tried converting the value but encountered an error");
+        }
     }
 }
