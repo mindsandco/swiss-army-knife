@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 
-
 namespace SCM.SwissArmyKnife.Extensions
 {
     /// <summary>
@@ -53,51 +52,38 @@ namespace SCM.SwissArmyKnife.Extensions
         }
 
         /// <summary>
-        /// Converts the values in the given dictionary to the new type using the provided convert function. Throws when the value cannot be converted.
+        /// Returns a new dictionary after appling the provided function to each value from the given dictionary.
         /// </summary>
         /// <typeparam name="K">Key Type.</typeparam>
         /// <typeparam name="O">Original Type.</typeparam>
         /// <typeparam name="N">New Type.</typeparam>
         /// <param name="dictionary">Source Dictionary.</param>
-        /// <param name="convertionFunction">Convert function.</param>
-        /// <exception cref="InvalidOperationException"> Throws when the provided convert function is not able to convert the value.</exception>
+        /// <param name="selector">Selector function.</param>
         /// <example>
         /// <code>
         /// // Will return a new dictionary where value type is integer
         /// var myDictionary = new Dictionary&lt;string, string&gt; {
         ///     {"myKey", "2"}
         /// }
-        /// myDictionary.ConvertValuesToNewType&lt;string, string, int&gt;("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
+        /// myDictionary.SelectValues("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
         ///
-        /// // Will throw InvalidOperationException
+        /// // Will throw exception
         /// var myDictionary = new Dictionary&lt;string, string&gt; {
         ///     {"myKey", "bar"}
         /// }
-        /// myDictionary.ConvertValuesToNewType&lt;string, string, int&gt;("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
+        /// myDictionary.SelectValues("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
         /// </code>
         /// </example>
         /// <returns>Dictioanary&lt;K, N&gt;</returns>
-        public static Dictionary<K, N> ConvertValuesToNewType<K, O, N>(
+        public static Dictionary<K, N> SelectValues<K, O, N>(
             this IReadOnlyDictionary<K, O> dictionary,
-            Func<O, N> convertionFunction)
+            Func<O, N> selector)
         {
             var newDictionary = new Dictionary<K, N>();
 
-            if (dictionary.Count == 0)
-            {
-                return newDictionary;
-            }
-
             foreach (var keyValuePair in dictionary)
             {
-                try
-                {
-                    newDictionary.Add(keyValuePair.Key, convertionFunction(keyValuePair.Value));
-                }
-                catch (Exception ex)
-                {
-                    throw new InvalidOperationException("Tried converting the value but encountered an error", ex);
-                }
+                newDictionary.Add(keyValuePair.Key, selector(keyValuePair.Value));
             }
 
             return newDictionary;

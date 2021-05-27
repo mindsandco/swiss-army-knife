@@ -71,7 +71,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
         }
 
         [Fact]
-        public void ConvertValuesToNewType_IfValueExists()
+        public void SelectValues_IfValueExists()
         {
             // Arrange
             var dictionary = new Dictionary<string, string>
@@ -80,7 +80,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
             };
 
             // Act
-            var convertedValueDictionary = dictionary.ConvertValuesToNewType<string, string, int>(oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
+            var convertedValueDictionary = dictionary.SelectValues(oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
 
             // Assert
             convertedValueDictionary.TryGetValue("foo", out var returnValue);
@@ -89,24 +89,20 @@ namespace SCM.SwissArmyKnife.Test.Extensions
         }
 
         [Fact]
-        public void ConvertValyesToNewType_IfNoValueExist()
+        public void SelectValues_IfNoValueExist()
         {
             // Arrange
             var dictionary = new Dictionary<string, string>();
 
             // Act
-            var convertedEmptyDictionary = dictionary.ConvertValuesToNewType<string, string, int>(oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
+            Dictionary<string, int> convertedEmptyDictionary = dictionary.SelectValues(oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
 
             // Assert
-            var arguments = convertedEmptyDictionary.GetType().GetGenericArguments();
-
             convertedEmptyDictionary.Should().BeEmpty();
-            arguments[0].Should().Be(typeof(string));
-            arguments[1].Should().Be(typeof(int));
         }
 
         [Fact]
-        public void ConvertValuesToNewType_ThrowsOnInvalidConvert()
+        public void SelectValues_ThrowsOnInvalidConvert()
         {
             // Arrange
             var dictionary = new Dictionary<string, string>
@@ -115,13 +111,12 @@ namespace SCM.SwissArmyKnife.Test.Extensions
             };
 
             // Act
-            Action convertAction = () => dictionary.ConvertValuesToNewType<string, string, int>(oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
+            Action convertAction = () => dictionary.SelectValues(oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
 
             // Assert
             convertAction
                 .Should()
-                .Throw<InvalidOperationException>()
-                .WithMessage("Tried converting the value but encountered an error");
+                .Throw<Exception>();
         }
     }
 }
