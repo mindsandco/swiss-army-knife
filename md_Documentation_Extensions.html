@@ -79,6 +79,15 @@ DictionaryExtensions</h1>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Will return &quot;myFallbackValue&quot;</span></div>
 <div class="line">myDictionary.GetOr(<span class="stringliteral">&quot;nonExistingKey&quot;</span>, () =&gt; <span class="stringliteral">&quot;myFallbackValue&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">var myIntDictionary = <span class="keyword">new</span> Dictionary&lt;string, string&gt; {</div>
+<div class="line">    {<span class="stringliteral">&quot;myKey&quot;</span>, <span class="stringliteral">&quot;2&quot;</span>}</div>
+<div class="line">}</div>
+<div class="line"> <span class="comment">// Will return a new dictionary where values type is integer</span></div>
+<div class="line"> var convertedValueDictionary = myIntDictionary.SelectValues(<span class="stringliteral">&quot;myKey&quot;</span>, oldValue =&gt; <span class="keywordtype">int</span>.Parse(oldValue, CultureInfo.InvariantCulture));</div>
+<div class="line">     </div>
+<div class="line"><span class="comment">// Using &lt;string,string&gt; dictionary from earlier with unparsable string. Will throw exception</span></div>
+<div class="line">var throwsOnConvertDictionary = myDictionary.SelectValues(<span class="stringliteral">&quot;myKey&quot;</span>, oldValue =&gt; <span class="keywordtype">int</span>.Parse(oldValue, CultureInfo.InvariantCulture));</div>
 </div><!-- fragment --><p><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html">View More Documentation</a></p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 EnumerableProducingExtensions</h1>

@@ -85,6 +85,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a4ea3117fb81c7fc5500c754dad0640d1"><td class="memItemLeft" align="right" valign="top">static TValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html#a4ea3117fb81c7fc5500c754dad0640d1">GetValueOr&lt; TKey, TValue &gt;</a> (this IReadOnlyDictionary&lt; TKey, TValue &gt; dictionary, TKey key, Func&lt; TValue &gt; valueProducer)</td></tr>
 <tr class="memdesc:a4ea3117fb81c7fc5500c754dad0640d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as the Regular GetOrDefault except this one takes a factory to produce the value.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html#a4ea3117fb81c7fc5500c754dad0640d1">More...</a><br /></td></tr>
 <tr class="separator:a4ea3117fb81c7fc5500c754dad0640d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bf380d9e734d1410db9be5ce8b773ad"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; TKey, TNewValue &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html#a5bf380d9e734d1410db9be5ce8b773ad">SelectValues&lt; TKey, TOldValue, TNewValue &gt;</a> (this IReadOnlyDictionary&lt; TKey, TOldValue &gt; dictionary, Func&lt; TOldValue, TNewValue &gt; selector)</td></tr>
+<tr class="memdesc:a5bf380d9e734d1410db9be5ce8b773ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new dictionary after appling the provided function to each value from the given dictionary.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html#a5bf380d9e734d1410db9be5ce8b773ad">More...</a><br /></td></tr>
+<tr class="separator:a5bf380d9e734d1410db9be5ce8b773ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Extension methods for the BCL Dictionaries. </p>
@@ -197,6 +200,71 @@ Static Public Member Functions</h2></td></tr>
 </dd>
 </dl>
 </div>
+
+</div>
+</div>
+<a id="a5bf380d9e734d1410db9be5ce8b773ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bf380d9e734d1410db9be5ce8b773ad">&#9670;&nbsp;</a></span>SelectValues&lt; TKey, TOldValue, TNewValue &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Dictionary&lt;TKey, TNewValue&gt; SelectValues&lt; TKey, TOldValue, TNewValue &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this IReadOnlyDictionary&lt; TKey, TOldValue &gt;&#160;</td>
+          <td class="paramname"><em>dictionary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Func&lt; TOldValue, TNewValue &gt;&#160;</td>
+          <td class="paramname"><em>selector</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a new dictionary after appling the provided function to each value from the given dictionary. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TKey</td><td>Key Type.</td></tr>
+    <tr><td class="paramname">TOldValue</td><td>Original Type.</td></tr>
+    <tr><td class="paramname">TNewValue</td><td>New Type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dictionary</td><td>Source Dictionary.</td></tr>
+    <tr><td class="paramname">selector</td><td>Selector function.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// Will return a new dictionary where value type is integer</span></div>
+<div class="line">var myDictionary = <span class="keyword">new</span> Dictionary&lt;string, string&gt; {</div>
+<div class="line">    {<span class="stringliteral">&quot;myKey&quot;</span>, <span class="stringliteral">&quot;2&quot;</span>}</div>
+<div class="line">}</div>
+<div class="line">myDictionary.SelectValues(<span class="stringliteral">&quot;myKey&quot;</span>, oldValue =&gt; <span class="keywordtype">int</span>.Parse(oldValue, CultureInfo.InvariantCulture));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Will throw exception</span></div>
+<div class="line">var myDictionary = <span class="keyword">new</span> Dictionary&lt;string, string&gt; {</div>
+<div class="line">    {<span class="stringliteral">&quot;myKey&quot;</span>, <span class="stringliteral">&quot;bar&quot;</span>}</div>
+<div class="line">}</div>
+<div class="line">myDictionary.SelectValues(<span class="stringliteral">&quot;myKey&quot;</span>, oldValue =&gt; <span class="keywordtype">int</span>.Parse(oldValue, CultureInfo.InvariantCulture));</div>
+</div><!-- fragment --> <dl class="section return"><dt>Returns</dt><dd>Dictioanary&lt;TKey, TNewValue&gt;.</dd></dl>
 
 </div>
 </div>
