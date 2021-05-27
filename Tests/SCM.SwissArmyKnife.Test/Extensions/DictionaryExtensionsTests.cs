@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using FluentAssertions;
 using SCM.SwissArmyKnife.Extensions;
 using Xunit;
@@ -79,7 +80,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
             };
 
             // Act
-            var convertedValueDictionary = dictionary.ConvertValuesToNewType<string, string, int>(oldValue => int.Parse(oldValue));
+            var convertedValueDictionary = dictionary.ConvertValuesToNewType<string, string, int>(oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
 
             // Assert
             convertedValueDictionary.TryGetValue("foo", out var returnValue);
@@ -94,7 +95,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
             var dictionary = new Dictionary<string, string>();
 
             // Act
-            var convertedEmptyDictionary = dictionary.ConvertValuesToNewType<string, string, int>(oldValue => int.Parse(oldValue));
+            var convertedEmptyDictionary = dictionary.ConvertValuesToNewType<string, string, int>(oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
 
             // Assert
             var arguments = convertedEmptyDictionary.GetType().GetGenericArguments();
@@ -114,7 +115,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
             };
 
             // Act
-            Action convertAction = () => dictionary.ConvertValuesToNewType<string, string, int>(oldValue => int.Parse(oldValue));
+            Action convertAction = () => dictionary.ConvertValuesToNewType<string, string, int>(oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
 
             // Assert
             convertAction
