@@ -21,10 +21,7 @@ var myIntDictionary = new Dictionary<string, string> {
  // Will return a new dictionary where values type is integer
  var convertedValueDictionary = myIntDictionary.SelectValues("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
      
-// Will throw exception
-var myDictionary = new Dictionary<string, string> {
-    {"myKey", "bar"}
-}
+// Using <string,string> dictionary from earlier with unparsable string. Will throw exception
 var throwsOnConvertDictionary = myDictionary.SelectValues("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
 ```
 
