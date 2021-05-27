@@ -67,16 +67,16 @@ namespace SCM.SwissArmyKnife.Extensions
         /// var myDictionary = new Dictionary&lt;string, string&gt; {
         ///     {"myKey", "2"}
         /// }
-        /// myDictionary.ConvertValuesToNewType&lt;string, string, int>("myKey", oldValue => int.Parse(oldValue));
+        /// myDictionary.ConvertValuesToNewType&lt;string, string, int&gt;("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
         ///
         /// // Will throw InvalidOperationException
         /// var myDictionary = new Dictionary&lt;string, string&gt; {
         ///     {"myKey", "bar"}
         /// }
-        /// myDictionary.ConvertValuesToNewType&lt;string, string, int>("myKey", oldValue => int.Parse(oldValue));
+        /// myDictionary.ConvertValuesToNewType&lt;string, string, int&gt;("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
         /// </code>
         /// </example>
-        /// <returns>Dictioanary&lt;K, N></returns>
+        /// <returns>Dictioanary&lt;K, N&gt;</returns>
         public static Dictionary<K, N> ConvertValuesToNewType<K, O, N>(
             this IReadOnlyDictionary<K, O> dictionary,
             Func<O, N> convertionFunction)

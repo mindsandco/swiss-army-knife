@@ -14,6 +14,18 @@ myDictionary.GetOrThrow("nonExistingKey", () => new ArgumentException("tried to 
 
 // Will return "myFallbackValue"
 myDictionary.GetOr("nonExistingKey", () => "myFallbackValue");
+
+var myDictionary = new Dictionary<string, string> {
+    {"myKey", "2"}
+}
+ // Will return a new dictionary where values type is integer
+ var convertedValueDictionary = myDictionary.ConvertValuesToNewType<string, string, int>("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
+     
+// Will throw InvalidOperationException
+var myDictionary = new Dictionary<string, string> {
+    {"myKey", "bar"}
+}
+var throwsOnConvertDictionary = myDictionary.ConvertValuesToNewType<string, string, int>("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
 ```
 
 \ref SCM.SwissArmyKnife.Extensions.DictionaryExtensions "View More Documentation"
