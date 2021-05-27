@@ -54,9 +54,9 @@ namespace SCM.SwissArmyKnife.Extensions
         /// <summary>
         /// Returns a new dictionary after appling the provided function to each value from the given dictionary.
         /// </summary>
-        /// <typeparam name="K">Key Type.</typeparam>
-        /// <typeparam name="O">Original Type.</typeparam>
-        /// <typeparam name="N">New Type.</typeparam>
+        /// <typeparam name="TKey">Key Type.</typeparam>
+        /// <typeparam name="TOldValue">Original Type.</typeparam>
+        /// <typeparam name="TNewValue">New Type.</typeparam>
         /// <param name="dictionary">Source Dictionary.</param>
         /// <param name="selector">Selector function.</param>
         /// <example>
@@ -74,12 +74,12 @@ namespace SCM.SwissArmyKnife.Extensions
         /// myDictionary.SelectValues("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
         /// </code>
         /// </example>
-        /// <returns>Dictioanary&lt;K, N&gt;</returns>
-        public static Dictionary<K, N> SelectValues<K, O, N>(
-            this IReadOnlyDictionary<K, O> dictionary,
-            Func<O, N> selector)
+        /// <returns>Dictioanary&lt;K, N&gt;.</returns>
+        public static Dictionary<TKey, TNewValue> SelectValues<TKey, TOldValue, TNewValue>(
+            this IReadOnlyDictionary<TKey, TOldValue> dictionary,
+            Func<TOldValue, TNewValue> selector)
         {
-            var newDictionary = new Dictionary<K, N>();
+            var newDictionary = new Dictionary<TKey, TNewValue>();
 
             foreach (var keyValuePair in dictionary)
             {

@@ -83,9 +83,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
             var convertedValueDictionary = dictionary.SelectValues(oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
 
             // Assert
-            convertedValueDictionary.TryGetValue("foo", out var returnValue);
-
-            returnValue.Should().BeOfType(typeof(int));
+            convertedValueDictionary.Should().ContainKey("foo").WhichValue.Should().Be(2);
         }
 
         [Fact]
