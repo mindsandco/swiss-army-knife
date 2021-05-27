@@ -65,16 +65,17 @@ namespace SCM.SwissArmyKnife.Extensions
         /// var myDictionary = new Dictionary&lt;string, string&gt; {
         ///     {"myKey", "2"}
         /// }
-        /// myDictionary.SelectValues("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
+        /// myDictionary.SelectValues(oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
         ///
         /// // Will throw exception
         /// var myDictionary = new Dictionary&lt;string, string&gt; {
         ///     {"myKey", "bar"}
         /// }
-        /// myDictionary.SelectValues("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
+        /// myDictionary.SelectValues(oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
         /// </code>
         /// </example>
         /// <returns>Dictioanary&lt;TKey, TNewValue&gt;.</returns>
+        [Pure]
         public static Dictionary<TKey, TNewValue> SelectValues<TKey, TOldValue, TNewValue>(
             this IReadOnlyDictionary<TKey, TOldValue> dictionary,
             Func<TOldValue, TNewValue> selector)
