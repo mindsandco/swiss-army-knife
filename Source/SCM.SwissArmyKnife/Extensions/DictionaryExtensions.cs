@@ -74,7 +74,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// myDictionary.SelectValues("myKey", oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
         /// </code>
         /// </example>
-        /// <returns>Dictioanary&lt;K, N&gt;.</returns>
+        /// <returns>Dictioanary&lt;TKey, TNewValue&gt;.</returns>
         public static Dictionary<TKey, TNewValue> SelectValues<TKey, TOldValue, TNewValue>(
             this IReadOnlyDictionary<TKey, TOldValue> dictionary,
             Func<TOldValue, TNewValue> selector)
