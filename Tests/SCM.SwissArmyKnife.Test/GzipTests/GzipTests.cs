@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Text;
 using FluentAssertions;
-using SCM.SwissArmyKnife.GzipOperations;
+using SCM.SwissArmyKnife.Compression;
 using Xunit;
 
 namespace SCM.SwissArmyKnife.Test.GzipTests
@@ -17,10 +17,10 @@ namespace SCM.SwissArmyKnife.Test.GzipTests
             " Aliquam erat volutpat. Nam sapien leo, gravida eu nulla in, mollis volutpat libero.";
 
         [Fact]
-        public void Compress_IfInputThenOutput()
+        public void Compress_ShouldWriteGzipHeader_IfGivenEmptyInput()
         {
             // Arrange
-            var testData = Encoding.ASCII.GetBytes(testString);
+            var testData = Array.Empty<byte>();
 
             // Act
             var compressedData = Gzip.Compress(testData);
@@ -30,20 +30,7 @@ namespace SCM.SwissArmyKnife.Test.GzipTests
         }
 
         [Fact]
-        public void Compress_IfEmptyInputThenOutput()
-        {
-            // Arrange
-            var testData = Array.Empty<byte>();
-
-            // Act
-            var compressedData = Gzip.Compress(testData);
-
-            // Assert
-            compressedData.Should().NotBeEmpty(); //because of the gzip header
-        }
-
-        [Fact]
-        public void Compress_OutputSmallerThenInput()
+        public void Compress_ShouldCreateOutput_ThatIsSmallerThanTheInput()
         {
             // Arrange
             var testData = Encoding.ASCII.GetBytes(testString);
@@ -56,7 +43,7 @@ namespace SCM.SwissArmyKnife.Test.GzipTests
         }
 
         [Fact]
-        public void Compress_OutputFirstTwoBytes()
+        public void Compress_ShouldCreateOutput_WithFirstTwoBytesSetToGzipSignatureBytes()
         {
             // Arrange
             var testData = Encoding.ASCII.GetBytes(testString);
@@ -64,43 +51,66 @@ namespace SCM.SwissArmyKnife.Test.GzipTests
             // Act
             var compressedData = Gzip.Compress(testData);
 
-            // Assert
+            // Assert - if the first two bytes are gzip signature bytes
             compressedData[0].Should().Be(31);
             compressedData[1].Should().Be(139);
         }
 
         [Fact]
-        public void Compress_OuputAgainstTestedOutput()
+        public void Compress_WithStringAndGivenEncoding_OutputShouldBeByteArray()
         {
-            //The TestCompressedData.gz was created using gzip utility with -n flag set.
-            //There is little use in equaling byte by byte as the output can differ.
+            //Arrange
+            var encoding = Encoding.ASCII;
 
-            // Arrange
-            var testData = Encoding.ASCII.GetBytes(testString);
+            //Act
+            var compressedString = Gzip.Compress(testString, encoding);
 
-            // Act
-            var compressedData = Gzip.Compress(testData);
-
-            // Assert
-            var testedCompressedData = File.ReadAllBytes(@$"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}TestCompressedData.gz");
-            compressedData.Length.Should().Be(testedCompressedData.Length);
+            //Assert
+            compressedString.Should().BeOfType(typeof(byte[]));
         }
 
         [Fact]
-        public void Decompress_IfInputThenOutput()
+        public void Compress_WithStringAndNoEncoding_OutputShouldBeByteArray()
         {
-            // Arrange
-            var testData = File.ReadAllBytes(@$"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}TestCompressedData.gz");
+            //Arrange
 
-            // Act
-            var decompressedData = Gzip.Decompress(testData);
+            //Act
+            var compressedString = Gzip.Compress(testString);
 
-            // Assert
-            decompressedData.Should().NotBeEmpty();
+            //Assert
+            compressedString.Should().BeOfType(typeof(byte[]));
         }
 
         [Fact]
-        public void Decompress_IfEmptyInputThenOutput()
+        public void Compress_WithEmptyStringAndNoEncoding_OutputShouldBeByteArray()
+        {
+            //Arrange
+            var emptyString = string.Empty;
+
+            //Act
+            var compressedString = Gzip.Compress(emptyString);
+
+            //Assert
+            compressedString.Should().BeOfType(typeof(byte[]));
+        }
+
+        [Fact]
+        public void Compress_WithEmptyStringAndWithEncoding_OutputShouldBeByteArray()
+        {
+            //Arrange
+            var encoding = Encoding.ASCII;
+            var emptyString = string.Empty;
+
+            //Act
+            var compressedString = Gzip.Compress(emptyString, encoding);
+
+            //Assert
+            compressedString.Should().BeOfType(typeof(byte[]));
+        }
+
+
+        [Fact]
+        public void Decompress_OutputShouldBeEmpty_IfInputEmpty()
         {
             // Arrange
             var testData = Array.Empty<byte>();
@@ -113,7 +123,7 @@ namespace SCM.SwissArmyKnife.Test.GzipTests
         }
 
         [Fact]
-        public void Decompress_OutputLargerThenInput()
+        public void Decompress_ShoudCreateOutput_ThatIsLargerThanTheInput()
         {
             // Arrange
             var testData = File.ReadAllBytes(@$"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}TestCompressedData.gz");
@@ -126,7 +136,7 @@ namespace SCM.SwissArmyKnife.Test.GzipTests
         }
 
         [Fact]
-        public void Decompress_OuputMatchesText()
+        public void Decompress_OutputShouldMatchControlText()
         {
             // Arrange
             var testData = File.ReadAllBytes(@$"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}TestCompressedData.gz");
@@ -137,6 +147,37 @@ namespace SCM.SwissArmyKnife.Test.GzipTests
 
             // Assert
             decompressedString.Should().BeEquivalentTo(testString);
+        }
+
+
+        [Fact]
+        public void DecompressToString_OutputShouldMatchControlText()
+        {
+            // Arrange
+            var testData = File.ReadAllBytes(@$"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}TestCompressedData.gz");
+            var encoding = Encoding.ASCII;
+
+            // Act
+            var decompressedString = Gzip.DecompressToString(testData, encoding);
+
+            // Assert
+            decompressedString.Should().BeEquivalentTo(testString);
+        }
+
+        [Fact]
+        public void CompressDecompress_OutputShouldMatchControlString()
+        {
+            //Not the most reliable test, but for what it is worth I think it still brings some value.
+
+            //Arrange
+            var dataToCompress = Encoding.ASCII.GetBytes(testString);
+
+            //Act
+            var compressedData = Gzip.Compress(dataToCompress);
+            var decompressedData = Gzip.Decompress(compressedData);
+
+            //Assert
+            Encoding.ASCII.GetString(decompressedData).Should().BeEquivalentTo(testString);
         }
     }
 }
