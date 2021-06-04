@@ -131,11 +131,11 @@ namespace SCM.SwissArmyKnife.Test.GzipTests
         public void CompressDecompress_StringOverload_WithSpecificEncoding_OutputShouldMatchControlString()
         {
             //Arrange
-            var encodding = Encoding.ASCII;
+            var encoding = Encoding.ASCII;
 
             //Act
-            var compressedData = Gzip.Compress(testString, encodding);
-            var decompressedString = Gzip.DecompressToString(compressedData, encodding);
+            var compressedData = Gzip.Compress(testString, encoding);
+            var decompressedString = Gzip.DecompressToString(compressedData, encoding);
 
             //Assert
             decompressedString.Should().BeEquivalentTo(testString);
