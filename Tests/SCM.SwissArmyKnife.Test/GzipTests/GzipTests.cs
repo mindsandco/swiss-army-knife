@@ -57,59 +57,6 @@ namespace SCM.SwissArmyKnife.Test.GzipTests
         }
 
         [Fact]
-        public void Compress_WithStringAndGivenEncoding_OutputShouldBeByteArray()
-        {
-            //Arrange
-            var encoding = Encoding.ASCII;
-
-            //Act
-            var compressedString = Gzip.Compress(testString, encoding);
-
-            //Assert
-            compressedString.Should().BeOfType(typeof(byte[]));
-        }
-
-        [Fact]
-        public void Compress_WithStringAndNoEncoding_OutputShouldBeByteArray()
-        {
-            //Arrange
-
-            //Act
-            var compressedString = Gzip.Compress(testString);
-
-            //Assert
-            compressedString.Should().BeOfType(typeof(byte[]));
-        }
-
-        [Fact]
-        public void Compress_WithEmptyStringAndNoEncoding_OutputShouldBeByteArray()
-        {
-            //Arrange
-            var emptyString = string.Empty;
-
-            //Act
-            var compressedString = Gzip.Compress(emptyString);
-
-            //Assert
-            compressedString.Should().BeOfType(typeof(byte[]));
-        }
-
-        [Fact]
-        public void Compress_WithEmptyStringAndWithEncoding_OutputShouldBeByteArray()
-        {
-            //Arrange
-            var encoding = Encoding.ASCII;
-            var emptyString = string.Empty;
-
-            //Act
-            var compressedString = Gzip.Compress(emptyString, encoding);
-
-            //Assert
-            compressedString.Should().BeOfType(typeof(byte[]));
-        }
-
-
-        [Fact]
         public void Decompress_OutputShouldBeEmpty_IfInputEmpty()
         {
             // Arrange
@@ -178,6 +125,33 @@ namespace SCM.SwissArmyKnife.Test.GzipTests
 
             //Assert
             Encoding.ASCII.GetString(decompressedData).Should().BeEquivalentTo(testString);
+        }
+
+        [Fact]
+        public void CompressDecompress_StringOverload_WithSpecificEncoding_OutputShouldMatchControlString()
+        {
+            //Arrange
+            var encodding = Encoding.ASCII;
+
+            //Act
+            var compressedData = Gzip.Compress(testString, encodding);
+            var decompressedString = Gzip.DecompressToString(compressedData, encodding);
+
+            //Assert
+            decompressedString.Should().BeEquivalentTo(testString);
+        }
+
+        [Fact]
+        public void CompressDecompress_StringOverload_WithoutSpecificEncoding_OutputShouldMatchControlString()
+        {
+            //Arrange
+
+            //Act
+            var compressedData = Gzip.Compress(testString);
+            var decompressedString = Gzip.Decompress(compressedData);
+
+            //Assert
+            Encoding.ASCII.GetString(decompressedString).Should().BeEquivalentTo(testString);
         }
     }
 }
