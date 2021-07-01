@@ -66,7 +66,7 @@ $(function() {
 <div class="title">Extensions </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md3"></a>
 DictionaryExtensions</h1>
 <div class="fragment"><div class="line">var myDictionary = <span class="keyword">new</span> Dictionary&lt;string, string&gt;; {</div>
 <div class="line">    {<span class="stringliteral">&quot;myKey&quot;</span>, <span class="stringliteral">&quot;myValue&quot;</span>}</div>
@@ -89,7 +89,7 @@ DictionaryExtensions</h1>
 <div class="line"><span class="comment">// Using &lt;string, string&gt; dictionary from earlier with unparsable string. Will throw exception</span></div>
 <div class="line">var throwsOnConvertDictionary = myDictionary.SelectValues(oldValue =&gt; <span class="keywordtype">int</span>.Parse(oldValue, CultureInfo.InvariantCulture));</div>
 </div><!-- fragment --><p><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html">View More Documentation</a></p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 EnumerableProducingExtensions</h1>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> myItem = 3;</div>
 <div class="line"> </div>
@@ -99,7 +99,7 @@ EnumerableProducingExtensions</h1>
 <div class="line"><span class="comment">// Type: IAsyncEnumerable&lt;int&gt;</span></div>
 <div class="line">var myAsyncEnumerable = myItem.YieldAsync();</div>
 </div><!-- fragment --><p><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1EnumerableProducingExtensions.html">View More Documentation</a></p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 FluentTaskExtensions</h1>
 <p>All tasks here are alternatives to calling <code>(await MyMethodAsync()).SomeFunction()</code> but instead allows you to chain the function at the end, and await the whole chain. </p><div class="fragment"><div class="line">var singleValueTask = Task.FromResult(1);</div>
 <div class="line">var enumerableTask = Task.FromResult(<span class="keyword">new</span> <span class="keywordtype">int</span>[]{1,2});</div>
@@ -122,7 +122,7 @@ FluentTaskExtensions</h1>
 <div class="line"> </div>
 <div class="line"><span class="comment">// ToList - Converts an enumerable returning tasks to a List</span></div>
 <div class="line">List&lt;int&gt; list = await enumerableTask.ToList()</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
 HttpClientExtensions</h1>
 <div class="fragment"><div class="line">var client = <span class="keyword">new</span> HttpClient();</div>
 <div class="line"> </div>
@@ -140,7 +140,7 @@ HttpClientExtensions</h1>
 <div class="line"><span class="comment">// POSTS URL with MyDomainModel as JSON body and serializes model to MyResponseModel.</span></div>
 <div class="line">var await response = client.PostAsJsonAsync&lt;MyResponseModel&gt;(url, myModel)</div>
 </div><!-- fragment --><p><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html">View More Documentation</a></p>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 HttpResponseMessageExtensions</h1>
 <div class="fragment"><div class="line">var client = <span class="keyword">new</span> HttpClient();</div>
 <div class="line">HttpResponseMessage message = client.GetAsync(<span class="stringliteral">&quot;www.some-url.com&quot;</span></div>
@@ -150,7 +150,7 @@ HttpResponseMessageExtensions</h1>
 <div class="line">    Console.Error(error, $<span class="stringliteral">&quot;Error happened when making http request. Server responded with body {responseBody}&quot;</span>);</div>
 <div class="line">});</div>
 </div><!-- fragment --><p> <a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpResponseMessageExtensions.html">View More Documentation</a></p>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 MemoryStreamExtensions</h1>
 <div class="fragment"><div class="line"><span class="comment">// Assume you got myMemoryStream from somewhere</span></div>
 <div class="line"> </div>
@@ -158,7 +158,7 @@ MemoryStreamExtensions</h1>
 <div class="line"><span class="comment">// the original memoryStream is still at the same position as before</span></div>
 <div class="line">var clonedStream = myMemoryStream.CloneEntireStream();</div>
 </div><!-- fragment --><p><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1MemoryStreamExtensions.html">View More Documentation</a></p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 NullableExtensions</h1>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span>? myNullableValue = 2;</div>
 <div class="line"><span class="keywordtype">int</span>? myNullvalue = <span class="keyword">null</span>;</div>
@@ -169,7 +169,7 @@ NullableExtensions</h1>
 <div class="line"><span class="comment">// Returns null</span></div>
 <div class="line">myNullValue.TransformIfExists(i =&gt; i + 2);</div>
 </div><!-- fragment --><p> <a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1NullableExtensions.html">View More Documentation</a></p>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 ObjectExtensions</h1>
 <div class="fragment"><div class="line">var myModel = <span class="keyword">new</span> MyModel();</div>
 <div class="line"> </div>
@@ -183,7 +183,7 @@ ObjectExtensions</h1>
 <div class="line"><span class="comment">// For debugging purposes. Prints the entire object as JSON via `Console.Writeline` </span></div>
 <div class="line">myModel.PrintAsJson();</div>
 </div><!-- fragment --><p><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html">View More Documentation</a></p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 RandomExtensions</h1>
 <div class="fragment"><div class="line">var random = <span class="keyword">new</span> Random();</div>
 <div class="line"> </div>
@@ -200,7 +200,7 @@ RandomExtensions</h1>
 <div class="line"><span class="comment">// Returns a random choice from an enumerable.</span></div>
 <div class="line">var randomChoice = random.Choice(<span class="keyword">new</span> []{<span class="stringliteral">&quot;foo&quot;</span>, <span class="stringliteral">&quot;bar&quot;</span>, <span class="stringliteral">&quot;qux&quot;</span>}) </div>
 </div><!-- fragment --><p> <a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions.html">View More Documentation</a></p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 StreamExtensions</h1>
 <div class="fragment"><div class="line">var myStream = <span class="comment">/* acquire stream somehow */</span></div>
 <div class="line"> </div>
@@ -216,7 +216,7 @@ StreamExtensions</h1>
 <div class="line"><span class="comment">// You can also specify encoding</span></div>
 <div class="line"><span class="keywordtype">string</span> stringFromStream = myStream.ContentToString(Encoding.ASCII)</div>
 </div><!-- fragment --><p> <a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions.html">View More Documentation</a></p>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 StringExtensions</h1>
 <div class="fragment"><div class="line">var <span class="keywordtype">string</span> = <span class="stringliteral">&quot;hello&quot;</span>;</div>
 <div class="line"> </div>

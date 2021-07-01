@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['memorystreamextensions_2ecs_89',['MemoryStreamExtensions.cs',['../MemoryStreamExtensions_8cs.html',1,'']]]
+  ['gzip_2ecs_98',['Gzip.cs',['../Gzip_8cs.html',1,'']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['filelocator_2ecs_84',['FileLocator.cs',['../FileLocator_8cs.html',1,'']]],
-  ['files_2emd_85',['Files.md',['../Files_8md.html',1,'']]],
-  ['fluenttaskextensions_2ecs_86',['FluentTaskExtensions.cs',['../FluentTaskExtensions_8cs.html',1,'']]]
+  ['enumerableproducingextensions_2ecs_93',['EnumerableProducingExtensions.cs',['../EnumerableProducingExtensions_8cs.html',1,'']]],
+  ['extensions_2emd_94',['Extensions.md',['../Extensions_8md.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['extensions_128',['Extensions',['../md_Documentation_Extensions.html',1,'']]]
+  ['compression_143',['Compression',['../md_Documentation_Compression.html',1,'']]]
 ];

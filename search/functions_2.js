@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ensuresuccessstatuscodeorlogasync_102',['EnsureSuccessStatusCodeOrLogAsync',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpResponseMessageExtensions.html#aea2ad27ce9288c3f90677ffa5486d9e2',1,'SCM::SwissArmyKnife::Extensions::HttpResponseMessageExtensions']]]
+  ['decompress_115',['Decompress',['../classSCM_1_1SwissArmyKnife_1_1Compression_1_1Gzip.html#a6850c214b59d0369c92ffa825de918cd',1,'SCM::SwissArmyKnife::Compression::Gzip']]],
+  ['decompresstostring_116',['DecompressToString',['../classSCM_1_1SwissArmyKnife_1_1Compression_1_1Gzip.html#a0e6c98c11717eafd73e7ec3d2ca261d7',1,'SCM::SwissArmyKnife::Compression::Gzip']]]
 ];
