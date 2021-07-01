@@ -26,7 +26,7 @@ var myDecompressedByteArray = Gzip.Decompress(myCompressedByteArray);
 // Will return the decompressed string using the provided encoding
 var myDecompressedStringASCII = Gzip.DecompressToString(myCompressedStringASCII, Encoding.ASCII);
 
-// Will return the decompressed string using the default encoding
+// Will return the decompressed string using the default (UTF8) encoding
 var myDecompressedStringUTF8 = Gzip.DecompressToString(myCompressedStringUTF8);
 
 ```
