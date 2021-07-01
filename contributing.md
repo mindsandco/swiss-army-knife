@@ -1,6 +1,4 @@
 # Contributing
-If you'd like to contribute view the contribution docs [here](./contribution.md)
-
 You can pull or fork this project. It runs on dotnet core, so you should be able to run `dotnet test`
 You cannot commit to `main` - but feel free to make a Pull Request.
 Remember to add tests for your changes.
@@ -15,6 +13,22 @@ dotnet cake --target=Test
 ```
 
 The project is built with `dotnet-boxed`, so if you have any questions to the structure, check out [this article](https://rehansaeed.com/the-fastest-nuget-package-ever-published-probably/)
+
+# Building the documentation locally
+To build the documentation locally to test out things you will need to install doxygen.
+Installation instructions can be found [here](https://www.doxygen.nl/download.html) (scroll down to "Sources and Binaries")
+
+After having installed doxygen you can generate the documentation by running:
+```shell
+doxygen doxygen-config.toml
+```
+
+The documentation will be put into a gitignored `docs` folder
+You can go into `docs/html/index.html` and serve this page to see the documentation built locally.
+
+If you run Rider, you can serve the website right from your editor by opening the file and clicking the browser icons on the top right
+
+![Serving websites in Rider](Documentation/serve-website.png)
 
 
 ### Before submitting a PR
