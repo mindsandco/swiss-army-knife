@@ -28,7 +28,7 @@ You can go into `docs/html/index.html` and serve this page to see the documentat
 
 If you run Rider, you can serve the website right from your editor by opening the file and clicking the browser icons on the top right
 
-![./serve-website.png]()
+![Serving websites in Rider](./serve-website.png)
 
 
 ### Before submitting a PR
