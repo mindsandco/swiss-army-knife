@@ -91,6 +91,31 @@ FileInfo programFile = FileLocator.GetFileStartingAtSolutionDirectory("SourcePro
 
 [And more!](https://scadaminds.github.io/swiss-army-knife/md_Documentation_Files.html)
 
+
+## SwissArmyKnife.Compression
+Methods to compress and decompress data using gzip:
+```cs
+// Will return the compressed byte array
+var myCompressedByteArray = Gzip.Compress(myByteArray);
+
+// Will return the compressed string as byte array, using ASCII for encoding
+var myCompressedStringASCII = Gzip.Compress(myString, Encoding.ASCII);
+
+// Will return the compressed string as byte array, using UTF8 for encoding
+var myCompressedStringUTF8 = Gzip.Compress(myString);
+
+// Will return the decompressed byte array
+var myDecompressedByteArray = Gzip.Decompress(myCompressedByteArray);
+
+// Will return the decompressed string using the provided encoding
+var myDecompressedStringASCII = Gzip.DecompressToString(myCompressedStringASCII, Encoding.ASCII);
+
+// Will return the decompressed string using the default encoding
+var myDecompressedStringUTF8 = Gzip.DecompressToString(myCompressedStringUTF8);
+```
+
+[And more!](https://scadaminds.github.io/swiss-army-knife/md_Documentation_Compression.html)
+
 ## Documentation
 You can view the documentation for the `main` branch [here.](https://scadaminds.github.io/swiss-army-knife/index.html)
 

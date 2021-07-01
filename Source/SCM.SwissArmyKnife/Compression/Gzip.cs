@@ -48,10 +48,10 @@ namespace SCM.SwissArmyKnife.Compression
         /// var myString = "my string";
         ///
         /// // Will return the compressed string as byte array, using ASCII for encoding
-        /// var myCompressedByteArrayASCII = Gzip.Compress(myByteArray, Encoding.ASCII);
+        /// var myCompressedStringyASCII = Gzip.Compress(myString, Encoding.ASCII);
         ///
         /// // Will return the compressed string as byte array, using UTF8 for encoding
-        /// var myCompressedByteArrayUTF8 = Gzip.Compress(myByteArray);
+        /// var myCompressedStringUTF8 = Gzip.Compress(myString);
         /// </code>
         /// </example>
         /// <returns>Compressed byte array.</returns>
@@ -95,8 +95,9 @@ namespace SCM.SwissArmyKnife.Compression
         /// <param name="encodingToUse">Enconding to use for converting byte array to string.</param>
         /// <example>
         /// <code>
-        /// var myCompressedStringASCII = Gzip.Compress("my string", Encoding.ASCII);
-        /// var myCompressedStringUTF8 = Gzip.Compress("me string");
+        /// var myString = "my string";
+        /// var myCompressedStringASCII = Gzip.Compress(myString, Encoding.ASCII);
+        /// var myCompressedStringUTF8 = Gzip.Compress(myString);
         ///
         /// // Will return the decompressed string using the provided encoding
         /// var myDecompressedStringASCII = Gzip.DecompressToString(myCompressedStringASCII, Encoding.ASCII);
