@@ -153,5 +153,171 @@ namespace SCM.SwissArmyKnife.Test.GzipTests
             //Assert
             Encoding.ASCII.GetString(decompressedString).Should().BeEquivalentTo(testString);
         }
+
+        [Fact]
+        public void CompressFile_IfFileThenCompressedFile()
+        {
+            // Arrange
+            var fileName = "TestUncompressedData.txt";
+            var testFilePath = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}{fileName}";
+            var outputDirectory = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}temp";
+
+            var originalFile = new FileInfo(testFilePath);
+
+            // Act
+            var compressedFile = Gzip.CompressFile(testFilePath, outputDirectory);
+            var compressedData = File.ReadAllBytes(compressedFile.FullName);
+
+            // Assert
+            compressedFile.Exists.Should().BeTrue();
+            compressedFile.Extension.Should().BeEquivalentTo(".gz");
+            compressedFile.Name.Should().BeEquivalentTo($"{fileName}.gz");
+            originalFile.Length.Should().BeGreaterThan(compressedFile.Length);
+
+            //if the first two bytes are gzip signature bytes
+            compressedData[0].Should().Be(31);
+            compressedData[1].Should().Be(139);
+
+            // Cleanup
+            Directory.Delete(outputDirectory, true);
+        }
+
+        [Fact]
+        public void CompressFile_IfFileThenCompressedFileWithGivenFileName()
+        {
+            // Arrange
+            var fileName = "ChangedFileName";
+            var testFilePath = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}TestUncompressedData.txt";
+            var outputDirectory = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}temp";
+
+            var originalFile = new FileInfo(testFilePath);
+
+            // Act
+            var compressedFile = Gzip.CompressFile(testFilePath, outputDirectory, fileName);
+            var compressedData = File.ReadAllBytes(compressedFile.FullName);
+
+            // Assert
+            compressedFile.Exists.Should().BeTrue();
+            compressedFile.Extension.Should().BeEquivalentTo(".gz");
+            compressedFile.Name.Should().BeEquivalentTo($"{fileName}.gz");
+            originalFile.Length.Should().BeGreaterThan(compressedFile.Length);
+
+            //if the first two bytes are gzip signature bytes
+            compressedData[0].Should().Be(31);
+            compressedData[1].Should().Be(139);
+
+            // Cleanup
+            Directory.Delete(outputDirectory, true);
+        }
+
+        [Fact]
+        public void CompressFile_NotExistingFileThenError()
+        {
+            // Arrange
+            var testFilePath = $@"notexistingfilepath";
+            var outputDirectory = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}temp";
+
+            // Act
+            Action tryCompress = () => Gzip.CompressFile(testFilePath, outputDirectory);
+
+            // Assert
+            tryCompress.Should().ThrowExactly<FileNotFoundException>();
+        }
+
+        [Fact]
+        public void CompressFile_InvalidFileThenError()
+        {
+            // Arrange
+            var testFilePath = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}TestCompressedData.gz";
+            var outputDirectory = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}temp";
+
+            // Act
+            Action tryCompress = () => Gzip.CompressFile(testFilePath, outputDirectory);
+
+            // Assert
+            tryCompress.Should().ThrowExactly<ArgumentException>();
+        }
+
+        [Fact]
+        public void DecompressFile_IfFileThenDecompressedFile()
+        {
+            // Arrange
+            var fileName = "TestCompressedData";
+            var testFilePath = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}{fileName}.gz";
+            var outputDirectory = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}temp";
+
+            var originalFile = new FileInfo(testFilePath);
+
+            // Act
+            var decompressed = Gzip.DecompressFile(testFilePath, outputDirectory);
+            var decompressedData = File.ReadAllText(decompressed.FullName);
+
+            // Assert
+            decompressed.Exists.Should().BeTrue();
+            decompressed.Extension.Should().NotBeEquivalentTo(".gz");
+            decompressed.Name.Should().BeEquivalentTo($"{fileName}");
+            decompressed.Length.Should().BeGreaterThan(originalFile.Length);
+
+            decompressedData.Should().BeEquivalentTo(testString);
+
+            // Cleanup
+            Directory.Delete(outputDirectory, true);
+        }
+
+        [Fact]
+        public void DecompressFile_IfFileThenDecompressedFileWithGivenName()
+        {
+            // Arrange
+            var fileName = "TestUncompressedData.txt";
+            var testFilePath = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}TestCompressedData.gz";
+            var outputDirectory = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}temp";
+
+            var originalFile = new FileInfo(testFilePath);
+
+            // Act
+            var decompressed = Gzip.DecompressFile(testFilePath, outputDirectory, fileName);
+            var decompressedData = File.ReadAllText(decompressed.FullName);
+
+            // Assert
+            decompressed.Exists.Should().BeTrue();
+            decompressed.Extension.Should().NotBeEquivalentTo(".gz");
+            decompressed.Name.Should().BeEquivalentTo($"{fileName}");
+            decompressed.Length.Should().BeGreaterThan(originalFile.Length);
+
+            decompressedData.Should().BeEquivalentTo(testString);
+
+            // Cleanup
+            Directory.Delete(outputDirectory, true);
+        }
+
+        [Fact]
+        public void DecompressFile_NotExistingFileThenError()
+        {
+            // Arrange
+            var testFilePath = $@"notexistingfilepath";
+            var outputDirectory = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}temp";
+
+            // Act
+            Action tryCompress = () => Gzip.DecompressFile(testFilePath, outputDirectory);
+
+            // Assert
+            tryCompress.Should().ThrowExactly<FileNotFoundException>();
+        }
+
+        [Fact]
+        public void DeompressFile_InvalidFileThenError()
+        {
+            // Arrange
+            var testFilePath = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}TestUncompressedData.txt";
+            var outputDirectory = $@"GzipTests{Path.DirectorySeparatorChar}TestingFiles{Path.DirectorySeparatorChar}temp";
+
+            var originalFile = new FileInfo(testFilePath);
+
+            // Act
+            Action tryCompress = () => Gzip.DecompressFile(testFilePath, outputDirectory);
+
+            // Assert
+            tryCompress.Should().ThrowExactly<ArgumentException>();
+        }
     }
 }

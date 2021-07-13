@@ -13,6 +13,9 @@
     <None Update="GzipTests\TestingFiles\TestCompressedData.gz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="GzipTests\TestingFiles\TestUncompressedData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics.Contracts;
 using System.IO;
 using System.IO.Compression;
@@ -112,6 +113,81 @@ namespace SCM.SwissArmyKnife.Compression
         {
             var encoding = encodingToUse ?? Encoding.UTF8;
             return encoding.GetString(Decompress(dataToDecompress));
+        }
+
+        /// <summary>
+        /// This method will compress a given file <paramref name="pathToFile"/> and save the compressed file to the provided output directory <paramref name="outputDirectory"/>.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="fileName"/> is provided the compressed file will use that name otherwise, the compressed file will use the original file name. This method adds the .gz extentions to the compressed file.
+        /// </remarks>
+        /// <param name="pathToFile">Path for the file to compress.</param>
+        /// <param name="outputDirectory">Output directory where to save the compressed file.</param>
+        /// <param name="fileName">(Optional) File name to be used for the compressed file.</param>
+        /// <returns>File info of the compressed file.</returns>
+        /// <exception cref="ArgumentException">Throws an exception if the file is already compressed using gzip or/and if it is hidden.</exception>
+        public static FileInfo CompressFile(string pathToFile, string outputDirectory, string fileName = "")
+        {
+            // Create output directory in case it doesn't exist
+            Directory.CreateDirectory(outputDirectory);
+
+            var fileToCompress = new FileInfo(pathToFile);
+
+            var compressedFilePath = @$"{outputDirectory}{Path.DirectorySeparatorChar}{(string.IsNullOrEmpty(fileName) ? fileToCompress.Name : fileName)}.gz";
+
+            using var originalFileStream = fileToCompress.OpenRead();
+            if ((File.GetAttributes(fileToCompress.FullName) & FileAttributes.Hidden) != FileAttributes.Hidden & fileToCompress.Extension != ".gz")
+            {
+                using (var compressedFileStream = File.Create(compressedFilePath))
+                {
+                    using var compressionStream = new GZipStream(compressedFileStream, CompressionMode.Compress);
+                    originalFileStream.CopyTo(compressionStream);
+                }
+
+                return new FileInfo(compressedFilePath);
+            }
+
+            throw new ArgumentException($"Tried compressing file {pathToFile} but could not perform the task.\n Please make sure that file is not hidden or/and is not already compressed (has .gz extension).");
+        }
+
+        /// <summary>
+        /// This method will decompress a given file <paramref name="pathToCompressedFile"/> and save the decompressed file to the provided output directory <paramref name="outputDirectory"/>.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="fileName"/> is provided the decompressed file will use that name otherwise, the decompressed file will use the original file name. This method removes the .gz extentions from the decompressed file.
+        /// </remarks>
+        /// <param name="pathToCompressedFile">Path for the file to decompress.</param>
+        /// <param name="outputDirectory">Output directory where to save the decompressed file.</param>
+        /// <param name="fileName">(Optional) File name to be used for the decompressed file.</param>
+        /// <returns>File info of the decompressed file.</returns>
+        /// <exception cref="ArgumentException">Throws an exception if the file does not have the ".gz" extension.</exception>
+        /// <exception cref="FileNotFoundException">Throws an exception if the file does not exist.</exception>
+        public static FileInfo DecompressFile(string pathToCompressedFile, string outputDirectory, string fileName = "")
+        {
+            // Create output directory in case it doesn't exist
+            Directory.CreateDirectory(outputDirectory);
+
+            var fileToDecompress = new FileInfo(pathToCompressedFile);
+
+            if (!fileToDecompress.Exists)
+            {
+                throw new FileNotFoundException($"Could not find {fileToDecompress.FullName}");
+            }
+
+            if (!fileToDecompress.Extension.Equals(".gz", StringComparison.Ordinal))
+            {
+                throw new ArgumentException($"Tried decompressing {pathToCompressedFile} but file is not gzip (.gz). Please make sure to provide gzip files.");
+            }
+
+            var uncompressedFile = @$"{outputDirectory}{Path.DirectorySeparatorChar}{(string.IsNullOrEmpty(fileName) ? fileToDecompress.Name.Remove(fileToDecompress.Name.Length - fileToDecompress.Extension.Length) : fileName)}";
+
+            using var originalFileStream = fileToDecompress.OpenRead();
+            using var decompressedFileStream = File.Create(uncompressedFile);
+            using var decompressionStream = new GZipStream(originalFileStream, CompressionMode.Decompress);
+
+            decompressionStream.CopyTo(decompressedFileStream);
+
+            return new FileInfo(uncompressedFile);
         }
     }
 }
