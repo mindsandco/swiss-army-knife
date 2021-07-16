@@ -454,6 +454,7 @@ dotnet_diagnostic.SA1009.severity = none
 dotnet_diagnostic.SA1505.severity = none
 dotnet_diagnostic.SA1508.severity = none
 dotnet_diagnostic.SA1516.severity = none
+dotnet_diagnostic.SA1000.severity = none
 
 # Using directives
 dotnet_diagnostic.SA1012.severity = none
