@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['asindentedjson_108',['AsIndentedJson',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#ae3f7cb368c565666cf2dac81606d95bc',1,'SCM::SwissArmyKnife::Extensions::ObjectExtensions']]],
-  ['asjson_109',['AsJson',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#a2a47f7c2e8be6b7a857abc4d7a6effd8',1,'SCM::SwissArmyKnife::Extensions::ObjectExtensions']]],
-  ['asmemorystreamasync_110',['AsMemoryStreamAsync',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions.html#a4835121e1e5e749a614b990f06e9c0a9',1,'SCM::SwissArmyKnife::Extensions::StreamExtensions']]]
+  ['asindentedjson_107',['AsIndentedJson',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#ae3f7cb368c565666cf2dac81606d95bc',1,'SCM::SwissArmyKnife::Extensions::ObjectExtensions']]],
+  ['asjson_108',['AsJson',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#a2a47f7c2e8be6b7a857abc4d7a6effd8',1,'SCM::SwissArmyKnife::Extensions::ObjectExtensions']]],
+  ['asmemorystreamasync_109',['AsMemoryStreamAsync',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions.html#a4835121e1e5e749a614b990f06e9c0a9',1,'SCM::SwissArmyKnife::Extensions::StreamExtensions']]]
 ];

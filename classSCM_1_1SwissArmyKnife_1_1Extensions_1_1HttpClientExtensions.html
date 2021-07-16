@@ -85,12 +85,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a52c03cf12232be4460242b37684ca803"><td class="memItemLeft" align="right" valign="top">static async Task&lt; TResponse &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a52c03cf12232be4460242b37684ca803">GetAsJsonAsync&lt; TResponse &gt;</a> (this HttpClient httpClient, Uri url, int? maxCharactersToPrint=null)</td></tr>
 <tr class="memdesc:a52c03cf12232be4460242b37684ca803"><td class="mdescLeft">&#160;</td><td class="mdescRight">GETs the given address, and serializes the resulting JSON object into an object of type T. Throws an error on non-2xx status messages.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a52c03cf12232be4460242b37684ca803">More...</a><br /></td></tr>
 <tr class="separator:a52c03cf12232be4460242b37684ca803"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d539fc36665b100d5e3a2f368b63582"><td class="memItemLeft" align="right" valign="top">static Task&lt; TResponse &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a3d539fc36665b100d5e3a2f368b63582">PostAsJsonAsync&lt; TResponse &gt;</a> (this HttpClient httpClient, string url, object? jsonBody=null, int? maxCharactersToPrint=null)</td></tr>
-<tr class="memdesc:a3d539fc36665b100d5e3a2f368b63582"><td class="mdescLeft">&#160;</td><td class="mdescRight">POSTS to the <em>url</em> , with a potentially provided <em>jsonBody</em> . The response is expected to be a JSON body and is serialized to <em>TResponse</em> .  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a3d539fc36665b100d5e3a2f368b63582">More...</a><br /></td></tr>
-<tr class="separator:a3d539fc36665b100d5e3a2f368b63582"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebd3bfff58295054b8a6699a361c193d"><td class="memItemLeft" align="right" valign="top">static async Task&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#aebd3bfff58295054b8a6699a361c193d">PostAsJsonAsync&lt; T &gt;</a> (this HttpClient httpClient, Uri url, object? jsonBody=null, int? maxCharactersToPrint=null)</td></tr>
-<tr class="memdesc:aebd3bfff58295054b8a6699a361c193d"><td class="mdescLeft">&#160;</td><td class="mdescRight">POSTs the given address with a potential provided body. If the body is provided, it is json-serialized. The JSON response is serialized into an T. Throws an error on non-2xx status messages.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#aebd3bfff58295054b8a6699a361c193d">More...</a><br /></td></tr>
-<tr class="separator:aebd3bfff58295054b8a6699a361c193d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52b9f76706b2e1a07e2d3bbde3b60a85"><td class="memItemLeft" align="right" valign="top">static Task&lt; TResponse &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a52b9f76706b2e1a07e2d3bbde3b60a85">PostAsJsonAsync&lt; TResponse &gt;</a> (this HttpClient httpClient, Uri uri, object? jsonBody=null, int? maxCharactersToPrint=null)</td></tr>
+<tr class="memdesc:a52b9f76706b2e1a07e2d3bbde3b60a85"><td class="mdescLeft">&#160;</td><td class="mdescRight">POSTS to the <em>uri</em> , with a potentially provided <em>jsonBody</em> . The response is expected to be a JSON body and is serialized to <em>TResponse</em> .  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a52b9f76706b2e1a07e2d3bbde3b60a85">More...</a><br /></td></tr>
+<tr class="separator:a52b9f76706b2e1a07e2d3bbde3b60a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa895c1a620ec3f475f915df23109d8e8"><td class="memItemLeft" align="right" valign="top">static async Task&lt; TResponse &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#aa895c1a620ec3f475f915df23109d8e8">PostAsJsonAsync&lt; TResponse &gt;</a> (this HttpClient httpClient, string url, object? jsonBody=null, int? maxCharactersToPrint=null)</td></tr>
+<tr class="memdesc:aa895c1a620ec3f475f915df23109d8e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">POSTS to the <em>url</em> , with a potentially provided <em>jsonBody</em> . The response is expected to be a JSON body and is serialized to <em>TResponse</em> .  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#aa895c1a620ec3f475f915df23109d8e8">More...</a><br /></td></tr>
+<tr class="separator:aa895c1a620ec3f475f915df23109d8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Extension methods to simplify common HttpClientExtension such as working with JSON. </p>
@@ -213,8 +213,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aebd3bfff58295054b8a6699a361c193d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebd3bfff58295054b8a6699a361c193d">&#9670;&nbsp;</a></span>PostAsJsonAsync&lt; T &gt;()</h2>
+<a id="aa895c1a620ec3f475f915df23109d8e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa895c1a620ec3f475f915df23109d8e8">&#9670;&nbsp;</a></span>PostAsJsonAsync&lt; TResponse &gt;() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,57 +223,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static async Task&lt;T&gt; PostAsJsonAsync&lt; T &gt; </td>
-          <td>(</td>
-          <td class="paramtype">this HttpClient&#160;</td>
-          <td class="paramname"><em>httpClient</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Uri&#160;</td>
-          <td class="paramname"><em>url</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">object?&#160;</td>
-          <td class="paramname"><em>jsonBody</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int?&#160;</td>
-          <td class="paramname"><em>maxCharactersToPrint</em> = <code>null</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>POSTs the given address with a potential provided body. If the body is provided, it is json-serialized. The JSON response is serialized into an T. Throws an error on non-2xx status messages. </p>
-
-</div>
-</div>
-<a id="a3d539fc36665b100d5e3a2f368b63582"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d539fc36665b100d5e3a2f368b63582">&#9670;&nbsp;</a></span>PostAsJsonAsync&lt; TResponse &gt;()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Task&lt;TResponse&gt; PostAsJsonAsync&lt; TResponse &gt; </td>
+          <td class="memname">static async Task&lt;TResponse&gt; PostAsJsonAsync&lt; TResponse &gt; </td>
           <td>(</td>
           <td class="paramtype">this HttpClient&#160;</td>
           <td class="paramname"><em>httpClient</em>, </td>
@@ -313,7 +263,80 @@ Static Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">httpClient</td><td>The HttpClient to use for the operation.</td></tr>
-    <tr><td class="paramname">url</td><td>The URL to POST to.</td></tr>
+    <tr><td class="paramname">url</td><td>The URL to POST to. This url has the same semantics as when using the regular "postAsync" in regards to respecting BaseAddress. </td></tr>
+    <tr><td class="paramname">jsonBody</td><td>The object to be serialized to JSON and included in the body. If not specified or null, no body will be sent.</td></tr>
+    <tr><td class="paramname">maxCharactersToPrint</td><td>If an error happen, how many characters of the HTTP response to include in the exception message. If not provided, will record the entire response. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">HttpRequestException</td><td>Will throw HttpRequestException if server responds with non-2xx status code.</td></tr>
+    <tr><td class="paramname">JsonException</td><td>Will throw JsonException if it was unable to parse the response body to <em>TResponse</em> .</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TResponse</td><td>The response type to parse the returned JSON to.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The response type serialized into <em>TResponse</em> .</dd></dl>
+
+</div>
+</div>
+<a id="a52b9f76706b2e1a07e2d3bbde3b60a85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52b9f76706b2e1a07e2d3bbde3b60a85">&#9670;&nbsp;</a></span>PostAsJsonAsync&lt; TResponse &gt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Task&lt;TResponse&gt; PostAsJsonAsync&lt; TResponse &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this HttpClient&#160;</td>
+          <td class="paramname"><em>httpClient</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Uri&#160;</td>
+          <td class="paramname"><em>uri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">object?&#160;</td>
+          <td class="paramname"><em>jsonBody</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int?&#160;</td>
+          <td class="paramname"><em>maxCharactersToPrint</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>POSTS to the <em>uri</em> , with a potentially provided <em>jsonBody</em> . The response is expected to be a JSON body and is serialized to <em>TResponse</em> . </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">httpClient</td><td>The HttpClient to use for the operation.</td></tr>
+    <tr><td class="paramname">uri</td><td>The URI to POST to. Note that this needs to be a fully qualified URI starting with http(s): Any BaseAddress from the HttpClient is not respected. </td></tr>
     <tr><td class="paramname">jsonBody</td><td>The object to be serialized to JSON and included in the body. If not specified or null, no body will be sent.</td></tr>
     <tr><td class="paramname">maxCharactersToPrint</td><td>If an error happen, how many characters of the HTTP response to include in the exception message. If not provided, will record the entire response. </td></tr>
   </table>
