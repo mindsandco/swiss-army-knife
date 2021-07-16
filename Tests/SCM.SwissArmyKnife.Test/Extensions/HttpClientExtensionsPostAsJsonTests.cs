@@ -167,7 +167,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
 
         // This test relies on internet connection which isn't optimal
         [Fact]
-        public async Task PostAsJson_ShouldIgnoreBasePath_WhenCalledWithFullyQualifiedUrl()
+        public async Task PostAsJson_ShouldIgnoreBasePath_WhenCalledWithFullyQualifiedUrlAsString()
         {
             // Arrange
             var client = new HttpClient()
