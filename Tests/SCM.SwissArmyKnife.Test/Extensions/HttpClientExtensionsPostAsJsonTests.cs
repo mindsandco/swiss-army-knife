@@ -142,8 +142,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
             Func<Task> actionThatThrows = async () => await client.PostAsJsonAsync<Dictionary<string, object>>(new Uri("/post?foo1=bar1&foo2=bar2"));
 
             // Throws either ArgumentException or UriFormatException depending on platform
-            await actionThatThrows.Should().ThrowAsync<SystemException>()
-                .WithMessage("*scheme*"); // error message varies across platform
+            await actionThatThrows.Should().ThrowAsync<SystemException>();
         }
 
         // This test relies on internet connection which isn't optimal
