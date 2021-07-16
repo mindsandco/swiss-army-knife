@@ -157,7 +157,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
 
         // This test relies on internet connection which isn't optimal
         [Fact]
-        public async Task GetAsJson_ShouldIgnoreBasePath_WhenCalledWithFullyQualifiedUrl()
+        public async Task GetAsJson_ShouldIgnoreBasePath_WhenCalledWithFullyQualifiedUrlAsString()
         {
             // Arrange
             var client = new HttpClient() { BaseAddress = new Uri("https://some-not-real-address.com/") };
