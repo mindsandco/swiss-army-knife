@@ -20,12 +20,13 @@ namespace SCM.SwissArmyKnife.Test.Extensions
         public async Task GetAsJson_ShouldReturnAsJson()
         {
             // Arrange
-            var originalDictionary = new Dictionary<string, string> {{"foo", "bar"}};
+            var originalDictionary = new Dictionary<string, string> { { "foo", "bar" } };
             var json = JsonConvert.SerializeObject(originalDictionary);
 
             var handlerMock = HttpMessageHandlerMock(new HttpResponseMessage
             {
-                StatusCode = HttpStatusCode.OK, Content = new StringContent(json)
+                StatusCode = HttpStatusCode.OK,
+                Content = new StringContent(json)
             });
 
             var client = new HttpClient(handlerMock.Object);
@@ -46,7 +47,8 @@ namespace SCM.SwissArmyKnife.Test.Extensions
 
             var handlerMock = HttpMessageHandlerMock(new HttpResponseMessage
             {
-                StatusCode = HttpStatusCode.NotFound, Content = new StringContent(errorResponse)
+                StatusCode = HttpStatusCode.NotFound,
+                Content = new StringContent(errorResponse)
             });
 
             var client = new HttpClient(handlerMock.Object);
@@ -67,7 +69,8 @@ namespace SCM.SwissArmyKnife.Test.Extensions
 
             var handlerMock = HttpMessageHandlerMock(new HttpResponseMessage
             {
-                StatusCode = HttpStatusCode.OK, Content = new StringContent(serverResponse)
+                StatusCode = HttpStatusCode.OK,
+                Content = new StringContent(serverResponse)
             });
 
             var client = new HttpClient(handlerMock.Object);
@@ -88,7 +91,8 @@ namespace SCM.SwissArmyKnife.Test.Extensions
 
             var handlerMock = HttpMessageHandlerMock(new HttpResponseMessage
             {
-                StatusCode = HttpStatusCode.NotFound, Content = new StringContent(errorResponse)
+                StatusCode = HttpStatusCode.NotFound,
+                Content = new StringContent(errorResponse)
             });
 
             var client = new HttpClient(handlerMock.Object);
@@ -107,14 +111,14 @@ namespace SCM.SwissArmyKnife.Test.Extensions
         public async Task GetAsJson_ShouldRespectBasePath_WhenCalledWithStringAsUrl()
         {
             // Arrange
-            var client = new HttpClient() {BaseAddress = new Uri("https://postman-echo.com/")};
+            var client = new HttpClient() { BaseAddress = new Uri("https://postman-echo.com/") };
 
             // Act & Assert
             // This should work without any issues, as the relative url provided is a string
             var response = await client.GetAsJsonAsync<Dictionary<string, object>>("get?foo1=bar1");
 
             response.Should().ContainKey("args").WhichValue.Should()
-                .BeEquivalentTo(new Dictionary<string, JValue> {{"foo1", new JValue("bar1")}});
+                .BeEquivalentTo(new Dictionary<string, JValue> { { "foo1", new JValue("bar1") } });
         }
 
         // This test relies on internet connection which isn't optimal
@@ -122,7 +126,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
         public async Task GetAsJson_ShouldThrowError_WhenCalledWithRelativeUri()
         {
             // Arrange
-            var client = new HttpClient() {BaseAddress = new Uri("https://postman-echo.com/")};
+            var client = new HttpClient() { BaseAddress = new Uri("https://postman-echo.com/") };
 
             // Act & Assert
             // This should throw an error because a relative Uri is specified, which is not allowed.
@@ -139,7 +143,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
         public async Task GetAsJson_ShouldIgnoreBasePath_WhenCalledWithFullyQualifiedUriInsteadOfString()
         {
             // Arrange
-            var client = new HttpClient() {BaseAddress = new Uri("https://some-not-real-address.com/")};
+            var client = new HttpClient() { BaseAddress = new Uri("https://some-not-real-address.com/") };
 
             // Act & Assert
             // This should work as the Uri provided is fully qualified
@@ -148,7 +152,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
                     new Uri("https://postman-echo.com/get?foo1=bar1"));
 
             response.Should().ContainKey("args").WhichValue.Should()
-                .BeEquivalentTo(new Dictionary<string, JValue> {{"foo1", new JValue("bar1")}});
+                .BeEquivalentTo(new Dictionary<string, JValue> { { "foo1", new JValue("bar1") } });
         }
 
         // This test relies on internet connection which isn't optimal
@@ -156,7 +160,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
         public async Task GetAsJson_ShouldIgnoreBasePath_WhenCalledWithFullyQualifiedUrl()
         {
             // Arrange
-            var client = new HttpClient() {BaseAddress = new Uri("https://some-not-real-address.com/")};
+            var client = new HttpClient() { BaseAddress = new Uri("https://some-not-real-address.com/") };
 
             // Act & Assert
             // This should work as the Uri provided is fully qualified
@@ -164,7 +168,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
                 await client.GetAsJsonAsync<Dictionary<string, object>>("https://postman-echo.com/get?foo1=bar1");
 
             response.Should().ContainKey("args").WhichValue.Should()
-                .BeEquivalentTo(new Dictionary<string, JValue> {{"foo1", new JValue("bar1")}});
+                .BeEquivalentTo(new Dictionary<string, JValue> { { "foo1", new JValue("bar1") } });
         }
 
 
