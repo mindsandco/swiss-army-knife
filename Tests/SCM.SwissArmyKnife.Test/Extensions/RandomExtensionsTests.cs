@@ -9,7 +9,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
 {
     public class RandomExtensionsTests
     {
-        private readonly Random random = new();
+        private readonly Random random = new ();
 
         [Fact]
         public void NextDouble_ReturnsADouble_WithinSpecifiedRange()

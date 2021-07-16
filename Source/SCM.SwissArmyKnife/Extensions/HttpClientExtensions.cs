@@ -76,11 +76,13 @@ namespace SCM.SwissArmyKnife.Extensions
 
 
         /// <summary>
-        /// POSTS to the <paramref name="url"/>, with a potentially provided <paramref name="jsonBody"/>.
+        /// POSTS to the <paramref name="uri"/>, with a potentially provided <paramref name="jsonBody"/>.
         /// The response is expected to be a JSON body and is serialized to <typeparamref name="TResponse"/>.
         /// </summary>
         /// <param name="httpClient">The HttpClient to use for the operation.</param>
-        /// <param name="url">The URL to POST to.</param>
+        /// <param name="uri">The URI to POST to. Note that this needs to be a fully qualified URI starting with http(s):
+        /// Any BaseAddress from the HttpClient is not respected.
+        /// </param>
         /// <param name="jsonBody">The object to be serialized to JSON and included in the body. If not specified or null, no body will be sent.</param>
         /// <param name="maxCharactersToPrint">
         /// If an error happen, how many characters of the HTTP response to include in the exception message.
@@ -91,9 +93,9 @@ namespace SCM.SwissArmyKnife.Extensions
         /// <typeparam name="TResponse">The response type to parse the returned JSON to.</typeparam>
         /// <returns>The response type serialized into <typeparamref name="TResponse"/>.</returns>
         ///
-        public static Task<TResponse> PostAsJsonAsync<TResponse>(this HttpClient httpClient, string url, object? jsonBody = null, int? maxCharactersToPrint = null)
+        public static Task<TResponse> PostAsJsonAsync<TResponse>(this HttpClient httpClient, Uri uri, object? jsonBody = null, int? maxCharactersToPrint = null)
         {
-            return PostAsJsonAsync<TResponse>(httpClient, new Uri(url), jsonBody, maxCharactersToPrint);
+            return PostAsJsonAsync<TResponse>(httpClient, uri.ToString(), jsonBody, maxCharactersToPrint);
         }
 
         /// <summary>
@@ -101,7 +103,7 @@ namespace SCM.SwissArmyKnife.Extensions
         /// The JSON response is serialized into an T.
         /// Throws an error on non-2xx status messages.
         /// </summary>
-        public static async Task<T> PostAsJsonAsync<T>(this HttpClient httpClient, Uri url, object? jsonBody = null, int? maxCharactersToPrint = null)
+        public static async Task<T> PostAsJsonAsync<T>(this HttpClient httpClient, string url, object? jsonBody = null, int? maxCharactersToPrint = null)
         {
             string? body = null;
 
@@ -118,6 +120,7 @@ namespace SCM.SwissArmyKnife.Extensions
                     content = new StringContent(string.Empty);
                 }
 
+                Console.WriteLine($"URL {url}");
                 var response = await httpClient.PostAsync(url, content).ConfigureAwait(false);
                 body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                 response.EnsureSuccessStatusCode();
