@@ -140,7 +140,8 @@ namespace SCM.SwissArmyKnife.Test.Extensions
             // This should throw an error because a relative Uri is specified, which is not allowed.
             Func<Task> actionThatThrows = async () => await client.PostAsJsonAsync<Dictionary<string, object>>(new Uri("/post?foo1=bar1&foo2=bar2"));
 
-            await actionThatThrows.Should().ThrowAsync<ArgumentException>()
+            // Throws either ArgumentException or UriFormatException depending on platform
+            await actionThatThrows.Should().ThrowAsync<SystemException>()
                 .WithMessage("*Only 'http' and 'https' schemes are allowed*");
         }
 
