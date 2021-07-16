@@ -99,11 +99,22 @@ namespace SCM.SwissArmyKnife.Extensions
         }
 
         /// <summary>
-        /// POSTs the given address with a potential provided body. If the body is provided, it is json-serialized.
-        /// The JSON response is serialized into an T.
-        /// Throws an error on non-2xx status messages.
+        /// POSTS to the <paramref name="url"/>, with a potentially provided <paramref name="jsonBody"/>.
+        /// The response is expected to be a JSON body and is serialized to <typeparamref name="TResponse"/>.
         /// </summary>
-        public static async Task<T> PostAsJsonAsync<T>(this HttpClient httpClient, string url, object? jsonBody = null, int? maxCharactersToPrint = null)
+        /// <param name="httpClient">The HttpClient to use for the operation.</param>
+        /// <param name="url">The URL to POST to. This url has the same semantics as when using the regular "postAsync" in regards to respecting BaseAddress.
+        /// </param>
+        /// <param name="jsonBody">The object to be serialized to JSON and included in the body. If not specified or null, no body will be sent.</param>
+        /// <param name="maxCharactersToPrint">
+        /// If an error happen, how many characters of the HTTP response to include in the exception message.
+        /// If not provided, will record the entire response.
+        /// </param>
+        /// <exception cref="HttpRequestException">Will throw HttpRequestException if server responds with non-2xx status code.</exception>
+        /// <exception cref="JsonException">Will throw JsonException if it was unable to parse the response body to <typeparamref name="TResponse"/>.</exception>
+        /// <typeparam name="TResponse">The response type to parse the returned JSON to.</typeparam>
+        /// <returns>The response type serialized into <typeparamref name="TResponse"/>.</returns>
+        public static async Task<TResponse> PostAsJsonAsync<TResponse>(this HttpClient httpClient, string url, object? jsonBody = null, int? maxCharactersToPrint = null)
         {
             string? body = null;
 
@@ -120,11 +131,10 @@ namespace SCM.SwissArmyKnife.Extensions
                     content = new StringContent(string.Empty);
                 }
 
-                Console.WriteLine($"URL {url}");
                 var response = await httpClient.PostAsync(url, content).ConfigureAwait(false);
                 body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                response.EnsureSuccessStatusCode();
-                return JsonConvert.DeserializeObject<T>(body);
+                _ = response.EnsureSuccessStatusCode();
+                return JsonConvert.DeserializeObject<TResponse>(body);
             }
 
             catch (HttpRequestException e)
