@@ -79,12 +79,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aae0936beb2275ac9ff6472614541c63e"><td class="memItemLeft" align="right" valign="top">static Task&lt; TResponse &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#aae0936beb2275ac9ff6472614541c63e">GetAsJsonAsync&lt; TResponse &gt;</a> (this HttpClient httpClient, string url, int? maxCharactersToPrint=null)</td></tr>
-<tr class="memdesc:aae0936beb2275ac9ff6472614541c63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">GETs the given address, and serializes the resulting JSON object into an object of type T. Throws an error on non-2xx status messages.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#aae0936beb2275ac9ff6472614541c63e">More...</a><br /></td></tr>
-<tr class="separator:aae0936beb2275ac9ff6472614541c63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52c03cf12232be4460242b37684ca803"><td class="memItemLeft" align="right" valign="top">static async Task&lt; TResponse &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a52c03cf12232be4460242b37684ca803">GetAsJsonAsync&lt; TResponse &gt;</a> (this HttpClient httpClient, Uri url, int? maxCharactersToPrint=null)</td></tr>
-<tr class="memdesc:a52c03cf12232be4460242b37684ca803"><td class="mdescLeft">&#160;</td><td class="mdescRight">GETs the given address, and serializes the resulting JSON object into an object of type T. Throws an error on non-2xx status messages.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a52c03cf12232be4460242b37684ca803">More...</a><br /></td></tr>
-<tr class="separator:a52c03cf12232be4460242b37684ca803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af64a125641c20ef3b5964d22786edb29"><td class="memItemLeft" align="right" valign="top">static Task&lt; TResponse &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#af64a125641c20ef3b5964d22786edb29">GetAsJsonAsync&lt; TResponse &gt;</a> (this HttpClient httpClient, Uri uri, int? maxCharactersToPrint=null)</td></tr>
+<tr class="memdesc:af64a125641c20ef3b5964d22786edb29"><td class="mdescLeft">&#160;</td><td class="mdescRight">GETs the given address, and serializes the resulting JSON object into an object of type T. Throws an error on non-2xx status messages.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#af64a125641c20ef3b5964d22786edb29">More...</a><br /></td></tr>
+<tr class="separator:af64a125641c20ef3b5964d22786edb29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b7ff17a9fdf55cbdf7d101ebafef72b"><td class="memItemLeft" align="right" valign="top">static async Task&lt; TResponse &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a1b7ff17a9fdf55cbdf7d101ebafef72b">GetAsJsonAsync&lt; TResponse &gt;</a> (this HttpClient httpClient, string url, int? maxCharactersToPrint=null)</td></tr>
+<tr class="memdesc:a1b7ff17a9fdf55cbdf7d101ebafef72b"><td class="mdescLeft">&#160;</td><td class="mdescRight">GETs the given address, and serializes the resulting JSON object into an object of type T. Throws an error on non-2xx status messages. The response is expected to be a JSON body and is serialized to <em>TResponse</em> .  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a1b7ff17a9fdf55cbdf7d101ebafef72b">More...</a><br /></td></tr>
+<tr class="separator:a1b7ff17a9fdf55cbdf7d101ebafef72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52b9f76706b2e1a07e2d3bbde3b60a85"><td class="memItemLeft" align="right" valign="top">static Task&lt; TResponse &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a52b9f76706b2e1a07e2d3bbde3b60a85">PostAsJsonAsync&lt; TResponse &gt;</a> (this HttpClient httpClient, Uri uri, object? jsonBody=null, int? maxCharactersToPrint=null)</td></tr>
 <tr class="memdesc:a52b9f76706b2e1a07e2d3bbde3b60a85"><td class="mdescLeft">&#160;</td><td class="mdescRight">POSTS to the <em>uri</em> , with a potentially provided <em>jsonBody</em> . The response is expected to be a JSON body and is serialized to <em>TResponse</em> .  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a52b9f76706b2e1a07e2d3bbde3b60a85">More...</a><br /></td></tr>
 <tr class="separator:a52b9f76706b2e1a07e2d3bbde3b60a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -95,8 +95,8 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Extension methods to simplify common HttpClientExtension such as working with JSON. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aae0936beb2275ac9ff6472614541c63e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae0936beb2275ac9ff6472614541c63e">&#9670;&nbsp;</a></span>GetAsJsonAsync&lt; TResponse &gt;() <span class="overload">[1/2]</span></h2>
+<a id="a1b7ff17a9fdf55cbdf7d101ebafef72b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b7ff17a9fdf55cbdf7d101ebafef72b">&#9670;&nbsp;</a></span>GetAsJsonAsync&lt; TResponse &gt;() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -105,7 +105,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Task&lt;TResponse&gt; GetAsJsonAsync&lt; TResponse &gt; </td>
+          <td class="memname">static async Task&lt;TResponse&gt; GetAsJsonAsync&lt; TResponse &gt; </td>
           <td>(</td>
           <td class="paramtype">this HttpClient&#160;</td>
           <td class="paramname"><em>httpClient</em>, </td>
@@ -135,11 +135,11 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>GETs the given address, and serializes the resulting JSON object into an object of type T. Throws an error on non-2xx status messages. </p>
+<p>GETs the given address, and serializes the resulting JSON object into an object of type T. Throws an error on non-2xx status messages. The response is expected to be a JSON body and is serialized to <em>TResponse</em> . </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">httpClient</td><td>HttpClient to use.</td></tr>
-    <tr><td class="paramname">url</td><td>Url to retrieve.</td></tr>
+    <tr><td class="paramname">url</td><td>The URL to GET. This url has the same semantics as when using the regular "GetAsync" in regards to respecting BaseAddress.</td></tr>
     <tr><td class="paramname">maxCharactersToPrint</td><td>If any errors occurs, how many characters of the response body should be included in the response body? If set to null, records the entire response. </td></tr>
   </table>
   </dd>
@@ -154,8 +154,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a52c03cf12232be4460242b37684ca803"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52c03cf12232be4460242b37684ca803">&#9670;&nbsp;</a></span>GetAsJsonAsync&lt; TResponse &gt;() <span class="overload">[2/2]</span></h2>
+<a id="af64a125641c20ef3b5964d22786edb29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af64a125641c20ef3b5964d22786edb29">&#9670;&nbsp;</a></span>GetAsJsonAsync&lt; TResponse &gt;() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,7 +164,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static async Task&lt;TResponse&gt; GetAsJsonAsync&lt; TResponse &gt; </td>
+          <td class="memname">static Task&lt;TResponse&gt; GetAsJsonAsync&lt; TResponse &gt; </td>
           <td>(</td>
           <td class="paramtype">this HttpClient&#160;</td>
           <td class="paramname"><em>httpClient</em>, </td>
@@ -173,7 +173,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Uri&#160;</td>
-          <td class="paramname"><em>url</em>, </td>
+          <td class="paramname"><em>uri</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -198,7 +198,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">httpClient</td><td>HttpClient to use.</td></tr>
-    <tr><td class="paramname">url</td><td>Url to retrieve.</td></tr>
+    <tr><td class="paramname">uri</td><td>The URI to GET. Note that this needs to be a fully qualified URI starting with http(s): Any BaseAddress from the HttpClient is not respected. </td></tr>
     <tr><td class="paramname">maxCharactersToPrint</td><td>If any errors occurs, how many characters of the response body should be included in the response body? If set to null, records the entire response. </td></tr>
   </table>
   </dd>
