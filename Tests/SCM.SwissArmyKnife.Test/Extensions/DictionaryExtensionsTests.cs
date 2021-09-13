@@ -134,7 +134,7 @@ namespace SCM.SwissArmyKnife.Test.Extensions
                 return 3;
             });
 
-            var dictionary = new Dictionary<string, Task<int>>() {{"1", task1}, {"2", task2}, {"3", task3}};
+            var dictionary = new Dictionary<string, Task<int>>() { { "1", task1 }, { "2", task2 }, { "3", task3 } };
 
             // Act
             Dictionary<string, int> awaitedDictionary = await dictionary.AwaitTasksInValuesAsync();
