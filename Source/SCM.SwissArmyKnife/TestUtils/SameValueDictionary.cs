@@ -40,7 +40,7 @@ namespace SCM.SwissArmyKnife.TestUtils
         /// </summary>
         public void Add(KeyValuePair<TKey, TValue> item)
         {
-             // no-op
+            // no-op
         }
 
         /// <summary>
