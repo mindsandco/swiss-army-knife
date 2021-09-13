@@ -23,6 +23,14 @@ namespace SCM.SwissArmyKnife.Test.TestUtils
         [AutoData]
         public void Get_ShouldAlwaysReturnTheValueSetInConstructor_EvenThoughAValueHasBeenSet(string keyName)
         {
+            // Creates a dictionary that always returns "defaultValue"
+            var dictionary = new SameValueDictionary<string, string>("defaultValue");
+            // Add operations are no-op
+            dictionary["someKey"] = "foo";
+            // Returns "defaultValue"
+            var value = dictionary["someKey"];
+
+
             // Try adding a few different ways
             this.sut[keyName] = "someOtherValue";
             this.sut.TryAdd(keyName, "someOtherValue");
