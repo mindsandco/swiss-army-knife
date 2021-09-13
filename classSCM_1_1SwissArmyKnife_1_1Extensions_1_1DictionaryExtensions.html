@@ -86,12 +86,65 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4ea3117fb81c7fc5500c754dad0640d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as the Regular GetOrDefault except this one takes a factory to produce the value.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html#a4ea3117fb81c7fc5500c754dad0640d1">More...</a><br /></td></tr>
 <tr class="separator:a4ea3117fb81c7fc5500c754dad0640d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bf380d9e734d1410db9be5ce8b773ad"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; TKey, TNewValue &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html#a5bf380d9e734d1410db9be5ce8b773ad">SelectValues&lt; TKey, TOldValue, TNewValue &gt;</a> (this IReadOnlyDictionary&lt; TKey, TOldValue &gt; dictionary, Func&lt; TOldValue, TNewValue &gt; selector)</td></tr>
-<tr class="memdesc:a5bf380d9e734d1410db9be5ce8b773ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new dictionary after appling the provided function to each value from the given dictionary.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html#a5bf380d9e734d1410db9be5ce8b773ad">More...</a><br /></td></tr>
+<tr class="memdesc:a5bf380d9e734d1410db9be5ce8b773ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new dictionary after applying the provided function to each value from the given dictionary.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html#a5bf380d9e734d1410db9be5ce8b773ad">More...</a><br /></td></tr>
 <tr class="separator:a5bf380d9e734d1410db9be5ce8b773ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16379edef04f10b5685c0a67864fbc5f"><td class="memItemLeft" align="right" valign="top">static async Task&lt; Dictionary&lt; TKey, TVal &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html#a16379edef04f10b5685c0a67864fbc5f">AwaitTasksInValuesAsync&lt; TKey, TVal &gt;</a> (this IReadOnlyDictionary&lt; TKey, Task&lt; TVal &gt;&gt; dictionaryToAwait)</td></tr>
+<tr class="memdesc:a16379edef04f10b5685c0a67864fbc5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a dictionary of &lt;TKey, Task&lt;TVal&gt;&gt; it awaits all the Tasks in parallel, and constructs a new dictionary&lt;TKey, TValgt;.  <a href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html#a16379edef04f10b5685c0a67864fbc5f">More...</a><br /></td></tr>
+<tr class="separator:a16379edef04f10b5685c0a67864fbc5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Extension methods for the BCL Dictionaries. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a16379edef04f10b5685c0a67864fbc5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16379edef04f10b5685c0a67864fbc5f">&#9670;&nbsp;</a></span>AwaitTasksInValuesAsync&lt; TKey, TVal &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static async Task&lt;Dictionary&lt;TKey, TVal&gt; &gt; AwaitTasksInValuesAsync&lt; TKey, TVal &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this IReadOnlyDictionary&lt; TKey, Task&lt; TVal &gt;&gt;&#160;</td>
+          <td class="paramname"><em>dictionaryToAwait</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a dictionary of &lt;TKey, Task&lt;TVal&gt;&gt; it awaits all the Tasks in parallel, and constructs a new dictionary&lt;TKey, TValgt;. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dictionaryToAwait</td><td>The dictionary with tasks to await.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>/// </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TKey</td><td>Type of the dictionaries keys.</td></tr>
+    <tr><td class="paramname">TVal</td><td>Type of the dictionaries values.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new dictionary with all the Tasks in the values turned into their actual values.</dd></dl>
+<div class="typeconstraint">
+<dl><dt><b>Type Constraints</b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em>TKey</em></td><td>&#160;:</td><td valign="top"><em>notnull</em></td><td>&#160;</td></tr>
+</table>
+</dd>
+</dl>
+</div>
+
+</div>
+</div>
 <a id="a332e1d95faf4f35f537843a55b771b09"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a332e1d95faf4f35f537843a55b771b09">&#9670;&nbsp;</a></span>GetOrThrow&lt; TKey, TValue &gt;()</h2>
 
@@ -237,7 +290,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a new dictionary after appling the provided function to each value from the given dictionary. </p>
+<p>Returns a new dictionary after applying the provided function to each value from the given dictionary. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">TKey</td><td>Key Type.</td></tr>

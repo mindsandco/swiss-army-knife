@@ -88,6 +88,16 @@ DictionaryExtensions</h1>
 <div class="line">     </div>
 <div class="line"><span class="comment">// Using &lt;string, string&gt; dictionary from earlier with unparsable string. Will throw exception</span></div>
 <div class="line">var throwsOnConvertDictionary = myDictionary.SelectValues(oldValue =&gt; <span class="keywordtype">int</span>.Parse(oldValue, CultureInfo.InvariantCulture));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Can await all tasks in values</span></div>
+<div class="line">var task = Task.Run(async () =&gt;</div>
+<div class="line">{</div>
+<div class="line">        await Task.Delay(200);</div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">});</div>
+<div class="line">var taskDictionary = <span class="keyword">new</span> Dictionary&lt;string, Task&lt;int&gt;&gt;() {{<span class="stringliteral">&quot;task1&quot;</span>, task}};</div>
+<div class="line"><span class="comment">// Returns {&quot;task1&quot;: 1}</span></div>
+<div class="line">await taskDictionary.AwaitTasksInValuesAsync();</div>
 </div><!-- fragment --><p><a class="el" href="classSCM_1_1SwissArmyKnife_1_1Extensions_1_1DictionaryExtensions.html">View More Documentation</a></p>
 <h1><a class="anchor" id="autotoc_md4"></a>
 EnumerableProducingExtensions</h1>
