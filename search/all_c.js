@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['randomextensions_47',['RandomExtensions',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1RandomExtensions.html',1,'SCM::SwissArmyKnife::Extensions']]],
-  ['randomextensions_2ecs_48',['RandomExtensions.cs',['../RandomExtensions_8cs.html',1,'']]],
-  ['readme_2emd_49',['README.md',['../README_8md.html',1,'']]],
-  ['repeat_50',['Repeat',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StringExtensions.html#adb74c5a05fceeb13e6f14b0a487ab3b3',1,'SCM::SwissArmyKnife::Extensions::StringExtensions']]]
+  ['path_59',['Path',['../classSCM_1_1SwissArmyKnife_1_1TestUtils_1_1TemporaryFileFixture.html#af331ba015acf9191899985a835008b9d',1,'SCM::SwissArmyKnife::TestUtils::TemporaryFileFixture']]],
+  ['postasjsonasync_3c_20tresponse_20_3e_60',['PostAsJsonAsync&lt; TResponse &gt;',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#a52b9f76706b2e1a07e2d3bbde3b60a85',1,'SCM.SwissArmyKnife.Extensions.HttpClientExtensions.PostAsJsonAsync&lt; TResponse &gt;(this HttpClient httpClient, Uri uri, object? jsonBody=null, int? maxCharactersToPrint=null)'],['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1HttpClientExtensions.html#aa895c1a620ec3f475f915df23109d8e8',1,'SCM.SwissArmyKnife.Extensions.HttpClientExtensions.PostAsJsonAsync&lt; TResponse &gt;(this HttpClient httpClient, string url, object? jsonBody=null, int? maxCharactersToPrint=null)']]],
+  ['printasjson_61',['PrintAsJson',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1ObjectExtensions.html#a5e939cc116f7b55111dea0c943d9adc8',1,'SCM::SwissArmyKnife::Extensions::ObjectExtensions']]]
 ];

@@ -77,13 +77,13 @@ $(function() {
 <li>Includes SourceLink so you can step into the source to debug</li>
 <li>Methods that are side-effect free are marked as <code>[Pure]</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 Installation</h1>
 <p>This library can be installed from Nuget or Github Packages. It targets <a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.1.md">netstandard 2.1</a>, and will require a version of JSON.NET installed in the <code>11.x</code> range.</p>
-<h3><a class="anchor" id="autotoc_md18"></a>
+<h3><a class="anchor" id="autotoc_md22"></a>
 Nuget</h3>
 <p>You can install it from nuget by running <code>dotnet add package <a class="el" href="namespaceSCM_1_1SwissArmyKnife.html">SCM.SwissArmyKnife</a></code></p>
-<h3><a class="anchor" id="autotoc_md19"></a>
+<h3><a class="anchor" id="autotoc_md23"></a>
 Github</h3>
 <p>If you are developing the library or want the latest packages built from the <code>main</code> branch, you can get them from Github packages.</p><ol type="1">
 <li>Add a <code>nuget.config</code> file to the root of your project. <div class="fragment"><div class="line">&lt;?<span class="keyword">xml</span> <span class="keyword">version</span>=<span class="stringliteral">&quot;1.0&quot;</span> <span class="keyword">encoding</span>=<span class="stringliteral">&quot;utf-8&quot;</span>?&gt;</div>
@@ -103,7 +103,7 @@ Github</h3>
 <li>Replace USERNAME with your Github username and TOKEN with a personal access token.</li>
 <li>Add the package: <code>dotnet add package <a class="el" href="namespaceSCM_1_1SwissArmyKnife.html">SCM.SwissArmyKnife</a> --version {VERSION} --prerelease</code></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 SwissArmyKnife.Extensions</h2>
 <p>A bunch of handy extension methods that you'll probably like to use! Examples: </p><div class="fragment"><div class="line">// ------------- Dictionary.GetOr</div>
 <div class="line">myDictionary.GetOr(&quot;nonExistingKey&quot;, () =&gt; &quot;myFallbackValue&quot;);</div>
@@ -132,7 +132,7 @@ SwissArmyKnife.Extensions</h2>
 <div class="line">// Gets URL and serializes model to MyResponseModel. On error prints http response</div>
 <div class="line">var await response = client.GetAsJsonAsync&lt;MyResponseModel&gt;(url)</div>
 </div><!-- fragment --><p><a href="https://scadaminds.github.io/swiss-army-knife/md_Documentation_Extensions.html">And many more!</a></p>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 SwissArmyKnife.Files</h2>
 <p>Methods to operate on files: </p><div class="fragment"><div class="line"><span class="comment">// Get the current solution directory. It will start with the current working directory and traverse upwards until finding the solution directory.</span></div>
 <div class="line">DirectoryInfo solutionDir = FileLocator.TryGetSolutionDirectoryInfo();</div>
@@ -140,7 +140,7 @@ SwissArmyKnife.Files</h2>
 <div class="line"><span class="comment">// If you need to get a specific file based on a relative path from the solution directory you can do it like this.</span></div>
 <div class="line">FileInfo programFile = FileLocator.GetFileStartingAtSolutionDirectory(<span class="stringliteral">&quot;SourceProject&quot;</span>, <span class="stringliteral">&quot;Program.cs&quot;</span>);</div>
 </div><!-- fragment --><p><a href="https://scadaminds.github.io/swiss-army-knife/md_Documentation_Files.html">And more!</a></p>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 SwissArmyKnife.Compression</h2>
 <p>Methods to compress and decompress data using gzip: </p><div class="fragment"><div class="line"><span class="comment">// Will return the compressed byte array</span></div>
 <div class="line"><span class="keywordtype">byte</span>[] myCompressedByteArray = Gzip.Compress(myByteArray);</div>
@@ -160,10 +160,27 @@ SwissArmyKnife.Compression</h2>
 <div class="line"><span class="comment">// Will return the decompressed string using the default (UTF8) encoding</span></div>
 <div class="line"><span class="keywordtype">string</span> myDecompressedStringUTF8 = Gzip.DecompressToString(myCompressedStringUTF8);</div>
 </div><!-- fragment --><p><a href="https://scadaminds.github.io/swiss-army-knife/md_Documentation_Compression.html">And more!</a></p>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
+SwissArmyKnife.TestUtils</h2>
+<p>Utilities to make testing a little bit easier. </p><div class="fragment"><div class="line">// Create a temporary file. The file is deleted when the block ends.</div>
+<div class="line">using var temporaryFile = TemporaryFileFixture.Create();</div>
+<div class="line">FileStream fileStream = temporaryFile.FileInfo.OpenWrite();</div>
+<div class="line"> </div>
+<div class="line">// Create a temporary directory, and delete it recursively at the end of the block.</div>
+<div class="line">using var temporaryDirectory = TemporaryDirectoryFixture.Create();</div>
+<div class="line">var directoryPath = temporaryDirectory.DirectoryInfo.FullName</div>
+<div class="line"> </div>
+<div class="line">// Create a dictionary that always returns the same value: &quot;defaultValue&quot; in this case.</div>
+<div class="line">var dictionary = new SameValueDictionary&lt;string, string&gt;(&quot;defaultValue&quot;);</div>
+<div class="line">// Add operations are no-op</div>
+<div class="line">dictionary[&quot;someKey&quot;] = &quot;foo&quot;;</div>
+<div class="line">// Returns &quot;defaultValue&quot;</div>
+<div class="line">var value = dictionary[&quot;someKey&quot;];</div>
+</div><!-- fragment --><p> <a href="https://scadaminds.github.io/swiss-army-knife/md_Documentation_TestUtils.html">And more!</a></p>
+<h2><a class="anchor" id="autotoc_md28"></a>
 Documentation</h2>
 <p>You can view the documentation for the <code>main</code> branch <a href="https://scadaminds.github.io/swiss-army-knife/index.html">here.</a></p>
-<h1><a class="anchor" id="autotoc_md24"></a>
+<h1><a class="anchor" id="autotoc_md29"></a>
 Contributing</h1>
 <p>If you'd like to contribute view the contribution docs here </p>
 </div></div><!-- PageDoc -->

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['streamextensions_83',['StreamExtensions',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions.html',1,'SCM::SwissArmyKnife::Extensions']]],
-  ['stringextensions_84',['StringExtensions',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StringExtensions.html',1,'SCM::SwissArmyKnife::Extensions']]]
+  ['samevaluedictionary_111',['SameValueDictionary',['../classSCM_1_1SwissArmyKnife_1_1TestUtils_1_1SameValueDictionary.html',1,'SCM::SwissArmyKnife::TestUtils']]],
+  ['streamextensions_112',['StreamExtensions',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StreamExtensions.html',1,'SCM::SwissArmyKnife::Extensions']]],
+  ['stringextensions_113',['StringExtensions',['../classSCM_1_1SwissArmyKnife_1_1Extensions_1_1StringExtensions.html',1,'SCM::SwissArmyKnife::Extensions']]]
 ];
