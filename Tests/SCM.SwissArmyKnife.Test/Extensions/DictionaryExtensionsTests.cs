@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Threading.Tasks;
 using FluentAssertions;
 using SCM.SwissArmyKnife.Extensions;
 using Xunit;
@@ -115,6 +116,34 @@ namespace SCM.SwissArmyKnife.Test.Extensions
             convertAction
                 .Should()
                 .Throw<Exception>();
+        }
+
+        [Fact]
+        public async Task AwaitTasksInValuesAsync_ShouldAwaitAllTasksInDictionary()
+        {
+            // Arrange
+            var task1 = Task.FromResult(1);
+            var task2 = Task.Run(async () =>
+            {
+                await Task.Delay(200);
+                return 2;
+            });
+            var task3 = Task.Run(async () =>
+            {
+                await Task.Delay(500);
+                return 3;
+            });
+
+            var dictionary = new Dictionary<string, Task<int>>() {{"1", task1}, {"2", task2}, {"3", task3}};
+
+            // Act
+            Dictionary<string, int> awaitedDictionary = await dictionary.AwaitTasksInValuesAsync();
+
+            // Assert
+            awaitedDictionary.Should().BeEquivalentTo(new Dictionary<string, int>()
+            {
+                {"1", 1}, {"2", 2}, {"3", 3}
+            });
         }
     }
 }
