@@ -116,6 +116,27 @@ string myDecompressedStringUTF8 = Gzip.DecompressToString(myCompressedStringUTF8
 
 [And more!](https://scadaminds.github.io/swiss-army-knife/md_Documentation_Compression.html)
 
+## SwissArmyKnife.TestUtils
+Utilities to make testing a little bit easier.
+```csharp
+// Create a temporary file. The file is deleted when the block ends.
+using var temporaryFile = TemporaryFileFixture.Create();
+FileStream fileStream = temporaryFile.FileInfo.OpenWrite();
+
+// Create a temporary directory, and delete it recursively at the end of the block.
+using var temporaryDirectory = TemporaryDirectoryFixture.Create();
+var directoryPath = temporaryDirectory.DirectoryInfo.FullName
+
+// Create a dictionary that always returns the same value: "defaultValue" in this case.
+var dictionary = new SameValueDictionary<string, string>("defaultValue");
+// Add operations are no-op
+dictionary["someKey"] = "foo";
+// Returns "defaultValue"
+var value = dictionary["someKey"];
+```
+[And more!](https://scadaminds.github.io/swiss-army-knife/md_Documentation_TestUtils.html)
+
+
 ## Documentation
 You can view the documentation for the `main` branch [here.](https://scadaminds.github.io/swiss-army-knife/index.html)
 
