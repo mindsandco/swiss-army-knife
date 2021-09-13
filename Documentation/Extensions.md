@@ -23,6 +23,17 @@ var myIntDictionary = new Dictionary<string, string> {
      
 // Using <string, string> dictionary from earlier with unparsable string. Will throw exception
 var throwsOnConvertDictionary = myDictionary.SelectValues(oldValue => int.Parse(oldValue, CultureInfo.InvariantCulture));
+
+// Can await all tasks in values
+var task = Task.Run(async () =>
+{
+        await Task.Delay(200);
+        return 1;
+});
+var taskDictionary = new Dictionary<string, Task<int>>() {{"task1", task}};
+// Returns {"task1": 1}
+await taskDictionary.AwaitTasksInValuesAsync();
+
 ```
 
 \ref SCM.SwissArmyKnife.Extensions.DictionaryExtensions "View More Documentation"
