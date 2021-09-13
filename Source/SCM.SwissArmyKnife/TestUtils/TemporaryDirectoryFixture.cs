@@ -15,7 +15,7 @@ namespace SCM.SwissArmyKnife.TestUtils
         /// This class performs IO.
         /// </summary>
         /// <returns>The TemporaryDirectoryFixture. </returns>
-        public static TemporaryDirectoryFixture Create() => new TemporaryDirectoryFixture();
+        public static TemporaryDirectoryFixture Create() => new();
 
         /// <summary>
         /// Gets the path to the temporary directory.

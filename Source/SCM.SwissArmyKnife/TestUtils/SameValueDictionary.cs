@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-// ReSharper disable SA1614
 
+// ReSharper disable SA1614
 namespace SCM.SwissArmyKnife.TestUtils
 {
     /// <summary>

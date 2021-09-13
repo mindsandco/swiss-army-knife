@@ -15,7 +15,7 @@ namespace SCM.SwissArmyKnife.TestUtils
         /// This method performs IO.
         /// </summary>
         /// <returns>A TemporaryFileFixture for a temporary file.</returns>
-        public static TemporaryFileFixture Create() => new TemporaryFileFixture();
+        public static TemporaryFileFixture Create() => new();
 
         /// <summary>
         /// Gets the path to the temporary file that this fixture governs.
@@ -31,7 +31,7 @@ namespace SCM.SwissArmyKnife.TestUtils
         {
             this.Path = System.IO.Path.GetFullPath(System.IO.Path.GetTempFileName());
             this.FileInfo = new FileInfo(this.Path);
-            Debug.Assert(this.FileInfo.Exists == true, "File should exist");
+            Debug.Assert(this.FileInfo.Exists, "File should exist");
         }
 
         /// <summary>
