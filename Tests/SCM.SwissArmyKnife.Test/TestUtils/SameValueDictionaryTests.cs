@@ -10,7 +10,7 @@ namespace SCM.SwissArmyKnife.Test.TestUtils
     public class SameValueDictionaryTests
     {
         private const string DefaultStringValue = "defaultStringValue";
-        private SameValueDictionary<string, string> sut = new SameValueDictionary<string, string>(DefaultStringValue);
+        private readonly SameValueDictionary<string, string> sut = new(DefaultStringValue);
 
         [Theory]
         [AutoData]
