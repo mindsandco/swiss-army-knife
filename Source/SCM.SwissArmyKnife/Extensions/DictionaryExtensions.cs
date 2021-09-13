@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using System.Linq;
+using System.Threading.Tasks;
+
 
 namespace SCM.SwissArmyKnife.Extensions
 {
@@ -52,7 +55,7 @@ namespace SCM.SwissArmyKnife.Extensions
         }
 
         /// <summary>
-        /// Returns a new dictionary after appling the provided function to each value from the given dictionary.
+        /// Returns a new dictionary after applying the provided function to each value from the given dictionary.
         /// </summary>
         /// <typeparam name="TKey">Key Type.</typeparam>
         /// <typeparam name="TOldValue">Original Type.</typeparam>
@@ -88,6 +91,41 @@ namespace SCM.SwissArmyKnife.Extensions
             }
 
             return newDictionary;
+        }
+
+
+        /// <summary>
+        /// Given a dictionary of &lt;TKey, Task&lt;TVal&gt;&gt; it awaits all the Tasks in parallel,
+        /// and constructs a new dictionary&lt;TKey, TVal%gt;.
+        /// </summary>
+        /// <param name="dictionaryToAwait">The dictionary with tasks to await.</param>
+        /// /// <typeparam name="TKey">Type of the dictionaries keys.</typeparam>
+        /// <typeparam name="TVal">Type of the dictionaries values.</typeparam>
+        /// <returns>A new dictionary with all the Tasks in the values turned into their actual values.</returns>
+        [Pure]
+        public static async Task<Dictionary<TKey, TVal>> AwaitTasksInValuesAsync<TKey, TVal>(
+            this IReadOnlyDictionary<TKey, Task<TVal>> dictionaryToAwait)
+            where TKey : notnull
+        {
+            if (dictionaryToAwait == null)
+            {
+                throw new ArgumentNullException(nameof(dictionaryToAwait));
+            }
+
+            var keys = dictionaryToAwait.Keys;
+            var tasks = dictionaryToAwait.Values;
+
+            // Await all tasks
+            var results = await Task.WhenAll(tasks).ConfigureAwait(false);
+
+            // Zip the results and the original keys together
+            var dictionary = new Dictionary<TKey, TVal>();
+            foreach (var valueTuple in keys.Zip(results, (key, val) => (key, val)))
+            {
+                dictionary.Add(valueTuple.key, valueTuple.val);
+            }
+
+            return dictionary;
         }
     }
 }
