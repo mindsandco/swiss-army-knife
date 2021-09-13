@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+// ReSharper disable SA1614
 
 namespace SCM.SwissArmyKnife.TestUtils
 {
@@ -35,14 +36,63 @@ namespace SCM.SwissArmyKnife.TestUtils
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
         /// <summary>
-        /// How many elements are in this dictionary? Will always pretend to only have one element.
+        /// No-op.
+        /// </summary>
+        public void Add(KeyValuePair<TKey, TValue> item)
+        {
+             // no-op
+        }
+
+        /// <summary>
+        /// No-op.
+        /// </summary>
+        public void Clear() => throw new NotImplementedException();
+
+        /// <summary>
+        /// Will always return true.
+        /// </summary>
+        /// <returns>True.</returns>
+        public bool Contains(KeyValuePair<TKey, TValue> item) => true;
+
+        /// <summary>
+        /// Throws an error. Not implemented. SameValueDictionary cannot be enumerated over.
+        /// </summary>
+        public void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex) => throw new NotImplementedException();
+
+        /// <summary>
+        /// Is a no-op, but returns true.
+        /// </summary>
+        /// <returns>True.</returns>
+        public bool Remove(KeyValuePair<TKey, TValue> item) => true;
+
+        /// <summary>
+        /// Gets how many elements are in this dictionary? Will always pretend to only have one element.
         /// </summary>
         public int Count => 1;
+
+        /// <inheritdoc cref="ICollection{T}.IsReadOnly"/>
+        public bool IsReadOnly { get; } = true;
+
+        /// <summary>
+        /// No-op.
+        /// </summary>
+        public void Add(TKey key, TValue value)
+        {
+            //no-op
+        }
 
         /// <inheritdoc cref="ContainsKey"/>
         public bool ContainsKey(TKey key) => true;
 
+        /// <summary>
+        /// No-op.
+        /// </summary>
+        public bool Remove(TKey key) => true;
+
+
+        ///
         /// <inheritdoc cref="TryGetValue"/>
+        ///
         public bool TryGetValue(TKey key, out TValue value)
         {
             value = this.returnedValue;
@@ -50,7 +100,7 @@ namespace SCM.SwissArmyKnife.TestUtils
         }
 
         /// <summary>
-        /// Will always return the "returnedValue" set in the constructor
+        /// Will always return the "returnedValue" set in the constructor.
         /// </summary>
         public TValue this[TKey key]
         {
